@@ -1,3 +1,4 @@
-for aliases in ./aliases.d/; do
-  source $aliases
+for f in $XDG_CONFIG_HOME/shell/aliases.d/*
+do
+  source $f
 done
