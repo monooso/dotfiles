@@ -1,3 +1,4 @@
-for variables in ./variables.d/; do
-  source $variables
+for f in $XDG_CONFIG_HOME/shell/variables.d/*
+do
+  source $f
 done
