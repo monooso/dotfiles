@@ -5,3 +5,6 @@
 
 # Source aliases
 . $XDG_CONFIG_HOME/shell/aliases
+
+# Source paths
+. $XDG_CONFIG_HOME/shell/paths
