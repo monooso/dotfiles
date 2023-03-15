@@ -4,9 +4,6 @@ export XDG_CONFIG_HOME="$HOME/.config"
 # Source shell configuration
 source $XDG_CONFIG_HOME/shell/shrc
 
-# Use Vim keybindings
-bindkey -v
-
 # Set the prompt
 parse_git_branch () {
   git branch 2> /dev/null | grep "*" | sed -e 's/* \(.*\)/ (\1)/g'
