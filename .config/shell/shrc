@@ -1,7 +1,7 @@
 #!sh
 
 # Source environment variables
-. $XDG_CONFIG_HOME/shell/env
+. $XDG_CONFIG_HOME/shell/variables
 
 # Source aliases
 . $XDG_CONFIG_HOME/shell/aliases
