@@ -1,4 +1,4 @@
-if [ -f $HOME/.asdf/asdf.sh ] && [ command -v brew &> /dev/null ]
+if [ -f $HOME/.asdf/asdf.sh ] && command -v brew &> /dev/null
 then
   asdf plugin remove nodejs
   brew uninstall gawk gpg

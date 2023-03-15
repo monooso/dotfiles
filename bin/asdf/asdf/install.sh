@@ -6,4 +6,4 @@ then
 else
   echo "Unable to install asdf. Check that Homebrew is installed."
   exit 1
-end
+fi
