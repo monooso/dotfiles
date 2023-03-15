@@ -23,3 +23,10 @@ alias lg='lazygit'
 alias vim=nvim
 alias vi=nvim
 alias v=nvim
+
+# -----------------------------------------------------------------------------
+# Load additional aliases from the aliases.d subdirectory
+# -----------------------------------------------------------------------------
+for extra in ./aliases.d/; do
+  source $extra
+done
