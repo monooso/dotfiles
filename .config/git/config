@@ -39,6 +39,7 @@
     prune = true
     rebase = true
 [push]
+    autoSetupRemote = true
     default = simple
 [status]
     showUntrackedFiles = all
