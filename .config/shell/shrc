@@ -1,10 +1,13 @@
 #!sh
 
 # Source environment variables
-. $XDG_CONFIG_HOME/shell/variables
+source $XDG_CONFIG_HOME/shell/variables
 
 # Source aliases
-. $XDG_CONFIG_HOME/shell/aliases
+source $XDG_CONFIG_HOME/shell/aliases
 
 # Source paths
-. $XDG_CONFIG_HOME/shell/paths
+source $XDG_CONFIG_HOME/shell/paths
+
+# Source keybindings
+source $XDG_CONFIG_HOME/shell/bindings
