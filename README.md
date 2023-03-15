@@ -3,13 +3,6 @@ All of my dotfiles, in a single repository. Supercedes the modular approach of o
 
 ## Getting started
 
-### Install Stow
-Install [Stow](https://www.gnu.org/software/stow/). You could use MacPorts, but there's a bunch of stuff in here which assumes you're using Homebrew, so stick with that.
-
-```sh
-brew install stow
-```
-
 ### Clone the dotfiles
 Clone the dotfiles to your local machine. For example:
 
@@ -19,10 +12,10 @@ mkdir code && cd $_
 git clone git@github.com:monooso/dotfiles.git
 ```
 
-### Install the dotfiles
-Install the dotfiles.
+### Run the bootstrap script
+Run the bootstrap script from the repository root. Assuming you followed the example above, and cloned the repository into `~/code/dotfiles`:
 
 ```sh
-cd ~/code
-stow dotfiles
+cd ~/code/dotfiles
+bash bin/bootstrap.sh
 ```
