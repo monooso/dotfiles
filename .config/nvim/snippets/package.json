@@ -1,0 +1,23 @@
+{
+  "name": "monooso-snippets",
+  "contributes": {
+    "snippets": [
+      {
+        "language": "all",
+        "path": "./filetypes/global.json"
+      },
+      {
+        "language": "erlang",
+        "path": "./filetypes/erlang.json"
+      },
+      {
+        "language": "elixir",
+        "path": "./filetypes/elixir.json"
+      },
+      {
+        "language": "eelixir",
+        "path": "./filetypes/eelixir.json"
+      }
+    ]
+  }
+}
