@@ -5,3 +5,10 @@ fi
 
 # Local Node.js package binaries
 export PATH=$PWD/node_modules/.bin:$PATH
+
+# Load asdf, if it exists
+# asdf *must* be sourced after any other path modifications
+ASDF_SH="$HOME/.asdf/asdf.sh"
+if [ -f $ASDF_SH ]; then
+  source $ASDF_SH >/dev/null
+fi
