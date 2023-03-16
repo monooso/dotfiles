@@ -1,4 +1,6 @@
 .config/composer/
+.config/op/
 .config/lazygit/config.yml
 .config/lazygit/state.yml
 .config/nvim/plugin/packer_compiled.lua
+.config/valet/
