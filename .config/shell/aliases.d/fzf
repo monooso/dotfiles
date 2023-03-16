@@ -1,0 +1,6 @@
+if command -v bat &> /dev/null && command -v fzf &> /dev/null
+then
+  # Alias fzf with preview to fp, so it doesn't mess with general-purpose fzf
+  # @see https://github.com/junegunn/fzf#preview-window
+  alias fp="fzf --preview 'bat --color=always {}' --preview-window '~3'"
+fi
