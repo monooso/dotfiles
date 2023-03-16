@@ -1,13 +1,13 @@
 #!sh
 
-# Source environment variables
+# Source environment variables.
 source $XDG_CONFIG_HOME/shell/variables
 
-# Source aliases
-source $XDG_CONFIG_HOME/shell/aliases
-
-# Source paths
+# Source paths. Must come before aliases.
 source $XDG_CONFIG_HOME/shell/paths
 
-# Source keybindings
+# Source aliases.
+source $XDG_CONFIG_HOME/shell/aliases
+
+# Source keybindings.
 source $XDG_CONFIG_HOME/shell/bindings
