@@ -6,6 +6,12 @@ fi
 # User binaries
 export PATH=$HOME/.local/bin:$PATH
 
+# Global Composer package binaries
+export PATH=$XDG_CONFIG_HOME/composer/vendor/bin:$PATH
+
+# Local Composer package binaries
+export PATH=$PWD/vendor/bin:$PATH
+
 # Local Node.js package binaries
 export PATH=$PWD/node_modules/.bin:$PATH
 
