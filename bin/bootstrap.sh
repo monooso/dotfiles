@@ -23,6 +23,7 @@ brew update && brew install \
   git \
   lazygit \
   neovim \
+  php \
   ripgrep \
   stow \
   tmux \
@@ -46,6 +47,11 @@ info "Installing Node.js LTS..."
 asdf plugin-update nodejs
 asdf install nodejs lts
 success "Node.js LTS installed"
+
+# Install Composer globally
+info "Installing Composer..."
+source bin/composer/install.sh
+success "Composer installed"
 
 # Stow our dotfiles
 info "Installing dotfiles..."
