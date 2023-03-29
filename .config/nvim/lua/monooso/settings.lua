@@ -54,7 +54,7 @@ M.setup = function()
   o.cmdheight = false
 
   -- Set the colour scheme. Encapsulate everything in functions because I inevitably switch.
-  o.background = 'light'
+  o.background = 'dark'
   o.termguicolors = true
 
   -- Set colour scheme to Solarized Light.
