@@ -77,6 +77,7 @@ M.setup = function()
   require('mason').setup()
   require('mason-lspconfig').setup({ automatic_installation = true })
 
+  require('lspconfig')['astro'].setup(extend_server_config())
   require('lspconfig')['bashls'].setup(extend_server_config())
   require('lspconfig')['vimls'].setup(extend_server_config())
 
