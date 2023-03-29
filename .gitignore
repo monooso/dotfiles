@@ -1,6 +1,7 @@
 .config/composer/
-.config/op/
+.config/github-copilot/hosts.json
 .config/lazygit/config.yml
 .config/lazygit/state.yml
 .config/nvim/plugin/packer_compiled.lua
+.config/op/
 .config/valet/
