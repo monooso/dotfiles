@@ -16,6 +16,7 @@ M.setup = function()
       'jsonc',
       'lua',
       'regex',
+      'svelte',
       'toml',
       'tsx',
       'typescript',

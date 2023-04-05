@@ -85,6 +85,8 @@ M.setup = function()
   require_if_supported('go', 'gopls')
   require_if_supported('node', 'tailwindcss')
   require_if_supported('php', 'intelephense')
+  require_if_supported('node', 'svelte')
+  require_if_supported('node', 'tsserver')
 end
 
 return M
