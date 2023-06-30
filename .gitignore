@@ -1,4 +1,6 @@
+.config/Autodesk/FusionFabrication.FusionNesting
 .config/composer/
+.config/exercism/user.json
 .config/github-copilot/hosts.json
 .config/lazygit/config.yml
 .config/lazygit/state.yml
