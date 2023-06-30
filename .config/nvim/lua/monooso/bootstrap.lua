@@ -31,9 +31,6 @@ M.setup = function()
     -- Use Telescope for fuzzy finding files.
     use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
 
-    -- Use toggleterm for, you know, toggling terminals
-    use { 'akinsho/toggleterm.nvim', tag = '2.3.0' }
-
     -- Tree sitter takes care of highlighting and indentation (and other things, such as code folding, that I don't use).
     -- It also helps with code navigation, within the current file.
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
