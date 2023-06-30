@@ -87,6 +87,12 @@ M.setup = function()
   require_if_supported('php', 'intelephense')
   require_if_supported('node', 'svelte')
   require_if_supported('node', 'tsserver')
+
+  require_if_supported('ocaml', 'ocamllsp', {
+    get_language_id = function(_, ftype)
+      return ftype
+    end
+  })
 end
 
 return M

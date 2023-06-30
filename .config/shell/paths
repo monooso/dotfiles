@@ -21,3 +21,6 @@ ASDF_SH="$HOME/.asdf/asdf.sh"
 if [ -f $ASDF_SH ]; then
   source $ASDF_SH >/dev/null
 fi
+
+# OCaml configuration
+[[ ! -r /Users/monooso/.opam/opam-init/init.zsh ]] || source /Users/monooso/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null

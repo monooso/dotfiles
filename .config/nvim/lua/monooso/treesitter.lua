@@ -15,6 +15,7 @@ M.setup = function()
       'json',
       'jsonc',
       'lua',
+      'ocaml',
       'regex',
       'svelte',
       'toml',
