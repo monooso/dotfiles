@@ -79,6 +79,7 @@ M.setup = function()
     require('rose-pine').setup({
       bold_vert_split = true,
       dark_variant = 'moon',
+      disable_italics = true,
       highlight_groups = {
         -- Add highlight groups for nvim-cmp.
         CmpItemAbbrMatch = { fg = 'pine' },
@@ -94,6 +95,9 @@ M.setup = function()
         CmpItemKindInterface = { fg = 'rose' },
         CmpItemKindText = { fg = 'rose' },
         CmpItemKindVariable = { fg = 'rose' },
+
+        -- Make tabs and trailing whitespace less obnoxious.
+        Whitespace = { fg = 'overlay' },
       }
     })
 
