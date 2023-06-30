@@ -33,7 +33,13 @@ M.setup = function()
 
     -- Tree sitter takes care of highlighting and indentation (and other things, such as code folding, that I don't use).
     -- It also helps with code navigation, within the current file.
-    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+    use {
+      'nvim-treesitter/nvim-treesitter',
+      run = function()
+        local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+        ts_update()
+      end
+    }
 
     -- LSP, snippets, and autocompletion.
     use 'neovim/nvim-lspconfig'
