@@ -13,7 +13,7 @@ export PATH=$XDG_CONFIG_HOME/composer/vendor/bin:$PATH
 export PATH=./vendor/bin:$PATH
 
 # Local Node.js package binaries
-export PATH=$PWD/node_modules/.bin:$PATH
+export PATH=./node_modules/.bin:$PATH
 
 # Load asdf, if it exists
 # asdf *must* be sourced after any other path modifications
