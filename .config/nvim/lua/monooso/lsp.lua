@@ -30,14 +30,6 @@ local function lsp_on_attach(client, bufnr)
     group = formatting_group
   })
 
-  -- Configure the diagnostics messages.
-  vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
-    vim.lsp.diagnostic.on_publish_diagnostics, {
-    underline = true,
-    update_in_insert = false,
-    virtual_text = true,
-  })
-
   -- Use a shorter update time; otherwise we have to wait 4 seconds for the diagnostics to show.
   vim.o.updatetime = 250
 
@@ -48,7 +40,10 @@ local function lsp_on_attach(client, bufnr)
 
   vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
     callback = function()
-      vim.diagnostic.open_float(nil)
+      -- Only display the diagnostics if we're not in "insert" mode.
+      if vim.api.nvim_get_mode().mode ~= 'i' then
+        vim.diagnostic.open_float(nil)
+      end
     end,
     group = diagnostics_group
   })
@@ -66,12 +61,12 @@ local function extend_server_config(config)
 end
 
 M.setup = function()
-  local lsp_config = require('lspconfig')
-
   -- Automatically install the servers required via LSP Config (below).
   -- Not convinced the main Mason setup belongs here, but don't have a better place.
   require('mason').setup()
   require('mason-lspconfig').setup({ automatic_installation = true })
+
+  local lsp_config = require('lspconfig')
 
   lsp_config['astro'].setup(extend_server_config())
   lsp_config['bashls'].setup(extend_server_config())
@@ -117,6 +112,12 @@ M.setup = function()
   if vim.fn.executable('php') == 1 then
     lsp_config['intelephense'].setup(extend_server_config())
   end
+
+  require('lsp_signature').setup({
+    bind = true,
+    handler_opts = { border = 'single' },
+    hint_enable = false
+  })
 end
 
 return M
