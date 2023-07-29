@@ -65,34 +65,58 @@ local function extend_server_config(config)
   }, config or {})
 end
 
-local function require_if_supported(executable, lsp_name, config)
-  if vim.fn.executable(executable) == 1 then
-    require('lspconfig')[lsp_name].setup(extend_server_config(config))
-  end
-end
-
 M.setup = function()
+  local lsp_config = require('lspconfig')
+
   -- Automatically install the servers required via LSP Config (below).
   -- Not convinced the main Mason setup belongs here, but don't have a better place.
   require('mason').setup()
   require('mason-lspconfig').setup({ automatic_installation = true })
 
-  require('lspconfig')['astro'].setup(extend_server_config())
-  require('lspconfig')['bashls'].setup(extend_server_config())
-  require('lspconfig')['vimls'].setup(extend_server_config())
+  lsp_config['astro'].setup(extend_server_config())
+  lsp_config['bashls'].setup(extend_server_config())
+  lsp_config['vimls'].setup(extend_server_config())
 
-  require_if_supported('elixir', 'elixirls')
-  require_if_supported('go', 'gopls')
-  require_if_supported('node', 'tailwindcss')
-  require_if_supported('php', 'intelephense')
-  require_if_supported('node', 'svelte')
-  require_if_supported('node', 'tsserver')
+  -- As per the Deno documentation, check for specific files in the
+  -- root directory for both the Deno LSP and the TypeScript LSP.
+  -- This ensures that they don't step on each other's toes.
+  --
+  -- @see https://deno.land/manual@v1.35.3/getting_started/setup_your_environment#neovim-06-using-the-built-in-language-server
+  if vim.fn.executable('deno') == 1 then
+    lsp_config['denols'].setup(extend_server_config({
+      root_dir = lsp_config.util.root_pattern('deno.json', 'deno.jsonc')
+    }))
+  end
 
-  require_if_supported('ocaml', 'ocamllsp', {
-    get_language_id = function(_, ftype)
-      return ftype
-    end
-  })
+  if vim.fn.executable('elixir') == 1 then
+    lsp_config['elixirls'].setup(extend_server_config())
+  end
+
+  if vim.fn.executable('go') == 1 then
+    lsp_config['gopls'].setup(extend_server_config())
+  end
+
+  if vim.fn.executable('node') == 1 then
+    lsp_config['svelte'].setup(extend_server_config())
+    lsp_config['tailwindcss'].setup(extend_server_config())
+
+    lsp_config['tsserver'].setup(extend_server_config({
+      root_dir = lsp_config.util.root_pattern('package.json'),
+      single_file_support = false
+    }))
+  end
+
+  if vim.fn.executable('ocaml') == 1 then
+    lsp_config['ocamllsp'].setup(extend_server_config({
+      get_language_id = function(_, ftype)
+        return ftype
+      end
+    }))
+  end
+
+  if vim.fn.executable('php') == 1 then
+    lsp_config['intelephense'].setup(extend_server_config())
+  end
 end
 
 return M
