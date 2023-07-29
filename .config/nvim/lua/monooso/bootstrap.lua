@@ -43,7 +43,7 @@ M.setup = function()
 
     -- LSP, snippets, and autocompletion.
     use 'neovim/nvim-lspconfig'
-    use 'onsails/lspkind-nvim'
+    use 'ray-x/lsp_signature.nvim'
 
     -- Manage LSP servers.
     use 'williamboman/mason.nvim'
