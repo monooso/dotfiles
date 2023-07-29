@@ -1,3 +1,4 @@
 elixir 1.14.3-otp-25
 erlang 25.2.2
 nodejs lts
+deno 1.35.3
