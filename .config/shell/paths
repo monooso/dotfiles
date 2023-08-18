@@ -15,6 +15,9 @@ export PATH=./vendor/bin:$PATH
 # Local Node.js package binaries
 export PATH=./node_modules/.bin:$PATH
 
+# Go binaries
+export PATH=$(go env GOPATH)/bin:$PATH
+
 # Load asdf, if it exists
 # asdf *must* be sourced after any other path modifications
 ASDF_SH="$HOME/.asdf/asdf.sh"
