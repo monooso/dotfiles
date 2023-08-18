@@ -23,8 +23,8 @@ if cmp ~= nil then
     sources = cmp.config.sources({
       { name = 'path' },
       { name = 'luasnip', keyword_length = 1, max_item_count = 4 },
-      { name = 'nvim_lsp', keyword_length = 1, max_item_count = 4 },
-      { name = 'nvim_lua', keyword_length = 1, max_item_count = 4 },
+      { name = 'nvim_lsp', keyword_length = 1 },
+      { name = 'nvim_lua', keyword_length = 1 },
       { name = 'copilot', keyword_length = 3, max_item_count = 3 },
     })
   })
