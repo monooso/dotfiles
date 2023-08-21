@@ -1,7 +1,7 @@
 .config/Autodesk/FusionFabrication.FusionNesting
 .config/composer/
 .config/exercism/user.json
-.config/github-copilot/hosts.json
+.config/github-copilot/
 .config/lazygit/config.yml
 .config/lazygit/state.yml
 .config/nvim/plugin/packer_compiled.lua
