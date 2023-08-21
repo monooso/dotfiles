@@ -1,4 +1,25 @@
 {
+  "context create": {
+    "prefix": "create",
+    "description": "Add create functions to a context.",
+    "body": [
+      "@doc \"\"\"",
+      "Creates a ${1:resource name} using the given attributes.",
+      "\"\"\"",
+      "@spec create_${2:resource_handle}(Map.t()) :: {:ok, ${3:ResourceSchema}.t()} | {:error, Ecto.Changeset.t()}",
+      "def create_$2(attrs),",
+      "  do: attrs |> create_$2_changeset() |> Repo.insert()",
+      "",
+      "@doc \"\"\"",
+      "Returns a changeset for creating a $1.",
+      "\"\"\"",
+      "@spec create_$2_changeset(Map.t()) :: Ecto.Changeset.t()",
+      "def create_$2_changeset(attrs),",
+      "  do: $3.insert_changeset(%$3{}, attrs)",
+      "",
+      "$0"
+    ]
+  },
   "defmodule": {
     "prefix": "defmo",
     "body": [
@@ -26,18 +47,6 @@
     ],
     "description": "Define a private function"
   },
-  "IO.puts": {
-    "prefix": "put",
-    "body": "IO.puts($0)"
-  },
-  "IO.inspect": {
-    "prefix": "ins",
-    "body": "IO.inspect($0)"
-  },
-  "IO.inspect with label": {
-    "prefix": "insl",
-    "body": "IO.inspect($1, label: \"$0\")"
-  },
   "if .. do .. end": {
     "prefix": "if",
     "body": [
@@ -49,29 +58,6 @@
   "if .. do:": {
     "prefix": "if:",
     "body": "if ${1:condition}, do: $0"
-  },
-  "if .. do .. else .. end": {
-    "prefix": "ife",
-    "body": [
-      "if ${1:condition} do",
-      "  $2",
-      "else",
-      "  $0",
-      "end"
-    ]
-  },
-  "if .. do: .. else:": {
-    "prefix": "ife:",
-    "body": "if ${1:condition}, do: $2, else: $0"
-  },
-  "cond": {
-    "prefix": "cond",
-    "body": [
-      "cond do",
-      "  $1 -> ",
-      "  $0",
-      "end"
-    ]
   },
   "case": {
     "prefix": "case",
@@ -158,27 +144,12 @@
       "end"
     ]
   },
-  "des": {
+  "describe": {
     "prefix": "desc",
     "body": [
       "describe \"${1:test group subject}\" do",
       "  $0",
       "end"
     ]
-  },
-  "IEx.pry": {
-    "prefix": "pry",
-    "body":  [
-      "require IEx; IEx.pry",
-      "$0"
-    ]
-  },
-  "word list": {
-    "prefix": "wl",
-    "body": "~w($0)"
-  },
-  "atom list": {
-    "prefix": "al",
-    "body": "~w($0)a"
   }
 }
