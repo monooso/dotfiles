@@ -1,0 +1,4 @@
+alias tma='tmux attach-session -t '
+alias tmk='tmux kill-session -t '
+alias tml='tmux list-sessions'
+alias tms='~/bin/tmux-quick-session.sh'
