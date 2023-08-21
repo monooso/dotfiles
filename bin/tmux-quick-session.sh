@@ -4,11 +4,8 @@
 # Quickly navigate to any code directory, and create a tmux session
 # -----------------------------------------------------------------------------
 
-dotfiles=$(find ~/dotfiles -maxdepth 1 -mindepth 1 -type d)
-personal=$(find ~/personal -maxdepth 2 -mindepth 1 -type d)
-work=$(find ~/work -maxdepth 2 -mindepth 1 -type d)
-
-all_directories="${dotfiles}\n${personal}\n${work}"
+code=$(find ~/code -maxdepth 1 -mindepth 1 -type d)
+all_directories="${code}"
 
 # Use FZF to fuzzy-find the desired directory.
 selected=$(echo "$all_directories" | fzf)
