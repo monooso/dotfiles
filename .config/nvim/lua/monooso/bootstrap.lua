@@ -59,11 +59,13 @@ M.setup = function()
 
     -- Welcome our new robot overlords
     use { 'zbirenbaum/copilot.lua',
-      event = 'VimEnter',
+      cmd = 'Copilot',
+      event = 'InsertEnter',
       config = function()
-        vim.defer_fn(function()
-          require('copilot').setup()
-        end, 100)
+        require('copilot').setup({
+          panel = { enabled = false },
+          suggestion = { enabled = false },
+        })
       end
     }
 
