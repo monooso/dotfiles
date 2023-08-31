@@ -113,11 +113,11 @@ M.setup = function()
     lsp_config['intelephense'].setup(extend_server_config())
   end
 
-  require('lsp_signature').setup({
-    bind = true,
-    handler_opts = { border = 'single' },
-    hint_enable = false
-  })
+  -- require('lsp_signature').setup({
+  --   bind = true,
+  --   handler_opts = { border = 'single' },
+  --   hint_enable = false
+  -- })
 end
 
 return M
