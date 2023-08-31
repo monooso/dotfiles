@@ -3,7 +3,7 @@ vim.diagnostic.config({
   float = { focus = false, scope = 'cursor' },
   severity_sort = true,
   source = true,
-  virtual_text = false
+  virtual_text = true
 })
 
 require('monooso.utils').register_keymap({ 'n' }, 'd', {
