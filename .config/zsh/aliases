@@ -1,0 +1,4 @@
+for f in $XDG_CONFIG_HOME/zsh/aliases.d/*
+do
+  source $f
+done

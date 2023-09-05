@@ -2,7 +2,7 @@
 export XDG_CONFIG_HOME="$HOME/.config"
 
 # Source shell configuration
-source $XDG_CONFIG_HOME/shell/shrc
+source $XDG_CONFIG_HOME/zsh/zshrc
 
 # Set the prompt
 parse_git_branch () {
