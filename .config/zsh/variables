@@ -1,4 +1,16 @@
-for f in $XDG_CONFIG_HOME/zsh/variables.d/*
-do
-  source $f
-done
+#!/usr/bin/env bash
+
+# Use ripgrep with fzf
+if command -v rg &> /dev/null; then
+  export FZF_DEFAULT_COMMAND='rg --files --hidden'
+fi
+
+# Neovim before Vim
+if command -v nvim &> /dev/null; then
+  export EDITOR='nvim'
+else
+  export EDITOR='vim -f'
+fi
+
+export VISUAL=$EDITOR
+export GIT_EDITOR=$EDITOR
