@@ -1,8 +1,17 @@
 # Set the XDG_* directories, so everything else can use them
 export XDG_CONFIG_HOME="$HOME/.config"
 
-# Source shell configuration
-source $XDG_CONFIG_HOME/zsh/zshrc
+# Set the shell
+export SHELL=$(which zsh)
+
+# Use Vim keybindings, always
+bindkey -v
+
+# Source configuration files
+# Order is important
+source $XDG_CONFIG_HOME/zsh/variables
+source $XDG_CONFIG_HOME/zsh/paths
+source $XDG_CONFIG_HOME/zsh/aliases
 
 # Set the prompt
 parse_git_branch () {
