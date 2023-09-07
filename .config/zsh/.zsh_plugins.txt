@@ -1,0 +1,9 @@
+#!/usr/bin/env zsh
+
+# Completion
+zsh-users/zsh-completions path:src kind:fpath
+
+# Core plugins, must be loaded last
+zsh-users/zsh-autosuggestions kind:defer
+zdharma-continuum/fast-syntax-highlighting kind:defer
+zsh-users/zsh-history-substring-search

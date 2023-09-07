@@ -1,8 +1,14 @@
-# Set the XDG_* directories, so everything else can use them
-export XDG_CONFIG_HOME="$HOME/.config"
+# Initialise Homebrew, which other things depend on
+if [ -f "/opt/homebrew/bin/brew" ]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+else
+  echo "ERROR: Homebrew is not installed"
+  exit 1
+fi
 
-# Set the shell
-export SHELL=$(which zsh)
+# Load antidote, which is installed via Homebrew
+source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
+antidote load
 
 # Use Vim keybindings, always
 bindkey -v
