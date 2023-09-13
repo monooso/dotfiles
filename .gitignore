@@ -8,3 +8,5 @@
 .config/raycast/extensions/
 .config/op/
 .config/valet/
+.config/zsh/.zsh_history
+
