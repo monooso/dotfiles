@@ -20,6 +20,7 @@ fi
 # Git
 alias ga='git add'
 alias gbc='~/bin/git/create_branch.sh'
+alias gbl='git branch --color'
 alias gc='git commit'
 alias gd='git diff'
 alias gl='git log'
