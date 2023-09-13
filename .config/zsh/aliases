@@ -35,4 +35,4 @@ alias v=nvim
 alias tma='tmux attach-session -t '
 alias tmk='tmux kill-session -t '
 alias tml='tmux list-sessions'
-alias tms='~/bin/tmux-quick-session.sh'
+alias tms='~/bin/tmux_quick_session.sh'
