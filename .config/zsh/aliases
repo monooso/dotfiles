@@ -23,6 +23,7 @@ alias gc='git commit'
 alias gd='git diff'
 alias gl='git log'
 alias gco='git checkout'
+alias gnb='~/bin/git_new_branch.sh'
 alias gs='git status -sb | sort -bf'
 alias lg='lazygit'
 
