@@ -1,3 +1,8 @@
+#!/usr/bin/env zsh
+
+# Load helper functions.
+source $HOME/bin/git/utils.sh
+
 # Initialise Homebrew, which other things depend on
 if [ -f "/opt/homebrew/bin/brew" ]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -20,19 +25,33 @@ source $XDG_CONFIG_HOME/zsh/paths
 source $XDG_CONFIG_HOME/zsh/aliases
 
 # Set the prompt
-parse_git_branch () {
-  git branch 2> /dev/null | grep "*" | sed -e 's/* \(.*\)/ (\1)/g'
-}
+function set_left_prompt {
+  # Build the user@machine:path prompt
+  local user_path_prompt="%F{245}%n@%m%F{245}:%F{green}%~${reset_color}"
 
-# Set the prompt
-set_left_prompt() {
+  # Build the git prompt
+  local git_local=$(git_current_branch)
+  local git_remote=$(git_upstream_branch)
+  local git_prompt=""
+
+  if [ -n "$git_local" ]; then
+    git_prompt="%F{yellow}${git_local}${reset_color}"
+  fi
+
+  if [ -n "$git_remote" ]; then
+    git_prompt="${git_prompt}%F{245} ← %F{green}${git_remote}${reset_color}"
+  fi
+
+  if [ -n "$git_prompt" ]; then
+    git_prompt="%F{245}[${git_prompt}%F{245}]${reset_color}"
+  fi
+
   export PROMPT="
-%F{245}%n@%m%{$reset_color%}
-%F{green}%~%F{yellow}$(parse_git_branch)%{$reset_color%}
+${user_path_prompt} ${git_prompt}
 → "
 }
 
-precmd() {
+function precmd {
   set_left_prompt
 }
 
