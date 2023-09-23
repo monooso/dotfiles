@@ -5,7 +5,7 @@ if cmp ~= nil then
   cmp.setup({
     completion = { completeopt = "menu,menuone,noinsert" },
     formatting = {
-      format = lspkind.cmp_format({ mode = "symbol_text" }),
+      format = lspkind.cmp_format({ mode = "symbol" }),
     },
     mapping = cmp.mapping.preset.insert({
       ["<CR>"] = cmp.mapping.confirm({
