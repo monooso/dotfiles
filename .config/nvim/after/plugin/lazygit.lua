@@ -6,7 +6,7 @@ local lazygit = Terminal:new({
   hidden = true,
   direction = "tab",
   on_open = function(term)
-    vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
+    vim.keymap.set("n", "q", "<cmd>close<CR>", { buffer = true, silent = true })
   end,
 })
 
@@ -14,4 +14,4 @@ function toggle_lazygit()
   lazygit:toggle()
 end
 
-vim.api.nvim_set_keymap("n", "<leader>sl", "<cmd>lua toggle_lazygit()<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>sl", toggle_lazygit, { silent = true })
