@@ -4,7 +4,14 @@ return {
   { "nvim-lualine/lualine.nvim", opts = { theme = "nord" } },
 
   -- Sane terminals.
-  { "akinsho/nvim-toggleterm.lua" },
+  {
+    "akinsho/nvim-toggleterm.lua",
+    opts = {
+      direction = "vertical",
+      size = 100,
+      open_mapping = [[<C-\>]],
+    }
+  },
 
   -- Treesitter.
   {
