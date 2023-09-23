@@ -6,7 +6,7 @@ M.setup = function()
 
   -- Highlight the current line number, so we know where we are.
   o.cursorline = true
-  o.cursorlineopt = 'number'
+  o.cursorlineopt = "number"
 
   -- Enable relative line numbers.
   o.number = true
@@ -23,12 +23,12 @@ M.setup = function()
 
   -- Show invisible characters.
   o.list = true
-  o.listchars = 'tab:▸ ,trail:•'
+  o.listchars = "tab:▸ ,trail:•"
 
   -- Disable folding.
   o.foldenable = false
 
-  -- Don't wrap lines, you savage.
+  -- Don"t wrap lines, you savage.
   o.wrap = false
 
   -- Stop beeping me, dammit.
@@ -40,7 +40,7 @@ M.setup = function()
 
   -- Use the global status line, and set the content.
   o.laststatus = 3
-  o.statusline = ' %(%<%f%m %)%=%( %l:%c %)'
+  o.statusline = " %(%<%f%m %)%=%( %l:%c %)"
 
   -- Now that we have a global status line, improve the appearance of window splits.
   vim.cmd [[highlight WinSeparator guifg=#908caa guibg=None]]
@@ -54,67 +54,18 @@ M.setup = function()
   o.cmdheight = false
 
   -- Set the colour scheme. Encapsulate everything in functions because I inevitably switch.
-  o.background = 'dark'
+  o.background = "dark"
   o.termguicolors = true
 
-  -- Set colour scheme to Solarized Light.
-  -- local function solarized_light()
-  --   g.solarized_italics = false
-  --   g.solarized_visibility = 'low'
-  --
-  --   -- Remove the godawful line number background colour.
-  --   local colorscheme_group = vim.api.nvim_create_augroup('SolarizedTweaks', { clear = true })
-  --
-  --   vim.api.nvim_create_autocmd('ColorScheme', {
-  --     command = 'highlight LineNr ctermbg=none guibg=none',
-  --     group = colorscheme_group,
-  --     pattern = 'solarized'
-  --   })
-  --
-  --   vim.cmd [[colorscheme solarized]]
-  -- end
-
-  -- Set colour scheme to Rosé Pine. Automatically handles light or dark background.
-  local function rose_pine()
-    require('rose-pine').setup({
-      bold_vert_split = true,
-      dark_variant = 'moon',
-      disable_italics = true,
-      highlight_groups = {
-        -- Add highlight groups for nvim-cmp.
-        CmpItemAbbrMatch = { fg = 'pine' },
-        CmpItemAbbrMatchFuzzy = { fg = 'pine' },
-
-        CmpItemKindFunction = { fg = 'gold' },
-        CmpItemKindMethod = { fg = 'gold' },
-
-        CmpItemKindKeyword = { fg = 'iris' },
-        CmpItemKindProperty = { fg = 'iris' },
-        CmpItemKindUnit = { fg = 'iris' },
-
-        CmpItemKindInterface = { fg = 'rose' },
-        CmpItemKindText = { fg = 'rose' },
-        CmpItemKindVariable = { fg = 'rose' },
-
-        -- Make tabs and trailing whitespace less obnoxious.
-        Whitespace = { fg = 'overlay' },
-      }
-    })
-
-    vim.cmd [[colorscheme rose-pine]]
-  end
-
-  rose_pine()
-
   -- Highlight text when yanking. Surprisingly helpful, and no longer requires a plugin.
-  local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
+  local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 
-  vim.api.nvim_create_autocmd('TextYankPost', {
+  vim.api.nvim_create_autocmd("TextYankPost", {
     callback = function()
       vim.highlight.on_yank()
     end,
     group = highlight_group,
-    pattern = '*',
+    pattern = "*",
   })
 
   -- Do not rely on any external dependencies; Lua or Vimscript only
