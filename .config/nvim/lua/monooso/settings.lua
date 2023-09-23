@@ -42,9 +42,8 @@ M.setup = function()
   o.splitbelow = true
   o.splitright = true
 
-  -- Use the global status line, and set the content.
+  -- Use the global status line.
   o.laststatus = 3
-  o.statusline = " %(%<%f%m %)%=%( %l:%c %)"
 
   -- Now that we have a global status line, improve the appearance of window splits.
   vim.cmd [[highlight WinSeparator guifg=#908caa guibg=None]]
@@ -57,7 +56,7 @@ M.setup = function()
   -- @since Neovim 0.8
   o.cmdheight = false
 
-  -- Set the colour scheme. Encapsulate everything in functions because I inevitably switch.
+  -- Set the background color to dark, and enable true colors.
   o.background = "dark"
   o.termguicolors = true
 
