@@ -17,12 +17,8 @@ return {
     end
   },
   {
-    -- Note the `lazy` and `priority` settings. This ensures my preferred colour scheme
-    -- is loaded before all other plugins.
     "rose-pine/neovim",
     name = "rose-pine",
-    lazy = false,
-    priority = 1000,
     opts = {
       bold_vert_split = true,
       dark_variant = "moon",
@@ -32,5 +28,16 @@ return {
         Whitespace = { fg = "overlay" },
       }
     },
+  },
+  {
+    -- Note the `lazy` and `priority` settings. This ensures my preferred colour scheme
+    -- is loaded before all other plugins.
+    "nordtheme/vim",
+    name = "nord",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.g.nord_cursor_line_number_background = true
+    end,
   }
 }
