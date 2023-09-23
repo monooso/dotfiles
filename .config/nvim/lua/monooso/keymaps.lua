@@ -10,11 +10,6 @@ M.setup = function()
   local mapset = vim.keymap.set
   local keymap_opts = { silent = true }
 
-  -- <Space> is my leader.
-  vim.g.mapleader = ' '
-  vim.g.maplocalleader = ' '
-  mapset({ 'n', 'v' }, '<Space>', '<Nop>', keymap_opts)
-
   require('monooso.utils').register_keymap({ 'n' }, 'c', {
     h = { '<cmd>let @/=""<cr>', 'Clear highlights' }
   })
