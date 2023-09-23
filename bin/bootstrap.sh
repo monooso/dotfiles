@@ -32,6 +32,15 @@ brew update && brew install \
 
 success "Homebrew packages installed"
 
+# Install fonts
+info "Installing fonts..."
+
+brew update && brew install \
+  font-iosevka-ss15 \
+  font-symbols-only-nerd-font
+
+success "Fonts installed"
+
 # Install asdf
 info "Installing asdf..."
 source bin/asdf/asdf/install.sh
