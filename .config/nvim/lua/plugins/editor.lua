@@ -2,6 +2,11 @@
 return {
   -- Status line.
   { "nvim-lualine/lualine.nvim", opts = { theme = "nord" } },
+
+  -- Sane terminals.
+  { "akinsho/nvim-toggleterm.lua" },
+
+  -- Treesitter.
   {
     "nvim-treesitter/nvim-treesitter",
     build = function()
