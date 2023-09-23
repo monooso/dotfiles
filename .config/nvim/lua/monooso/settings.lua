@@ -34,6 +34,10 @@ M.setup = function()
   -- Stop beeping me, dammit.
   o.visualbell = true
 
+  -- Don't wait around for keymappings to complete.
+  o.timeoutlen = 500
+
+
   -- Set the position of new splits. The defaults confuse me, every time.
   o.splitbelow = true
   o.splitright = true
