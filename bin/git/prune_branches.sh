@@ -9,5 +9,23 @@
 # Load helper functions.
 source "$(dirname "$0")/utils.sh"
 
-echo $(git_upstream_branch)
-echo "@todo"
+function git_prune_branches() {
+  git branch --merged | egrep -v "(^\*|master|main)" | xargs git branch -d
+}
+
+current_branch="$(git_current_branch)"
+
+if [ "$current_branch" != "main" ] && [ "$current_branch" != "master" ]; then
+  echo "WOAH THERE, COWBOY"
+  read -p "Are you sure you want to prune branches that are not merged into $current_branch (y/n): " proceed
+
+  case $proceed in
+    [Yy])
+      git_prune_branches;;
+
+    *)
+      echo "Crisis averted";;
+  esac
+else
+  git_prune_branches
+fi
