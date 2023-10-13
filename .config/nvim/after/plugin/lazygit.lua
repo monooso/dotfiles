@@ -14,4 +14,5 @@ function toggle_lazygit()
   lazygit:toggle()
 end
 
-vim.keymap.set("n", "<leader>sl", toggle_lazygit, { silent = true })
+-- [L]aunch [L]azygit
+vim.keymap.set("n", "<leader>ll", toggle_lazygit, { silent = true })
