@@ -1,4 +1,4 @@
-elixir 1.14.3-otp-25
-erlang 25.2.2
-nodejs lts
+elixir 1.15.7-otp-26
+erlang 26.1.2
+nodejs 18.18.2
 deno 1.35.3
