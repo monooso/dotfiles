@@ -21,15 +21,6 @@ local function lsp_on_attach(client, bufnr)
     })
   end
 
-  -- Format files using the LSP on save
-  local formatting_group = vim.api.nvim_create_augroup("FormatOnSave", { clear = true })
-  vim.api.nvim_create_autocmd("BufWritePre", {
-    callback = function()
-      vim.lsp.buf.format()
-    end,
-    group = formatting_group
-  })
-
   -- Use a shorter update time; otherwise we have to wait 4 seconds for the diagnostics to show.
   vim.o.updatetime = 250
 
@@ -67,11 +58,12 @@ M.setup = function()
 
   lsp_config["astro"].setup(extend_server_config())
   lsp_config["bashls"].setup(extend_server_config())
+  lsp_config["eslint"].setup(extend_server_config())
   lsp_config["vimls"].setup(extend_server_config())
 
   -- As per the Deno documentation, check for specific files in the
   -- root directory for both the Deno LSP and the TypeScript LSP.
-  -- This ensures that they don"t step on each other"s toes.
+  -- This ensures that they don't step on each other's toes.
   --
   -- @see https://deno.land/manual@v1.35.3/getting_started/setup_your_environment#neovim-06-using-the-built-in-language-server
   if vim.fn.executable("deno") == 1 then
