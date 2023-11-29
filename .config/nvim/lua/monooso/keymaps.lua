@@ -57,40 +57,6 @@ M.setup = function()
     s = { '<cmd>TestSuite<cr>', 'Suite' },
     v = { '<cmd>TestVisit<cr>', 'Visit last test' },
   })
-
-  -- EXPERIMENTAL: easier split navigation.
-  -- Left
-  mapset({ 'n' }, '<A-n>', '<C-w>h', keymap_opts)
-  mapset({ 'i' }, '<A-n>', '<Esc><C-w>h', keymap_opts)
-  mapset({ 't' }, '<A-n>', [[<C-\><C-n><C-w>h]], keymap_opts)
-
-  -- Right
-  mapset({ 'n' }, '<A-o>', '<C-w>l', keymap_opts)
-  mapset({ 'i' }, '<A-o>', '<Esc><C-w>l', keymap_opts)
-  mapset({ 't' }, '<A-o>', [[<C-\><C-n><C-w>l]], keymap_opts)
-
-  -- Up
-  mapset({ 'n' }, '<A-i>', '<C-w>k', keymap_opts)
-  mapset({ 'i' }, '<A-i>', '<Esc><C-w>k', keymap_opts)
-  mapset({ 't' }, '<A-i>', [[<C-\><C-n><C-w>k]], keymap_opts)
-
-  -- Down
-  mapset({ 'n' }, '<A-e>', '<C-w>j', keymap_opts)
-  mapset({ 'i' }, '<A-e>', '<Esc><C-w>j', keymap_opts)
-  mapset({ 't' }, '<A-e>', [[<C-\><C-n><C-w>j]], keymap_opts)
-
-  -- EXPERIMENTAL: easier tab navigation using the arrow keys.
-  -- Left
-  mapset({ 'i', 'n', 't' }, '<A-S-n>', '<cmd>tabprevious<cr>', keymap_opts)
-
-  -- Right
-  mapset({ 'i', 'n', 't' }, '<A-S-o>', '<cmd>tabnext<cr>', keymap_opts)
-
-  -- Up
-  mapset({ 'i', 'n', 't' }, '<A-S-i>', '<cmd>tabfirst<cr>', keymap_opts)
-
-  -- Down
-  mapset({ 'i', 'n', 't' }, '<A-S-e>', '<cmd>tablast<cr>', keymap_opts)
 end
 
 return M
