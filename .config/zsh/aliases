@@ -2,7 +2,7 @@
 
 # General
 alias c='clear'
-alias l='ls -al'
+alias l='ls -ahl'
 alias ..='cd ..'
 alias ...='cd ../..'
 
