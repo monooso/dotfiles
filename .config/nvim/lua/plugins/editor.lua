@@ -35,6 +35,9 @@ return {
   { "hrsh7th/cmp-nvim-lsp" },
   { "saadparwaiz1/cmp_luasnip" },
 
+  -- Code formatting.
+  { "stevearc/conform.nvim" },
+
   -- Welcome our new robot overlords
   { "github/copilot.vim" },
 }
