@@ -17,8 +17,11 @@ return {
     end
   },
   {
+    -- Note the `lazy` and `priority` options. These must be applied to the current theme.
     "rose-pine/neovim",
     name = "rose-pine",
+    lazy = false,
+    priority = 1000,
     opts = {
       bold_vert_split = true,
       dark_variant = "moon",
@@ -35,12 +38,5 @@ return {
     config = function()
       vim.g.nord_cursor_line_number_background = true
     end,
-  },
-  {
-    -- Note the `lazy` and `priority` settings. This ensures my preferred colour scheme
-    -- is loaded before all other plugins.
-    "projekt0n/github-nvim-theme",
-    lazy = false,
-    priority = 1000,
   }
 }

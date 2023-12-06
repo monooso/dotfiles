@@ -1,10 +1,10 @@
 local wezterm = require('wezterm')
--- local colors = require('lua/rose-pine-moon').colors()
+local colors = require('lua/rose-pine-moon').colors()
 
 return {
   check_for_updates = false,
-  color_scheme = 'github-dark-colorblind',
-  -- colors = colors,
+  color_scheme = 'rose-pine-moon',
+  colors = colors,
   default_cursor_style = 'BlinkingBar',
 
   -- Font.
