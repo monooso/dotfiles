@@ -37,7 +37,6 @@ M.setup = function()
   -- Don't wait around for keymappings to complete.
   o.timeoutlen = 500
 
-
   -- Set the position of new splits. The defaults confuse me, every time.
   o.splitbelow = true
   o.splitright = true
@@ -52,9 +51,14 @@ M.setup = function()
   o.ignorecase = true
   o.smartcase = true
 
-  -- Hide the command line when not in use.
-  -- @since Neovim 0.8
-  o.cmdheight = false
+  -- Keep the command line small.
+  o.cmdheight = 1
+
+  -- Don't show the intro message when starting Neovim.
+  o.shortmess = 'I'
+
+  -- Don't display a "short message" when switching mode; it's already in the status line.
+  o.showmode = false
 
   -- Set the background color to dark, and enable true colors.
   o.background = "dark"
