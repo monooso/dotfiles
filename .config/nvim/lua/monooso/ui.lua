@@ -2,7 +2,7 @@ local M = {}
 
 M.setup = function()
   -- Set the colorscheme.
-  vim.cmd([[ colorscheme nord ]])
+  vim.cmd([[ colorscheme github_dark_colorblind ]])
 
   -- Set up Lualine.
   require("lualine").setup()

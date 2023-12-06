@@ -30,14 +30,17 @@ return {
     },
   },
   {
-    -- Note the `lazy` and `priority` settings. This ensures my preferred colour scheme
-    -- is loaded before all other plugins.
     "nordtheme/vim",
     name = "nord",
-    lazy = false,
-    priority = 1000,
     config = function()
       vim.g.nord_cursor_line_number_background = true
     end,
+  },
+  {
+    -- Note the `lazy` and `priority` settings. This ensures my preferred colour scheme
+    -- is loaded before all other plugins.
+    "projekt0n/github-nvim-theme",
+    lazy = false,
+    priority = 1000,
   }
 }
