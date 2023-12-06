@@ -6,7 +6,6 @@
   "conform.nvim": { "branch": "master", "commit": "e5840429ac49c7acbf702cd2cff8bc6557e08c75" },
   "copilot.vim": { "branch": "release", "commit": "2c31989063b145830d5f0bea8ab529d2aef2427b" },
   "fern.vim": { "branch": "main", "commit": "56f8e4c79da01eecb0f7f3803c051cd23c803b35" },
-  "github-nvim-theme": { "branch": "main", "commit": "e248b62a7f80cd5e8048ed27d14cdf022ba1ead0" },
   "harpoon": { "branch": "master", "commit": "867e212ac153e793f95b316d1731f3ca1894625e" },
   "lazy.nvim": { "branch": "main", "commit": "96584866b9c5e998cbae300594d0ccfd0c464627" },
   "lsp_signature.nvim": { "branch": "master", "commit": "fed2c8389c148ff1dfdcdca63c2b48d08a50dea0" },
