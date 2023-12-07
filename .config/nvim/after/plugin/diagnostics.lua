@@ -1,9 +1,9 @@
 -- Configure how diagnostic messages are shown.
 vim.diagnostic.config({
-  float = { focus = false, scope = 'cursor' },
+  float = { border = 'single', scope = 'cursor' },
   severity_sort = true,
   source = true,
-  virtual_text = true
+  virtual_text = false
 })
 
 require('monooso.utils').register_keymap({ 'n' }, 'd', {

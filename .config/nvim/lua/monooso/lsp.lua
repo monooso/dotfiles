@@ -32,6 +32,8 @@ local function lsp_on_attach(client, bufnr)
   vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
     callback = function()
       -- Only display the diagnostics if we"re not in "insert" mode.
+      -- Note that the appearance of the diagnostics window is defined in `after/plugin/diagnostic.lua`.
+      -- TODO: Move the styling into `extend_server_config()`..? I have no idea what the consequences of this would be.
       if vim.api.nvim_get_mode().mode ~= "i" then
         vim.diagnostic.open_float(nil)
       end
@@ -41,12 +43,21 @@ local function lsp_on_attach(client, bufnr)
 end
 
 local function extend_server_config(config)
+  -- Show borders around the floating windows.
+  local hover_opts = { border = "single", focusable = true }
+
+  local handlers = {
+    ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, hover_opts),
+    ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, hover_opts)
+  }
+
   -- Tell the language servers that we support all the capabilities of `nvim-cmp`.
   local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
 
   return vim.tbl_deep_extend("force", {
     capabilities = lsp_capabilities,
     flags = { debounce_text_changes = 150 },
+    handlers = handlers,
     on_attach = lsp_on_attach
   }, config or {})
 end
@@ -81,6 +92,7 @@ M.setup = function()
   end
 
   if vim.fn.executable("node") == 1 then
+    lsp_config["biome"].setup(extend_server_config())
     lsp_config["svelte"].setup(extend_server_config())
     lsp_config["tailwindcss"].setup(extend_server_config())
 
