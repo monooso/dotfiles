@@ -1,10 +1,10 @@
 local wezterm = require('wezterm')
-local colors = require('lua/rose-pine-moon').colors()
+-- local colors = require('lua/rose-pine-moon').colors()
 
 return {
   check_for_updates = false,
-  color_scheme = 'rose-pine-moon',
-  colors = colors,
+  color_scheme = 'Black Metal (Bathory) (base16)',
+  -- colors = colors,
   default_cursor_style = 'BlinkingBar',
 
   -- Font.
