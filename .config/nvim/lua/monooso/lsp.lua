@@ -72,6 +72,29 @@ M.setup = function()
   lsp_config["eslint"].setup(extend_server_config())
   lsp_config["vimls"].setup(extend_server_config())
 
+  lsp_config["lua_ls"].setup(extend_server_config({
+    on_init = function(client)
+      local path = client.workspace_folders[1].name
+
+      if not vim.loop.fs_stat(path..'/.luarc.json') and not vim.loop.fs_stat(path..'/.luarc.jsonc') then
+        client.config.settings = vim.tbl_deep_extend('force', client.config.settings, {
+          Lua = {
+            runtime = { version = 'LuaJIT' },
+            -- Make the server aware of Neovim runtime files
+            workspace = {
+              checkThirdParty = false,
+              library = { vim.env.VIMRUNTIME }
+            }
+          }
+        })
+
+        client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })
+      end
+
+      return true
+    end
+  }))
+
   -- As per the Deno documentation, check for specific files in the
   -- root directory for both the Deno LSP and the TypeScript LSP.
   -- This ensures that they don't step on each other's toes.
