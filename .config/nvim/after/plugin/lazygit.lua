@@ -5,12 +5,12 @@ local lazygit = Terminal:new({
   dir = "git_dir",
   hidden = true,
   direction = "tab",
-  on_open = function(term)
+  on_open = function()
     vim.keymap.set("n", "q", "<cmd>close<CR>", { buffer = true, silent = true })
   end,
 })
 
-function toggle_lazygit()
+local function toggle_lazygit()
   lazygit:toggle()
 end
 
