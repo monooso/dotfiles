@@ -1,27 +1,10 @@
+-- Note: the `lazy` and `priority` options must be applied to the current theme.
+-- lazy: false
+-- priority: 1000
 return {
   {
-    "ishan9299/nvim-solarized-lua",
-    name = "solarized",
-    config = function()
-      vim.g.solarized_italics = false
-      vim.g.solarized_visibility = "low"
-
-      -- Remove the godawful line number background colour.
-      local colorscheme_group = vim.api.nvim_create_augroup("SolarizedTweaks", { clear = true })
-
-      vim.api.nvim_create_autocmd("ColorScheme", {
-        command = "highlight LineNr ctermbg=none guibg=none",
-        group = colorscheme_group,
-        pattern = "solarized"
-      })
-    end
-  },
-  {
-    -- Note the `lazy` and `priority` options. These must be applied to the current theme.
     "rose-pine/neovim",
     name = "rose-pine",
-    lazy = false,
-    priority = 1000,
     opts = {
       bold_vert_split = true,
       dark_variant = "moon",
