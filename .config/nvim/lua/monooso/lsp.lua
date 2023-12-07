@@ -102,23 +102,9 @@ M.setup = function()
     }))
   end
 
-  if vim.fn.executable("ocaml") == 1 then
-    lsp_config["ocamllsp"].setup(extend_server_config({
-      get_language_id = function(_, ftype)
-        return ftype
-      end
-    }))
-  end
-
   if vim.fn.executable("php") == 1 then
     lsp_config["intelephense"].setup(extend_server_config())
   end
-
-  -- require("lsp_signature").setup({
-  --   bind = true,
-  --   handler_opts = { border = "single" },
-  --   hint_enable = false
-  -- })
 end
 
 return M
