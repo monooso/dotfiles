@@ -115,7 +115,6 @@ M.setup = function()
   end
 
   if vim.fn.executable("node") == 1 then
-    lsp_config["biome"].setup(extend_server_config())
     lsp_config["svelte"].setup(extend_server_config())
     lsp_config["tailwindcss"].setup(extend_server_config())
 
