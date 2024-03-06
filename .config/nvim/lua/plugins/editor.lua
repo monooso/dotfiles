@@ -1,7 +1,7 @@
 -- A bit of a catch-all, until I figure out how to organise everything.
 return {
   -- Status line.
-  { "nvim-lualine/lualine.nvim", opts = { theme = "nord" } },
+  { "nvim-lualine/lualine.nvim",        opts = { theme = "nord" } },
 
   -- Sane terminals.
   {
@@ -29,10 +29,10 @@ return {
 
   -- Manage LSP servers.
   { "williamboman/mason.nvim" },
-  { "williamboman/mason-lspconfig.nvim", opts = { automatic_installation = true } },
+  { "williamboman/mason-lspconfig.nvim" },
 
   -- Completion sources.
-  { "hrsh7th/nvim-cmp", dependencies = { "onsails/lspkind.nvim" } },
+  { "hrsh7th/nvim-cmp",                 dependencies = { "onsails/lspkind.nvim" } },
   { "hrsh7th/cmp-nvim-lsp" },
   { "saadparwaiz1/cmp_luasnip" },
 
