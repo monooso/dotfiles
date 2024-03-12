@@ -7,11 +7,11 @@ return {
   -- colors = colors,
   default_cursor_style = 'BlinkingBar',
 
-  -- Font.
-  font = wezterm.font('JetBrains Mono'),
+  -- Font. Wezterm bundles and uses JetBrains Mono by default.
+  -- @see https://wezfurlong.org/wezterm/config/fonts.html
   font_size = 15,
-  harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }, -- Disable ligatures.
   line_height = 1.75,
+  harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }, -- Disable ligatures.
 
   -- Chrome.
   tab_bar_at_bottom = true,
