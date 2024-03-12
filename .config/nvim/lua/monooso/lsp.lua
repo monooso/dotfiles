@@ -44,7 +44,7 @@ end
 
 local function extend_server_config(config)
   -- Show borders around the floating windows.
-  local hover_opts = { border = "single", focusable = false }
+  local hover_opts = { border = "single", focusable = true }
 
   local handlers = {
     ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, hover_opts),
