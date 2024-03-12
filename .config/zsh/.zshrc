@@ -24,6 +24,11 @@ source $XDG_CONFIG_HOME/zsh/variables
 source $XDG_CONFIG_HOME/zsh/paths
 source $XDG_CONFIG_HOME/zsh/aliases
 
+# Set up direnv
+if command -v direnv &> /dev/null; then
+  eval "$(direnv hook zsh)"
+fi
+
 # Set the prompt
 function set_left_prompt {
   # Build the user@machine:path prompt
