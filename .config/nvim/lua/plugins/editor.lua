@@ -1,7 +1,7 @@
 -- A bit of a catch-all, until I figure out how to organise everything.
 return {
   -- Status line.
-  { "nvim-lualine/lualine.nvim",        opts = { theme = "nord" } },
+  { "nvim-lualine/lualine.nvim" },
 
   -- Sane terminals.
   {
