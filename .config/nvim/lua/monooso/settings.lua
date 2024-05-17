@@ -60,9 +60,8 @@ M.setup = function()
   -- Don't display a "short message" when switching mode; it's already in the status line.
   o.showmode = false
 
-  -- Set the background color to dark, and enable true colors.
-  o.background = "dark"
-  o.termguicolors = true
+  -- Set the background
+  o.background = "light"
 
   -- Highlight text when yanking. Surprisingly helpful, and no longer requires a plugin.
   local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
