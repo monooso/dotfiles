@@ -4,6 +4,7 @@
 .config/github-copilot/
 .config/lazygit/config.yml
 .config/lazygit/state.yml
+.config/ngrok/ngrok.yml
 .config/nvim/plugin/packer_compiled.lua
 .config/raycast/extensions/
 .config/op/
