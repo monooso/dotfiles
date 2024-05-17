@@ -1,10 +1,9 @@
 local wezterm = require('wezterm')
--- local colors = require('lua/rose-pine-moon').colors()
 
 return {
   check_for_updates = false,
-  color_scheme = 'Black Metal (Bathory) (base16)',
-  -- colors = colors,
+  color_scheme = 'PaperColor Light (base16)',
+  -- color_scheme = 'Black Metal (Bathory) (base16)',
   default_cursor_style = 'BlinkingBar',
 
   -- Font. Wezterm bundles and uses JetBrains Mono by default.

@@ -1,17 +1,13 @@
 local M = {}
 
 M.setup = function()
-  -- Tweak the default colorscheme when it's loaded.
-  local colorscheme_group = vim.api.nvim_create_augroup("DefaultColorSchemeTweaks", { clear = true })
-
+  -- Set the colour scheme background to transparent when it's loaded.
   vim.api.nvim_create_autocmd("ColorScheme", {
-    command = "highlight Normal ctermbg=none guibg=#none",
-    group = colorscheme_group,
-    pattern = "default"
+    command = "highlight Normal ctermbg=none guibg=#none"
   })
 
-  -- Set the colorscheme.
-  vim.cmd([[ colorscheme default ]])
+  -- Set the colour scheme.
+  vim.cmd([[ colorscheme PaperColorSlim ]])
 
   -- Set up Lualine.
   require("lualine").setup()
