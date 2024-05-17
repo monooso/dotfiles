@@ -8,11 +8,6 @@ local function lsp_on_attach(client, bufnr)
     vim.bo[bufnr].tagfunc = "v:lua.vim.lsp.tagfunc"
   end
 
-  -- Show the signature of the function under the cursor.
-  if client.server_capabilities.hoverProvider then
-    vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-  end
-
   -- Show the available code actions.
   if client.server_capabilities.codeActionProvider then
     require("monooso.utils").register_keymap({ "n" }, "c", {
