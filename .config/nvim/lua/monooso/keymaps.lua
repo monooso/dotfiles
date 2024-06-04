@@ -57,6 +57,15 @@ M.setup = function()
     s = { '<cmd>TestSuite<cr>', 'Suite' },
     v = { '<cmd>TestVisit<cr>', 'Visit last test' },
   })
+
+  -- Easily maximise and equalise splits.
+  require('which-key').register({
+    ['<C-w>'] = {
+      name = 'Window...',
+      e = { '<C-w>=', 'Equalise' },
+      m = { '<C-w>|<C-w>_', 'Maximise' },
+    }
+  }, { mode = { 'i', 'n', 't', 'v' } })
 end
 
 return M
