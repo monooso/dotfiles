@@ -20,13 +20,14 @@ fi
 # Git: Branches
 alias gbc='~/bin/git/create_branch.sh'
 alias gbl='git branch --color'
-alias gbp='~/bin/git/prune_branches.sh'
 alias gbr='git branch --move'
+alias gbx='~/bin/git/prune_branches.sh'
 
 # Git: Worktrees
 alias gwc='~/bin/git/create_worktree.sh'
 alias gwd='git worktree remove'
 alias gwl='git worktree list'
+alias gwp='~/bin/git/pull_worktree_branch.sh'
 
 # Git: General
 alias ga='git add'
