@@ -18,6 +18,13 @@ function git_create_branch {
   git checkout -b $1
 }
 
+# Function to create a new git worktree.
+#
+# Usage: git_create_worktree new_branch_name base_branch_name
+function git_create_worktree {
+  git worktree add -b $1 $1 $2
+}
+
 # Function to get the upstream for the current git branch.
 #
 # Usage: upstream=$(git_upstream_branch)

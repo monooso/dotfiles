@@ -17,12 +17,19 @@ if command -v bat &> /dev/null && command -v fzf &> /dev/null; then
   alias fzfp="fzf --preview 'bat --color=always {}' --preview-window '~3'"
 fi
 
-# Git
-alias ga='git add'
+# Git: Branches
 alias gbc='~/bin/git/create_branch.sh'
 alias gbl='git branch --color'
 alias gbp='~/bin/git/prune_branches.sh'
 alias gbr='git branch --move'
+
+# Git: Worktrees
+alias gwc='~/bin/git/create_worktree.sh'
+alias gwd='git worktree remove'
+alias gwl='git worktree list'
+
+# Git: General
+alias ga='git add'
 alias gc='git commit'
 alias gd='git diff'
 alias gl='git log -10'
