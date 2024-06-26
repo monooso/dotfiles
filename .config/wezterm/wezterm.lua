@@ -15,5 +15,6 @@ return {
   -- Chrome.
   tab_bar_at_bottom = true,
   use_fancy_tab_bar = false,
-  hide_tab_bar_if_only_one_tab = true
+  hide_tab_bar_if_only_one_tab = true,
+  window_decorations = 'RESIZE'
 }
