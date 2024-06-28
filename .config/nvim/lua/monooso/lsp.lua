@@ -1,8 +1,6 @@
 local M = {}
 
 local function lsp_on_attach(client, bufnr)
-  local opts = { buffer = bufnr, silent = true }
-
   -- Jump to definition using <C-]>, just like with old-school tags.
   if client.server_capabilities.definitionProvider then
     vim.bo[bufnr].tagfunc = "v:lua.vim.lsp.tagfunc"
@@ -71,26 +69,20 @@ M.setup = function()
   lsp_config["vimls"].setup(extend_server_config())
 
   lsp_config["lua_ls"].setup(extend_server_config({
-    on_init = function(client)
-      local path = client.workspace_folders[1].name
-
-      if not vim.uv.fs_stat(path .. '/.luarc.json') and not vim.uv.fs_stat(path .. '/.luarc.jsonc') then
-        client.config.settings = vim.tbl_deep_extend('force', client.config.settings, {
-          Lua = {
-            runtime = { version = 'LuaJIT' },
-            -- Make the server aware of Neovim runtime files
-            workspace = {
-              checkThirdParty = false,
-              library = { vim.env.VIMRUNTIME }
-            }
-          }
-        })
-
-        client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })
-      end
-
-      return true
-    end
+    diagnostics = { globals = { "vim" } },
+    settings = {
+      Lua = {
+        runtime = {
+          version = "LuaJIT"
+        },
+        workspace = {
+          checkThirdParty = false,
+          library = { vim.env.VIMRUNTIME }
+          -- or pull in all of "runtimepath". NOTE: this is a lot slower
+          -- library = vim.api.nvim_get_runtime_file("", true)
+        }
+      }
+    }
   }))
 
   -- As per the Deno documentation, check for specific files in the
