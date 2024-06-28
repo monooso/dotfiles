@@ -7,7 +7,7 @@ M.setup = function()
   })
 
   -- Set the colour scheme.
-  vim.cmd([[ colorscheme PaperColorSlim ]])
+  vim.cmd([[ colorscheme default ]])
 
   -- Set up Lualine.
   require("lualine").setup()
