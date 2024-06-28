@@ -1,9 +1,23 @@
-local wezterm = require('wezterm')
+-- Reasonable colour schemes, I think. I'm still not sure how to get Neovim
+-- to inherit the terminal colour scheme. Pretty sure it has *something* to do
+-- with the "truecolors" and `vim.o.termguicolors`.
+local color_schemes = {
+  dark = {
+    black_metal = "Black Metal (Bathory) (base16)",
+  },
+  light = {
+    alabaster = "Alabaster",
+    atelier = "Atelier Estuary Light (base16)",
+    ayu = "Ayu Light (Gogh)",
+    dawnfox = "dawnfox",
+    papercolor = "PaperColor Light (base16)",
+  }
+}
+
 
 return {
   check_for_updates = false,
-  color_scheme = 'PaperColor Light (base16)',
-  -- color_scheme = 'Black Metal (Bathory) (base16)',
+  color_scheme = color_schemes.light.atelier,
   default_cursor_style = 'BlinkingBar',
 
   -- Font. Wezterm bundles and uses JetBrains Mono by default.
