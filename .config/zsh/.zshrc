@@ -26,6 +26,9 @@ if command -v direnv &> /dev/null; then
   eval "$(direnv hook zsh)"
 fi
 
+# Ensure the ZSH autosuggestion ghost text is visible
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=245"
+
 # Load our fancy prompt
 eval "$(starship init zsh)"
 

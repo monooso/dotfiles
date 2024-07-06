@@ -4,6 +4,7 @@
 local color_schemes = {
   dark = {
     black_metal = "Black Metal (Bathory) (base16)",
+    fahrenheit = "Fahrenheit",
   },
   light = {
     alabaster = "Alabaster",
@@ -17,7 +18,7 @@ local color_schemes = {
 
 return {
   check_for_updates = false,
-  color_scheme = color_schemes.light.atelier,
+  color_scheme = color_schemes.dark.fahrenheit,
   default_cursor_style = 'BlinkingBar',
 
   -- Font. Wezterm bundles and uses JetBrains Mono by default.

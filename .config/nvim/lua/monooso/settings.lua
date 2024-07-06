@@ -61,7 +61,7 @@ M.setup = function()
   o.showmode = false
 
   -- Set the background
-  o.background = "light"
+  o.background = "dark"
 
   -- Highlight text when yanking. Surprisingly helpful, and no longer requires a plugin.
   local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
