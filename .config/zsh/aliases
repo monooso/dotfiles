@@ -18,16 +18,16 @@ if command -v bat &> /dev/null && command -v fzf &> /dev/null; then
 fi
 
 # Git: Branches
-alias gbc='~/bin/git/create_branch.sh'
+alias gbc='~/.config/zsh/functions/git/create_branch.sh'
 alias gbl='git branch --color'
 alias gbr='git branch --move'
-alias gbx='~/bin/git/prune_branches.sh'
+alias gbx='~/.config/zsh/functions/git/prune_branches.sh'
 
 # Git: Worktrees
 alias gwc='~/bin/git/create_worktree.sh'
 alias gwd='git worktree remove'
 alias gwl='git worktree list'
-alias gwp='~/bin/git/pull_worktree_branch.sh'
+alias gwp='~/.config/zsh/functions/git/pull_worktree_branch.sh'
 
 # Git: General
 alias ga='git add'
