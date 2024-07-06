@@ -13,12 +13,7 @@ export PATH=./node_modules/.bin:$PATH
 # Go binaries
 export PATH=$(go env GOPATH)/bin:$PATH
 
-# OCaml configuration
-[[ ! -r /Users/monooso/.opam/opam-init/init.zsh ]] || source /Users/monooso/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
-
-# Load asdf, if it exists
-# asdf *must* be sourced after any other path modifications
-ASDF_SH="$HOME/.asdf/asdf.sh"
-if [ -f $ASDF_SH ]; then
-  source $ASDF_SH >/dev/null
+# Load Mise, if it exists
+if command -v mise &> /dev/null; then
+  eval "$(mise activate zsh)"
 fi
