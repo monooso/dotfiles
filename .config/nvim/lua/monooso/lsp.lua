@@ -96,11 +96,6 @@ M.setup = function()
     }))
   end
 
-  -- Prevent Deno and TypeScript from stepping on each other's toes.
-  if vim.fn.executable("node") == 1 and vim.fn.executable("deno") == 0 then
-    lsp_config["tsserver"].setup(extend_server_config({ single_file_support = false }))
-  end
-
   if vim.fn.executable("elixir") == 1 then
     lsp_config["elixirls"].setup(extend_server_config())
   end
@@ -117,6 +112,7 @@ M.setup = function()
 
     lsp_config["svelte"].setup(extend_server_config())
     lsp_config["tailwindcss"].setup(extend_server_config())
+    lsp_config["tsserver"].setup(extend_server_config({ single_file_support = false }))
   end
 
   if vim.fn.executable("php") == 1 then
