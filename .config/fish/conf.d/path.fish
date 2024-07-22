@@ -1,11 +1,17 @@
-# Homebrew
-fish_add_path /opt/homebrew/bin
-
 # Global Composer package binaries
-fish_add_path $XDG_CONFIG_HOME/composer/vendor/bin
+if test -d $XDG_CONFIG_HOME/composer/vendor/bin
+    fish_add_path $XDG_CONFIG_HOME/composer/vendor/bin
+end
 
 # Go binaries
-fish_add_path $(go env GOPATH)/bin
+if command -v --quiet go
+    fish_add_path $(go env GOPATH)/bin
+end
+
+# User binaries
+if test -d $HOME/.local/bin
+    fish_add_path $HOME/.local/bin
+end
 
 # Local Node package binaries
 fish_add_path ./node_modules/.bin
@@ -13,8 +19,15 @@ fish_add_path ./node_modules/.bin
 # Local Composer package binaries
 fish_add_path ./vendor/bin
 
-# User binaries
-fish_add_path $HOME/.local/bin
+# -----------------------------------------------
+# macOS-specific
+# -----------------------------------------------
+# Homebrew
+if test -d /opt/homebrew/bin
+    fish_add_path /opt/homebrew/bin
+end
 
 # Postgres.app tools
-fish_add_path /Applications/Postgres.app/Contents/Versions/latest/bin
+if test -e /Applications/Postgres.app
+    fish_add_path /Applications/Postgres.app/Contents/Versions/latest/bin
+end
