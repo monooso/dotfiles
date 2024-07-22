@@ -1,4 +1,3 @@
 return {
-  -- Themes are automatically loaded when we call `vim.cmd([[ colorscheme SomeColorScheme ]])`.
-  { "pappasam/papercolor-theme-slim", lazy = true }
+    { "folke/tokyonight.nvim", lazy = false, priority = 1000 }
 }
