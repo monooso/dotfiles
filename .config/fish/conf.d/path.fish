@@ -15,3 +15,6 @@ fish_add_path ./vendor/bin
 
 # User binaries
 fish_add_path $HOME/.local/bin
+
+# Postgres.app tools
+fish_add_path /Applications/Postgres.app/Contents/Versions/latest/bin
