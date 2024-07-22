@@ -24,6 +24,8 @@
     pretty = format:%Cred%ad %C(yellow)%h %Cblue%an%Cgreen%d %Creset%s
 [gpg]
     format = ssh
+[gpg "ssh"]
+  program = "/opt/1Password/op-ssh-sign"
 [help]
     autocorrect = 10
 [init]
@@ -48,4 +50,4 @@
 [user]
     email = gpg@stephenlewis.me
     name = Stephen Lewis
-    signingkey = ~/.ssh/id_ed25519.pub
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKdaJjjtO89I+cWBpkFudVsREist0r+ZQV1VmS+DiXiB
