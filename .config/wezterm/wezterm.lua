@@ -30,7 +30,7 @@ local color_schemes = {
 local config = wezterm.config_builder()
 
 config.check_for_updates = false
-config.color_scheme = color_schemes.dark.fahrenheit
+config.color_scheme = color_schemes.light.ayu
 config.default_cursor_style = 'BlinkingBar'
 
 -- Use Fish shell, always. Act as though it's the login shell.
