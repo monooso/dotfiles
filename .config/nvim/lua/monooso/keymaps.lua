@@ -7,11 +7,16 @@ end
 local M = {}
 
 M.setup = function()
+  local wk = require('which-key')
+
   local mapset = vim.keymap.set
   local keymap_opts = { silent = true }
 
-  require('monooso.utils').register_keymap({ 'n' }, 'c', {
-    h = { '<cmd>let @/=""<cr>', 'Clear highlights' }
+  wk.add({
+    {
+      mode = { 'n' },
+      { '<leader>ch', '<cmd>let @/=""<cr>', desc = 'Clear highlights' }
+    }
   })
 
   -- Yank to the system clipboard, without reading the register docs first.
@@ -25,47 +30,57 @@ M.setup = function()
   mapset({ 't' }, '<Esc>', [[<C-\><C-n>]], keymap_opts)
 
   -- Find
-  require('monooso.utils').register_keymap({ 'n' }, 'f', {
-    name = 'Find...',
-    b = { '<cmd>Telescope buffers<cr>', 'Buffer' },
-    e = { '<cmd>Fern . -reveal=% -stay<cr>', 'Explorer' },
-    f = { '<cmd>Telescope find_files<cr>', 'File' },
-    g = { '<cmd>Telescope live_grep<cr>', 'Grep' },
-    h = { '<cmd>Telescope help_tags<cr>', 'Help' },
-    s = { '<cmd>Telescope lsp_document_symbols<cr>', 'Document symbol' },
+  wk.add({
+    {
+      mode = { 'n' },
+      { '<leader>f',  group = 'Find...' },
+      { '<leader>fb', '<cmd>Telescope buffers<cr>',              desc = 'Buffer' },
+      { '<leader>fe', '<cmd>Fern . -reveal=% -stay<cr>',         desc = 'Explorer' },
+      { '<leader>ff', '<cmd>Telescope find_files<cr>',           desc = 'File' },
+      { '<leader>fg', '<cmd>Telescope live_grep<cr>',            desc = 'Grep' },
+      { '<leader>fh', '<cmd>Telescope help_tags<cr>',            desc = 'Help' },
+      { '<leader>fs', '<cmd>Telescope lsp_document_symbols<cr>', desc = 'Document symbol' },
+    }
   })
 
   -- Harpoon
-  require('monooso.utils').register_keymap({ 'n' }, 'h', {
-    name = 'Harpoon...',
-    h = { require('harpoon.ui').toggle_quick_menu, 'Toggle quick menu' },
-    n = { require('harpoon.mark').add_file, 'New' },
+  wk.add({
+    {
+      mode = { 'n' },
+      { '<leader>h',  group = 'Harpoon' },
+      { '<leader>hh', require('harpoon.ui').toggle_quick_menu, desc = 'Toggle quick menu' },
+      { '<leader>hn', require('harpoon.mark').add_file,        desc = 'New' },
 
-    -- Navigate to the first four Harpooned files.
-    t = { goto_harpooned_file(1), 'Goto first file' },
-    s = { goto_harpooned_file(2), 'Goto second file' },
-    r = { goto_harpooned_file(3), 'Goto third file' },
-    a = { goto_harpooned_file(4), 'Goto fourth file' },
+      -- Navigate to the first four Harpooned files.
+      { '<leader>ht', goto_harpooned_file(1),                  desc = 'Goto first file' },
+      { '<leader>hs', goto_harpooned_file(2),                  desc = 'Goto second file' },
+      { '<leader>hr', goto_harpooned_file(3),                  desc = 'Goto third file' },
+      { '<leader>ha', goto_harpooned_file(4),                  desc = 'Goto fourth file' },
+    }
   })
 
   -- Test
-  require('monooso.utils').register_keymap({ 'n' }, 't', {
-    name = 'Test...',
-    f = { '<cmd>TestFile<cr>', 'File' },
-    l = { '<cmd>TestLast<cr>', 'Last' },
-    n = { '<cmd>TestNearest<cr>', 'Nearest' },
-    s = { '<cmd>TestSuite<cr>', 'Suite' },
-    v = { '<cmd>TestVisit<cr>', 'Visit last test' },
+  wk.add({
+    {
+      mode = { 'n' },
+      { '<leader>t',  group = 'Test...' },
+      { '<leader>tf', '<cmd>TestFile<cr>',    desc = 'File' },
+      { '<leader>tl', '<cmd>TestLast<cr>',    desc = 'Last' },
+      { '<leader>tn', '<cmd>TestNearest<cr>', desc = 'Nearest' },
+      { '<leader>ts', '<cmd>TestSuite<cr>',   desc = 'Suite' },
+      { '<leader>tv', '<cmd>TestVisit<cr>',   desc = 'Visit last test' },
+    }
   })
 
   -- Easily maximise and equalise splits.
-  require('which-key').register({
-    ['<C-w>'] = {
-      name = 'Window...',
-      e = { '<C-w>=', 'Equalise' },
-      m = { '<C-w>|<C-w>_', 'Maximise' },
+  wk.add({
+    {
+      mode = { 'i', 'n', 't', 'v' },
+      { '<C-w>',  group = 'Window...' },
+      { '<C-w>e', '<C-w>=',           desc = 'Equalise' },
+      { '<C-w>m', '<C-w>|<C-w>_',     desc = 'Maximise' },
     }
-  }, { mode = { 'i', 'n', 't', 'v' } })
+  })
 end
 
 return M
