@@ -1,6 +1,8 @@
 local M = {}
 
 local function lsp_on_attach(client, bufnr)
+    local wk = require('which-key')
+
     -- Jump to definition using <C-]>, just like with old-school tags.
     if client.server_capabilities.definitionProvider then
         vim.bo[bufnr].tagfunc = "v:lua.vim.lsp.tagfunc"
@@ -8,9 +10,12 @@ local function lsp_on_attach(client, bufnr)
 
     -- Show the available code actions.
     if client.server_capabilities.codeActionProvider then
-        require("monooso.utils").register_keymap({ "n" }, "c", {
-            name = "Code",
-            a = { vim.lsp.buf.code_action, "Code action" }
+        wk.add({
+            {
+                mode = { 'n' },
+                { '<leader>c',  group = 'Code' },
+                { '<leader>ca', vim.lsp.buf.code_action, desc = 'Actions' }
+            }
         })
     end
 
