@@ -12,3 +12,8 @@ set -Ux GIT_EDITOR $EDITOR
 if command -v --quiet rg
     set -Ux FZF_DEFAULT_COMMAND 'rg --files --hidden'
 end
+
+# Fly, if it exists
+if test -d $HOME/.fly
+    set -Ux FLYCTL_INSTALL $HOME/.fly
+end
