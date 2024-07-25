@@ -1,6 +1,7 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR --export EDITOR:nvim
+SETUVAR --export FLYCTL_INSTALL:/home/sl/\x2efly
 SETUVAR --export FZF_DEFAULT_COMMAND:rg\x20\x2d\x2dfiles\x20\x2d\x2dhidden
 SETUVAR --export GIT_EDITOR:nvim
 SETUVAR --path PATH:/opt/homebrew/bin/
@@ -45,4 +46,4 @@ SETUVAR fish_pager_color_selected_background:\x2d\x2dbackground\x3dFF9940
 SETUVAR fish_pager_color_selected_completion:\x1d
 SETUVAR fish_pager_color_selected_description:\x1d
 SETUVAR fish_pager_color_selected_prefix:\x1d
-SETUVAR fish_user_paths:/Users/monooso/code/personal\x2dsite/node_modules/\x2ebin\x1e/Applications/Postgres\x2eapp/Contents/Versions/latest/bin\x1e/Users/monooso/code/reba/node_modules/\x2ebin\x1e/opt/homebrew/bin\x1e/Users/monooso/go/bin\x1e/Users/monooso/\x2elocal/bin
+SETUVAR fish_user_paths:/home/sl/\x2efly/bin\x1e/Users/monooso/code/personal\x2dsite/node_modules/\x2ebin\x1e/Applications/Postgres\x2eapp/Contents/Versions/latest/bin\x1e/Users/monooso/code/reba/node_modules/\x2ebin\x1e/opt/homebrew/bin\x1e/Users/monooso/go/bin\x1e/Users/monooso/\x2elocal/bin

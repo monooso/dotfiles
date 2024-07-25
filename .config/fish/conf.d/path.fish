@@ -19,6 +19,11 @@ fish_add_path ./node_modules/.bin
 # Local Composer package binaries
 fish_add_path ./vendor/bin
 
+# Fly
+if test -d $HOME/.fly
+    fish_add_path $HOME/.fly/bin
+end
+
 # -----------------------------------------------
 # macOS-specific
 # -----------------------------------------------
