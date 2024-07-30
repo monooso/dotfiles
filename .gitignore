@@ -2,6 +2,7 @@
 .config/composer/
 .config/exercism/user.json
 .config/github-copilot/
+.config/fish/fish_variables
 .config/lazygit/config.yml
 .config/lazygit/state.yml
 .config/ngrok/ngrok.yml
