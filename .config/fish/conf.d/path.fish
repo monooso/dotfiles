@@ -1,3 +1,8 @@
+# Fly
+if test -d $HOME/.fly
+    fish_add_path $HOME/.fly/bin
+end
+
 # Global Composer package binaries
 if test -d $XDG_CONFIG_HOME/composer/vendor/bin
     fish_add_path $XDG_CONFIG_HOME/composer/vendor/bin
@@ -10,19 +15,12 @@ end
 
 # User binaries
 if test -d $HOME/.local/bin
-    fish_add_path $HOME/.local/bin
+    fish_add_path -p $HOME/.local/bin
 end
 
-# Local Node package binaries
-fish_add_path ./node_modules/.bin
-
-# Local Composer package binaries
-fish_add_path ./vendor/bin
-
-# Fly
-if test -d $HOME/.fly
-    fish_add_path $HOME/.fly/bin
-end
+# Local binaries override everything
+fish_add_path -p ./node_modules/.bin
+fish_add_path -p ./vendor/bin
 
 # -----------------------------------------------
 # macOS-specific
