@@ -63,7 +63,7 @@ end
 M.setup = function()
     require("mason").setup()
     require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "elixirls", "tsserver" }
+        ensure_installed = { "bashls", "lua_ls", "elixirls", "tailwindcss", "tsserver" }
     })
 
     local lsp_config = require("lspconfig")
