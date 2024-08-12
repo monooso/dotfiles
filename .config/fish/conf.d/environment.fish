@@ -1,3 +1,6 @@
+# Set the $SHELL environment variable, otherwise Neovim :terminal uses sh
+set -gx SHELL $(which fish)
+
 # Neovim for the win
 if command -v --quiet nvim
     set -Ux EDITOR nvim
