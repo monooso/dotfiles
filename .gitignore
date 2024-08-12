@@ -12,3 +12,5 @@
 .config/valet/
 .config/zed/
 .config/zsh/.zsh_history
+.ssh/known_hosts
+.ssh/known_hosts.old
