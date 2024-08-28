@@ -1,12 +1,7 @@
-local function goto_harpooned_file(file_index)
-  return function()
-    require('harpoon.ui').nav_file(file_index)
-  end
-end
-
 local M = {}
 
 M.setup = function()
+  local builtin = require('telescope.builtin')
   local wk = require('which-key')
 
   local mapset = vim.keymap.set
@@ -34,16 +29,23 @@ M.setup = function()
     {
       mode = { 'n' },
       { '<leader>f',  group = 'Find...' },
-      { '<leader>fb', '<cmd>Telescope buffers<cr>',              desc = 'Buffer' },
-      { '<leader>fe', '<cmd>Fern . -reveal=% -stay<cr>',         desc = 'Explorer' },
-      { '<leader>ff', '<cmd>Telescope find_files<cr>',           desc = 'File' },
-      { '<leader>fg', '<cmd>Telescope live_grep<cr>',            desc = 'Grep' },
-      { '<leader>fh', '<cmd>Telescope help_tags<cr>',            desc = 'Help' },
-      { '<leader>fs', '<cmd>Telescope lsp_document_symbols<cr>', desc = 'Document symbol' },
+      { '<leader>fb', builtin.buffers,                   desc = 'Buffer' },
+      { '<leader>fd', builtin.diagnostics,               desc = 'Diagnostics' },
+      { '<leader>fe', '<cmd>Fern . -reveal=% -stay<cr>', desc = 'Explorer' },
+      { '<leader>ff', builtin.find_files,                desc = 'File' },
+      { '<leader>fg', builtin.live_grep,                 desc = 'Grep' },
+      { '<leader>fh', builtin.help_tags,                 desc = 'Help' },
+      { '<leader>fs', builtin.lsp_document_symbols,      desc = 'Document symbol' },
     }
   })
 
   -- Harpoon
+  local function goto_harpooned_file(file_index)
+    return function()
+      require('harpoon.ui').nav_file(file_index)
+    end
+  end
+
   wk.add({
     {
       mode = { 'n' },
