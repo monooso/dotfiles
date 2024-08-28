@@ -63,7 +63,7 @@ end
 M.setup = function()
     require("mason").setup()
     require("mason-lspconfig").setup({
-        ensure_installed = { "bashls", "lua_ls", "elixirls", "tailwindcss", "tsserver" }
+        ensure_installed = { "bashls", "intelephense", "lua_ls", "elixirls", "tailwindcss", "tsserver" }
     })
 
     local lsp_config = require("lspconfig")
@@ -71,6 +71,7 @@ M.setup = function()
     lsp_config["astro"].setup(extend_server_config())
     lsp_config["bashls"].setup(extend_server_config())
     lsp_config["eslint"].setup(extend_server_config())
+    lsp_config["intelephense"].setup(extend_server_config())
     lsp_config["vimls"].setup(extend_server_config())
 
     lsp_config["lua_ls"].setup(extend_server_config({
