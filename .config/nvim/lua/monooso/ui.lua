@@ -7,8 +7,10 @@ M.setup = function()
     -- })
 
     -- Set the colour scheme.
-    vim.o.background = "dark"
-    vim.cmd([[ colorscheme tokyonight-night ]])
+    -- vim.o.background = "dark"
+    -- vim.cmd([[ colorscheme tokyonight-night ]])
+    vim.o.background = "light"
+    vim.cmd([[ colorscheme tokyonight-day ]])
 
     -- Set up Lualine.
     require("lualine").setup()
