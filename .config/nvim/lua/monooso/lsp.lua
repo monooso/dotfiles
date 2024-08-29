@@ -1,5 +1,9 @@
 local M = {}
 
+local function executable_exists(name)
+    return vim.fn.executable(name) == 1
+end
+
 local function lsp_on_attach(client, bufnr)
     local wk = require('which-key')
 
@@ -61,19 +65,31 @@ local function extend_server_config(config)
 end
 
 M.setup = function()
-    require("mason").setup()
-    require("mason-lspconfig").setup({
-        ensure_installed = { "bashls", "intelephense", "lua_ls", "elixirls", "tailwindcss", "tsserver" }
-    })
-
     local lsp_config = require("lspconfig")
+    local mason = require("mason")
+    local mason_lspconfig = require("mason-lspconfig")
 
-    lsp_config["astro"].setup(extend_server_config())
-    lsp_config["bashls"].setup(extend_server_config())
-    lsp_config["eslint"].setup(extend_server_config())
-    lsp_config["intelephense"].setup(extend_server_config())
-    lsp_config["vimls"].setup(extend_server_config())
+    -- Set up Mason and install the must-have language servers.
+    local ensure_installed = {}
 
+    if executable_exists("elixir") then
+        table.insert(ensure_installed, "elixirls")
+    end
+
+    if executable_exists("node") then
+        table.insert(ensure_installed, "bashls")
+        table.insert(ensure_installed, "tailwindcss")
+        table.insert(ensure_installed, "tsserver")
+    end
+
+    if executable_exists("php") then
+        table.insert(ensure_installed, "intelephense")
+    end
+
+    mason.setup()
+    mason_lspconfig.setup(ensure_installed)
+
+    -- Set up and configure the language servers...
     lsp_config["lua_ls"].setup(extend_server_config({
         diagnostics = { globals = { "vim" } },
         settings = {
@@ -96,27 +112,32 @@ M.setup = function()
     -- This ensures that they don't step on each other's toes.
     --
     -- @see https://deno.land/manual@v1.35.3/getting_started/setup_your_environment#neovim-06-using-the-built-in-language-server
-    if vim.fn.executable("deno") == 1 then
+    if executable_exists("deno") then
         lsp_config["denols"].setup(extend_server_config({
             root_dir = lsp_config.util.root_pattern("deno.json", "deno.jsonc")
         }))
     end
 
-    if vim.fn.executable("elixir") == 1 then
+    if executable_exists("elixir") then
         lsp_config["elixirls"].setup(extend_server_config())
     end
 
-    if vim.fn.executable("go") == 1 then
+    if executable_exists("go") then
         lsp_config["gopls"].setup(extend_server_config())
     end
 
-    if vim.fn.executable("node") == 1 then
+    if executable_exists("node") then
+        lsp_config["astro"].setup(extend_server_config())
+        lsp_config["bashls"].setup(extend_server_config())
+        lsp_config["vimls"].setup(extend_server_config())
+        lsp_config["svelte"].setup(extend_server_config())
+        lsp_config["tsserver"].setup(extend_server_config({ single_file_support = false }))
+
         -- Phoenix makes life tricky, because it uses JavaScript, but may not have a `package.json` file.
         lsp_config["eslint"].setup(extend_server_config({
             root_dir = lsp_config.util.root_pattern("mix.exs", "package.json")
         }))
 
-        lsp_config["svelte"].setup(extend_server_config())
         lsp_config["tailwindcss"].setup(extend_server_config({
             settings = {
                 tailwindCSS = {
@@ -128,11 +149,9 @@ M.setup = function()
                 }
             }
         }))
-
-        lsp_config["tsserver"].setup(extend_server_config({ single_file_support = false }))
     end
 
-    if vim.fn.executable("php") == 1 then
+    if executable_exists("php") then
         lsp_config["intelephense"].setup(extend_server_config())
     end
 end
