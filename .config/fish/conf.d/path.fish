@@ -25,6 +25,11 @@ fish_add_path -p ./vendor/bin
 # -----------------------------------------------
 # macOS-specific
 # -----------------------------------------------
+# Herd
+if test -d "$HOME/Library/Application Support/Herd/bin"
+    fish_add_path "$HOME/Library/Application\ Support/Herd/bin/"
+end
+
 # Homebrew
 if test -d /opt/homebrew/bin
     fish_add_path /opt/homebrew/bin
