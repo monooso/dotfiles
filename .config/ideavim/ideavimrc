@@ -1,0 +1,18 @@
+" Space is my leader.
+let mapleader = " "
+
+" Finding things.
+nmap <leader>ff <Action>(SearchEverywhere)
+nmap <leader>fc <Action>(GotoClass)
+nmap <leader>fs <Action>(FileStructurePopup)
+
+" Moving around.
+map <C-o> <Action>(Back)
+
+" Commenting.
+nmap gcc <Action>(CommentByLineComment)
+vmap gc <Action>(CommentByBlockComment)
+
+" Testing.
+nmap <leader>tn <Action>(RunTestGroup)
+nmap <leader>tl <Action>(RerunTests)
