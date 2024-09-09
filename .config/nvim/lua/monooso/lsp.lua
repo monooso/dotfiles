@@ -79,7 +79,7 @@ M.setup = function()
     if executable_exists("node") then
         table.insert(ensure_installed, "bashls")
         table.insert(ensure_installed, "tailwindcss")
-        table.insert(ensure_installed, "tsserver")
+        table.insert(ensure_installed, "ts_ls")
     end
 
     if executable_exists("php") then
@@ -131,7 +131,7 @@ M.setup = function()
         lsp_config["bashls"].setup(extend_server_config())
         lsp_config["vimls"].setup(extend_server_config())
         lsp_config["svelte"].setup(extend_server_config())
-        lsp_config["tsserver"].setup(extend_server_config({ single_file_support = false }))
+        lsp_config["ts_ls"].setup(extend_server_config({ single_file_support = false }))
 
         -- Phoenix makes life tricky, because it uses JavaScript, but may not have a `package.json` file.
         lsp_config["eslint"].setup(extend_server_config({
