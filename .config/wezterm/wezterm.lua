@@ -14,15 +14,17 @@ end)
 -- Define some "known good" colour schemes, so I'm not faffing about every time I fancy a change.
 local color_schemes = {
   dark = {
-    black_metal = "Black Metal (Bathory) (base16)",
-    fahrenheit = "Fahrenheit",
+    black_metal = 'Black Metal (Bathory) (base16)',
+    fahrenheit = 'Fahrenheit',
+    tokyo = 'Tokyo Night',
   },
   light = {
-    alabaster = "Alabaster",
-    atelier = "Atelier Estuary Light (base16)",
-    ayu = "Ayu Light (Gogh)",
-    dawnfox = "dawnfox",
-    papercolor = "PaperColor Light (base16)",
+    alabaster = 'Alabaster',
+    atelier = 'Atelier Estuary Light (base16)',
+    ayu = 'Ayu Light (Gogh)',
+    dawnfox = 'dawnfox',
+    papercolor = 'PaperColor Light (base16)',
+    tokyo = 'Tokyo Night Day',
   }
 }
 
@@ -30,7 +32,7 @@ local color_schemes = {
 local config = wezterm.config_builder()
 
 config.check_for_updates = false
-config.color_scheme = color_schemes.light.ayu
+config.color_scheme = color_schemes.light.tokyo
 config.default_cursor_style = 'BlinkingBar'
 
 -- Use Fish shell, always. Act as though it's the login shell.
