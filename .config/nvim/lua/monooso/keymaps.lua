@@ -74,13 +74,26 @@ M.setup = function()
     }
   })
 
-  -- Easily maximise and equalise splits.
+  -- Splits
   wk.add({
     {
       mode = { 'i', 'n', 't', 'v' },
       { '<C-w>',  group = 'Window...' },
       { '<C-w>e', '<C-w>=',           desc = 'Equalise' },
       { '<C-w>m', '<C-w>|<C-w>_',     desc = 'Maximise' },
+    }
+  })
+
+  -- Write, because homerow mods and Miryoku mean I'm constantly
+  -- typing `:&` instead of `:w`, and it's driving me insane.
+  wk.add({
+    {
+      mode = { 'n' },
+      { '<leader>w',   group = 'Write...' },
+      { '<leader>ww',  ':w<cr>',          desc = 'Write current file' },
+      { '<leader>wa',  ':wa<cr>',         desc = 'Write all open files' },
+      { '<leader>wq',  ':wq<cr>',         desc = 'Write current file and quit' },
+      { '<leader>wqa', ':wqa<cr>',        desc = 'Write all open files and quit' },
     }
   })
 end
