@@ -16,6 +16,7 @@
   "nvim-treesitter": { "branch": "master", "commit": "4af16a10b7f1e79275f712a1c6dcf725d301a303" },
   "nvim-treesitter-textobjects": { "branch": "master", "commit": "bf8d2ad35d1d1a687eae6c065c3d524f7ab61b23" },
   "plenary.nvim": { "branch": "master", "commit": "ec289423a1693aeae6cd0d503bac2856af74edaa" },
+  "tailwind-sorter.nvim": { "branch": "main", "commit": "e03eea3909c28509375993fb77a42454ac8ecbb2" },
   "telescope.nvim": { "branch": "master", "commit": "1398e11b06f67276881ed44dcefda5050d8ecd0c" },
   "toggleterm.nvim": { "branch": "main", "commit": "137d06fb103952a0fb567882bb8527e2f92d327d" },
   "tokyonight.nvim": { "branch": "main", "commit": "4b386e66a9599057587c30538d5e6192e3d1c181" },
