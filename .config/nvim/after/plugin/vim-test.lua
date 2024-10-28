@@ -1,8 +1,13 @@
--- require('monooso.utils').register_keymap({ 'n' }, 't', {
---   name = 'Testing',
---   t = { '<cmd>TestNearest<cr>', 'Run test' },
---   f = { '<cmd>TestFile<cr>', 'Run test file' },
---   s = { '<cmd>TestSuite<cr>', 'Run test suite' },
---   a = { '<cmd>TestLast<cr>', 'Re-run last test' },
---   j = { '<cmd>TestVisit<cr>', 'Go to last test' },
--- })
+local wk = require('which-key')
+
+wk.add({
+  {
+    mode = { 'n' },
+    { '<leader>t',  group = 'Test...' },
+    { '<leader>tf', '<cmd>TestFile<cr>',    desc = 'File' },
+    { '<leader>tl', '<cmd>TestLast<cr>',    desc = 'Last' },
+    { '<leader>tn', '<cmd>TestNearest<cr>', desc = 'Nearest' },
+    { '<leader>ts', '<cmd>TestSuite<cr>',   desc = 'Suite' },
+    { '<leader>tv', '<cmd>TestVisit<cr>',   desc = 'Visit last test' },
+  }
+})

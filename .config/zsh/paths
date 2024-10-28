@@ -1,8 +1,12 @@
 # User binaries
-export PATH=$HOME/.local/bin:$PATH
+if test -d $HOME/.local/bin; then
+  export PATH=$HOME/.local/bin:$PATH
+fi
 
 # Global Composer package binaries
-export PATH=$XDG_CONFIG_HOME/composer/vendor/bin:$PATH
+if test -d $XDG_CONFIG_HOME/composer/vendor/bin; then
+  export PATH=$XDG_CONFIG_HOME/composer/vendor/bin:$PATH
+fi
 
 # Local Composer package binaries
 export PATH=./vendor/bin:$PATH
@@ -11,7 +15,14 @@ export PATH=./vendor/bin:$PATH
 export PATH=./node_modules/.bin:$PATH
 
 # Go binaries
-export PATH=$(go env GOPATH)/bin:$PATH
+if command -v go &> /dev/null; then
+  export PATH=$(go env GOPATH)/bin:$PATH
+fi
+
+# We use Herd to manage PHP on macOS
+if test -d $HOME/Library/Application\ Support/Herd/bin; then
+  export PATH=$HOME/Library/Application\ Support/Herd/bin:$PATH
+fi
 
 # Load Mise, if it exists
 if command -v mise &> /dev/null; then

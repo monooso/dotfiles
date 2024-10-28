@@ -1,6 +1,9 @@
 # Dotfiles
 All of my dotfiles, in a single repository. Supercedes the modular approach of one repository per use-case (`dot-elixir`, `dot-git`, etc.). Long live the monolith.
 
+## Requirements
+Uses [GNU Stow](https://www.gnu.org/software/stow/) to manage symlinks. You'll need a reasonably recent version. This isn't a problem if you're on Fedora (using `dnf`) or macOS (using `brew`); I can't speak for any other systems.
+
 ## Getting started
 
 ### Clone the dotfiles
@@ -12,10 +15,9 @@ mkdir code && cd $_
 git clone git@github.com:monooso/dotfiles.git
 ```
 
-### Run the bootstrap script
-Run the bootstrap script from the repository root. Assuming you followed the example above, and cloned the repository into `~/code/dotfiles`:
+### Symlink the dotfiles
 
 ```sh
 cd ~/code/dotfiles
-bash bin/bootstrap.sh
+stow -t ~/ .
 ```

@@ -1,0 +1,24 @@
+" Space is my leader.
+let mapleader = " "
+
+" Force reload the .ideavimrc config.
+nmap <leader>fr <Action>(IdeaVim.ReloadVimRc.reload)
+
+" Finding things.
+nmap <leader>ff <Action>(SearchEverywhere)
+nmap <leader>fc <Action>(GotoClass)
+nmap gs <Action>(FileStructurePopup)
+
+" Editing.
+nmap g. <Action>(ShowIntentionActions)
+
+" Moving around.
+map <C-o> <Action>(Back)
+
+" Commenting.
+nmap gcc <Action>(CommentByLineComment)
+vmap gc <Action>(CommentByBlockComment)
+
+" Testing.
+nmap <leader>tn <Action>(RunTestGroup)
+nmap <leader>tl <Action>(RerunTests)

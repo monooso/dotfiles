@@ -1,4 +1,4 @@
--- *setlocal* buffer options
+-- Local buffer options
 local o = vim.bo
 
 -- Fix broken autoindentation
