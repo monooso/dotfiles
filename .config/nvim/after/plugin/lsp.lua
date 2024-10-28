@@ -15,8 +15,8 @@ local function lsp_on_attach(client, bufnr)
         wk.add({
             {
                 mode = { 'n' },
-                { '<leader>c',  group = 'Code' },
-                { '<leader>ca', vim.lsp.buf.code_action, desc = 'Actions' }
+                -- Inspired by Zed.
+                { '<leader>g.', vim.lsp.buf.code_action, desc = 'Code actions' }
             }
         })
     end
