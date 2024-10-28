@@ -1,10 +1,16 @@
 " Space is my leader.
 let mapleader = " "
 
+" Force reload the .ideavimrc config.
+nmap <leader>fr <Action>(IdeaVim.ReloadVimRc.reload)
+
 " Finding things.
 nmap <leader>ff <Action>(SearchEverywhere)
 nmap <leader>fc <Action>(GotoClass)
-nmap <leader>fs <Action>(FileStructurePopup)
+nmap gs <Action>(FileStructurePopup)
+
+" Editing.
+nmap g. <Action>(ShowIntentionActions)
 
 " Moving around.
 map <C-o> <Action>(Back)
