@@ -1,6 +1,7 @@
 .config/Autodesk/FusionFabrication.FusionNesting
 .config/composer/
 .config/exercism/user.json
+.config/fish/fish_variables
 .config/github-copilot/
 .config/lazygit/config.yml
 .config/lazygit/state.yml
@@ -8,6 +9,10 @@
 .config/nvim/plugin/packer_compiled.lua
 .config/raycast/extensions/
 .config/op/
+.config/psysh/
 .config/valet/
+.config/wireguard/*.conf
 .config/zed/
 .config/zsh/.zsh_history
+.ssh/known_hosts
+.ssh/known_hosts.old
