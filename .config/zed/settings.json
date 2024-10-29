@@ -1,0 +1,39 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "ui_font_size": 14,
+  "buffer_font_size": 14,
+  "buffer_line_height": { "custom": 2.25 },
+  "current_line_highlight": "none",
+  "outline_panel": { "button": false },
+  "project_panel": { "button": false },
+  "scrollbar": { "show": "never" },
+  "search": {
+    "case_sensitive": true,
+    "regex": true
+  },
+  "tab_bar": {
+    "show_nav_history_buttons": false
+  },
+  "terminal": {
+    "button": false,
+    "dock": "right",
+    "toolbar": { "title": false }
+  },
+  "toolbar": {
+    "breadcrumbs": false,
+    "quick_actions": false
+  },
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "One Dark"
+  },
+  "vim_mode": true
+}

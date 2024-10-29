@@ -12,7 +12,6 @@
 .config/psysh/
 .config/valet/
 .config/wireguard/*.conf
-.config/zed/
 .config/zsh/.zsh_history
 .ssh/known_hosts
 .ssh/known_hosts.old
