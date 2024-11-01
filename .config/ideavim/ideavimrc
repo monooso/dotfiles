@@ -14,6 +14,8 @@ nmap g. <Action>(ShowIntentionActions)
 
 " Moving around.
 map <C-o> <Action>(Back)
+nmap <leader>dn <Action>(GotoNextError)
+nmap <leader>dp <Action>(GotoPreviousError)
 
 " Commenting.
 nmap gcc <Action>(CommentByLineComment)
