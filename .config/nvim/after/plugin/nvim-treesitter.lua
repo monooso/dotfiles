@@ -12,33 +12,11 @@ vim.filetype.get_option = function(filetype, option)
         and require('ts_context_commentstring.internal').calculate_commentstring()
         or original_get_option(filetype, option)
 end
+
+-- General TreeSitter configuration.
 require('nvim-treesitter.configs').setup({
     auto_install = true,
-    ensure_installed = {
-        'bash',
-        'comment',
-        'css',
-        'diff',
-        'dockerfile',
-        'elixir',
-        'erlang',
-        'fish',
-        'heex',
-        'html',
-        'javascript',
-        'json',
-        'jsonc',
-        'lua',
-        'markdown',
-        'php',
-        'phpdoc',
-        'regex',
-        'sql',
-        'toml',
-        'typescript',
-        'xml',
-        'yaml'
-    },
+    ensure_installed = 'all',
     highlight = {
         enable = true
     },
@@ -52,7 +30,6 @@ require('nvim-treesitter.configs').setup({
         updatetime = 25,        -- Debounced time for highlighting nodes in the playground from source code
         persist_queries = false -- Whether the query persists across vim sessions
     },
-    sync_install = true,
     textobjects = {
         select = {
             enable = true,
