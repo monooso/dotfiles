@@ -44,8 +44,8 @@
   },
   "theme": {
     "mode": "system",
-    "light": "One Light",
-    "dark": "One Dark"
+    "dark": "Andromeda",
+    "light": "One Light"
   },
   "vim_mode": true
 }
