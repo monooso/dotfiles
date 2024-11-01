@@ -43,18 +43,24 @@ config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' } -- Disable ligatures
 -- Colours.
 config.color_scheme = color_schemes.dark.tokyo
 
-config.window_frame = {
-  font = wezterm.font { family = 'JetBrains Mono' },
-  font_size = 13,
-  active_titlebar_bg = '#d2d4de'
-}
-
--- Chrome.
+-- Tabs.
 config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 config.show_new_tab_button_in_tab_bar = false
-config.show_tab_index_in_tab_bar = false
+config.show_tab_index_in_tab_bar = true
+
+config.colors = {
+  tab_bar = {
+    active_tab = {
+      bg_color = 'transparent',
+      fg_color = '#FFFFFF',
+      intensity = 'Bold',
+    },
+  }
+}
+
+-- Chrome.
 config.window_decorations = 'RESIZE'
 
 return config
