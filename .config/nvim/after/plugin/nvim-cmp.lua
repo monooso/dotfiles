@@ -2,7 +2,7 @@ local cmp = require('cmp')
 local lspkind = require('lspkind')
 
 cmp.setup({
-  completion = { completeopt = 'menu,menuone,noinsert' },
+  completion = { completeopt = 'menu,menuone,noinsert,popup' },
   formatting = {
     format = lspkind.cmp_format({ mode = 'symbol' }),
   },
