@@ -3,6 +3,7 @@ local lspkind = require('lspkind')
 
 cmp.setup({
   completion = { completeopt = 'menu,menuone,noinsert,popup' },
+  experimental = { ghost_text = false },
   formatting = {
     format = lspkind.cmp_format({ mode = 'symbol' }),
   },
