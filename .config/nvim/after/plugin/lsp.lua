@@ -10,13 +10,21 @@ local function lsp_on_attach(client, bufnr)
         vim.bo[bufnr].tagfunc = 'v:lua.vim.lsp.tagfunc'
     end
 
-    -- Show the available code actions.
+    -- Common LSP keybindings.
+    wk.add({ {
+        mode = { 'n' },
+        { 'gd', require('telescope.builtin').lsp_definitions,     desc = 'List definitions' },
+        { 'gi', require('telescope.builtin').lsp_implementations, desc = 'List implementations' },
+        { 'gr', require('telescope.builtin').lsp_references,      desc = 'List references' }
+    } })
+
+    -- Show the available code actions if the LSP supports them.
     if client.server_capabilities.codeActionProvider then
         wk.add({
             {
                 mode = { 'n' },
                 -- Inspired by Zed.
-                { '<leader>g.', vim.lsp.buf.code_action, desc = 'Code actions' }
+                { 'g.', vim.lsp.buf.code_action, desc = 'Code actions' }
             }
         })
     end
@@ -62,31 +70,13 @@ local function extend_server_config(config)
     }, config or {})
 end
 
+-- Use Mason to manage the LSP servers.
+require('mason').setup()
+require('mason-lspconfig').setup({ automatic_installation = true })
+
+-- Configure the LSP servers.
 local lsp_config = require('lspconfig')
-local mason = require('mason')
-local mason_lspconfig = require('mason-lspconfig')
 
--- Set up Mason and install the must-have language servers.
-local ensure_installed = {}
-
-if executable_exists('elixir') then
-    table.insert(ensure_installed, 'elixirls')
-end
-
-if executable_exists('node') then
-    table.insert(ensure_installed, 'bashls')
-    table.insert(ensure_installed, 'tailwindcss')
-    table.insert(ensure_installed, 'ts_ls')
-end
-
-if executable_exists('php') then
-    table.insert(ensure_installed, 'intelephense')
-end
-
-mason.setup()
-mason_lspconfig.setup(ensure_installed)
-
--- Set up and configure the language servers...
 lsp_config['lua_ls'].setup(extend_server_config({
     diagnostics = { globals = { 'vim' } },
     settings = {
@@ -110,13 +100,13 @@ lsp_config['lua_ls'].setup(extend_server_config({
 --
 -- @see https://deno.land/manual@v1.35.3/getting_started/setup_your_environment#neovim-06-using-the-built-in-language-server
 if executable_exists('deno') then
-    lsp_config['denols'].setup(extend_server_config({
+    lsp_config.denols.setup(extend_server_config({
         root_dir = lsp_config.util.root_pattern('deno.json', 'deno.jsonc')
     }))
 end
 
 if executable_exists('elixir') then
-    lsp_config['elixirls'].setup(extend_server_config())
+    lsp_config.elixirls.setup(extend_server_config())
 end
 
 if executable_exists('go') then
@@ -124,18 +114,18 @@ if executable_exists('go') then
 end
 
 if executable_exists('node') then
-    lsp_config['astro'].setup(extend_server_config())
-    lsp_config['bashls'].setup(extend_server_config())
-    lsp_config['vimls'].setup(extend_server_config())
-    lsp_config['svelte'].setup(extend_server_config())
-    lsp_config['ts_ls'].setup(extend_server_config({ single_file_support = false }))
+    lsp_config.astro.setup(extend_server_config())
+    lsp_config.bashls.setup(extend_server_config())
+    lsp_config.svelte.setup(extend_server_config())
+    lsp_config.vimls.setup(extend_server_config())
+    lsp_config.volar.setup(extend_server_config())
 
     -- Phoenix makes life tricky, because it uses JavaScript, but may not have a `package.json` file.
-    lsp_config['eslint'].setup(extend_server_config({
+    lsp_config.eslint.setup(extend_server_config({
         root_dir = lsp_config.util.root_pattern('mix.exs', 'package.json')
     }))
 
-    lsp_config['tailwindcss'].setup(extend_server_config({
+    lsp_config.tailwindcss.setup(extend_server_config({
         settings = {
             tailwindCSS = {
                 includeLanguages = {
@@ -146,8 +136,36 @@ if executable_exists('node') then
             }
         }
     }))
+
+    -- Getting the TypeScript LSP to work with Vue is a bit tricky.
+    -- Just follow the instructions below:
+    -- @see https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#ts_ls
+    lsp_config.ts_ls.setup(extend_server_config({
+        init_options = {
+            plugins = {
+                {
+                    name = '@vue/typescript-plugin',
+                    location = '',
+                    languages = { 'javascript', 'typescript', 'vue' },
+                },
+            },
+        },
+        filetypes = { 'javascript', 'typescript', 'vue' },
+    }))
 end
 
 if executable_exists('php') then
-    lsp_config['intelephense'].setup(extend_server_config())
+    lsp_config.intelephense.setup(extend_server_config({
+        settings = {
+            intelephense = {
+                codeLens = {
+                    implementations = { enable = true },
+                    overrides = { enable = true },
+                    parent = { enable = true },
+                    references = { enable = true },
+                    usages = { enable = true },
+                }
+            }
+        }
+    }))
 end
