@@ -9,6 +9,9 @@ o.cursorlineopt = 'number'
 o.number = true
 o.relativenumber = true
 
+-- Always show the sign column. Allow two cells for diagnostics.
+o.signcolumn = 'yes:2'
+
 -- Default to spaces.
 o.expandtab = true
 o.shiftwidth = 2
