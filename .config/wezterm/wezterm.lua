@@ -34,9 +34,6 @@ local config = wezterm.config_builder()
 config.check_for_updates = false
 config.default_cursor_style = 'BlinkingBar'
 
--- Use Fish shell, always. Act as though it's the login shell.
-config.default_prog = { '/opt/homebrew/bin/fish', '--login' }
-
 -- Font. Wezterm bundles and uses JetBrains Mono by default.
 -- @see https://wezfurlong.org/wezterm/config/fonts.html
 config.font_size = 15
