@@ -19,6 +19,7 @@
   "nvim-treesitter-textobjects": { "branch": "master", "commit": "3e450cd85243da99dc23ebbf14f9c70e9a0c26a4" },
   "nvim-ts-context-commentstring": { "branch": "main", "commit": "9c74db656c3d0b1c4392fc89a016b1910539e7c0" },
   "plenary.nvim": { "branch": "master", "commit": "2d9b06177a975543726ce5c73fca176cedbffe9d" },
+  "schemastore.nvim": { "branch": "main", "commit": "a5f6e784d2000f9570791d5f43040ab29e13f9e3" },
   "telescope.nvim": { "branch": "master", "commit": "85922dde3767e01d42a08e750a773effbffaea3e" },
   "toggleterm.nvim": { "branch": "main", "commit": "5969229c0352ff1ed7f6e24aba9c6554e1842939" },
   "tokyonight.nvim": { "branch": "main", "commit": "c3d0838e357cbcc86580a4e06995f1030363591f" },

@@ -125,6 +125,16 @@ if executable_exists('node') then
         root_dir = lsp_config.util.root_pattern('mix.exs', 'package.json')
     }))
 
+    -- Autocompletion of JSON properties.
+    lsp_config.jsonls.setup(extend_server_config({
+        settings = {
+            json = {
+                schemas = require('schemastore').json.schemas(),
+                validate = { enable = true },
+            },
+        },
+    }))
+
     lsp_config.tailwindcss.setup(extend_server_config({
         settings = {
             tailwindCSS = {
