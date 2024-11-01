@@ -3,6 +3,9 @@ return {
     build = function()
         require('nvim-treesitter.install').update({ with_sync = true })
     end,
-    dependencies = { 'nvim-treesitter/nvim-treesitter-textobjects' },
+    dependencies = {
+        'nvim-treesitter/nvim-treesitter-textobjects',
+        'JoosepAlviste/nvim-ts-context-commentstring',
+    },
     event = 'VeryLazy',
 }
