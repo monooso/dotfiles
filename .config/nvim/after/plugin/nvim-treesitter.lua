@@ -31,6 +31,15 @@ require('nvim-treesitter.configs').setup({
         persist_queries = false -- Whether the query persists across vim sessions
     },
     textobjects = {
+        lsp_interop = {
+            enable = true,
+            border = 'none',
+            floating_preview_opts = {},
+            peek_definition_code = {
+                ['<leader>df'] = '@function.outer',
+                ['<leader>dc'] = '@class.outer',
+            },
+        },
         select = {
             enable = true,
             lookahead = true,
