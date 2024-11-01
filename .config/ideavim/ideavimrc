@@ -17,6 +17,9 @@ map <C-o> <Action>(Back)
 nmap <leader>dn <Action>(GotoNextError)
 nmap <leader>dp <Action>(GotoPreviousError)
 
+" GitHub Copilot Chat.
+nmap <leader>cc <Action>(copilot.chat.show)
+
 " Commenting.
 nmap gcc <Action>(CommentByLineComment)
 vmap gc <Action>(CommentByBlockComment)
