@@ -18,6 +18,11 @@
   "buffer_font_size": 14,
   "buffer_line_height": { "custom": 2.25 },
   "current_line_highlight": "none",
+  "languages": {
+    "PHP": {
+      "language_servers": ["intelephense", "!phpactor"]
+    }
+  },
   "outline_panel": { "button": false },
   "project_panel": { "button": false },
   "scrollbar": { "show": "never" },
