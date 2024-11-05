@@ -148,19 +148,23 @@ if executable_exists('node') then
     }))
 
     -- Getting the TypeScript LSP to work with Vue is a bit tricky.
-    -- Just follow the instructions below:
     -- @see https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#ts_ls
+    -- @see https://github.com/vuejs/language-tools?tab=readme-ov-file#hybrid-mode-configuration-requires-vuelanguage-server-version-200
+    local mason_registry = require('mason-registry')
+    local vue_lsp = mason_registry.get_package('vue-language-server'):get_install_path() ..
+        '/node_modules/@vue/language-server'
+
     lsp_config.ts_ls.setup(extend_server_config({
         init_options = {
             plugins = {
                 {
                     name = '@vue/typescript-plugin',
-                    location = '',
-                    languages = { 'javascript', 'typescript', 'vue' },
+                    location = vue_lsp,
+                    languages = { 'vue' },
                 },
             },
         },
-        filetypes = { 'javascript', 'typescript', 'vue' },
+        filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
     }))
 end
 
