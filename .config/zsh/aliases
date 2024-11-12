@@ -48,3 +48,6 @@ alias tma='tmux attach-session -t '
 alias tmk='tmux kill-session -t '
 alias tml='tmux list-sessions'
 alias tms='~/bin/tmux_quick_session.sh'
+
+# Laravel
+alias art='php artisan'
