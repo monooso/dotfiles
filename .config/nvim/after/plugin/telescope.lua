@@ -5,16 +5,13 @@ local wk = require('which-key')
 wk.add({
   {
     mode = { 'n' },
-    { '<leader>f',  group = 'Find...' },
-    { '<leader>fb', builtin.buffers,                   desc = 'Buffer' },
-    { '<leader>fd', builtin.diagnostics,               desc = 'Diagnostics' },
-    { '<leader>fe', '<cmd>Fern . -reveal=% -stay<cr>', desc = 'Explorer' },
-    { '<leader>ff', builtin.find_files,                desc = 'File' },
-    { '<leader>fg', builtin.live_grep,                 desc = 'Grep' },
-    { '<leader>fh', builtin.help_tags,                 desc = 'Help' },
-
-    -- Inspired by Zed.
-    { 'gs',         builtin.lsp_document_symbols,      desc = 'Document symbol' },
+    { '<leader>gb', builtin.buffers,                   desc = 'Buffer' },
+    { '<leader>gd', builtin.diagnostics,               desc = 'Diagnostics' },
+    { '<leader>ge', '<cmd>Fern . -reveal=% -stay<cr>', desc = 'File explorer' },
+    { '<leader>gf', builtin.find_files,                desc = 'File' },
+    { '<leader>gg', builtin.live_grep,                 desc = 'Grep' },
+    { '<leader>gh', builtin.help_tags,                 desc = 'Help' },
+    { '<leader>gs', builtin.lsp_document_symbols,      desc = 'Document symbol' },
   }
 })
 
