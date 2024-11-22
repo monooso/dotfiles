@@ -1,0 +1,45 @@
+[
+  {
+    // Ideally, these should also work when no file is open. There may be a non-inherited
+    // context for that, but I'm damned if I can find it.
+    "context": "vim_mode == normal && !menu",
+    "bindings": {
+      "space g a": "assistant::ToggleFocus", // Goto Assistant
+      "space g b": "tab_switcher::Toggle", // Goto Buffer
+      "space g c": "command_palette::Toggle", // Goto Command
+      "space g e": "project_panel::ToggleFocus", // Goto Explorer
+      "space g f": "file_finder::Toggle", // Goto File
+      "ctrl-\\": "terminal_panel::ToggleFocus"
+    }
+  },
+  // Hacks so we can use the same keyboard shortcut to open / close panels,
+  // rather than just toggling focus.
+  {
+    "context": "ContextEditor > Editor && vim_mode == normal",
+    "bindings": {
+      "space g a": "workspace::ToggleRightDock"
+    }
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "space g e": "workspace::ToggleLeftDock"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-\\": "workspace::ToggleRightDock"
+    }
+  },
+  // Navigate between panes as if they're splits.
+  {
+    "context": "Dock",
+    "bindings": {
+      "ctrl-w h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-w l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-w k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-w j": ["workspace::ActivatePaneInDirection", "Down"]
+    }
+  }
+]
