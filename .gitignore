@@ -12,6 +12,7 @@
 .config/psysh/
 .config/valet/
 .config/wireguard/*.conf
+.config/zed/embeddings/
 .config/zed/prompts/
 .config/zsh/.zsh_history
 .ssh/known_hosts
