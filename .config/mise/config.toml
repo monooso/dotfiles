@@ -1,2 +1,2 @@
 [tools]
-usage = "latest"
+lua = '5.1.5'
