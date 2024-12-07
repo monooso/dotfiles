@@ -7,6 +7,7 @@ let mapleader = " "
 nmap <leader>gc <Action>(GotoClass)
 nmap <leader>gd <Action>(GotoDeclaration)
 nmap <leader>ge <Action>(ActivateProjectToolWindow)
+nmap <leader>gf <Action>(GotoFile)
 nmap <leader>gg <Action>(FindInPath)
 nmap <leader>gi <Action>(GotoImplementation)
 nmap <leader>go <Action>(SearchEverywhere)
