@@ -13,6 +13,7 @@ nmap <leader>gi <Action>(GotoImplementation)
 nmap <leader>go <Action>(SearchEverywhere)
 nmap <leader>gs <Action>(FileStructurePopup)
 nmap <leader>gt <Action>(GotoTest)
+nmap <C-\> <Action>(ActivateTerminalToolWindow)
 map <C-o> <Action>(Back)
 
 " -----------------------------------------------
