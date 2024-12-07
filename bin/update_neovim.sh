@@ -2,7 +2,7 @@
 
 # -----------------------------------------------------------------------------
 # Build Neovim from source. Assumes that the build prerequisites are installed.
-# See https://github.com/neovim/neovim/wiki/Building-Neovim#build-prerequisites
+# @see https://github.com/neovim/neovim/blob/master/BUILD.md
 #
 # Run the script from inside the Neovim source directory.
 # -----------------------------------------------------------------------------
