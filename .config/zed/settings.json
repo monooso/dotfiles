@@ -7,6 +7,9 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "edit_predictions": {
+    "disabled_globs": [".env", "README.md"]
+  },
   "assistant": {
     "default_model": {
       "provider": "copilot_chat",
@@ -24,7 +27,11 @@
     }
   },
   "outline_panel": { "button": false },
-  "project_panel": { "button": false },
+  "project_panel": {
+    "button": false,
+    "dock": "right"
+  },
+  "relative_line_numbers": true,
   "scrollbar": { "show": "never" },
   "search": {
     "case_sensitive": true,
@@ -44,7 +51,7 @@
   },
   "theme": {
     "mode": "system",
-    "dark": "Andromeda",
+    "dark": "Ayu Mirage",
     "light": "One Light"
   },
   "vim_mode": true
