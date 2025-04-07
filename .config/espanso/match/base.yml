@@ -1,0 +1,25 @@
+matches:
+  - trigger: ";dd "
+    replace: "{{date}}"
+    vars:
+      - name: date
+        type: date
+        params:
+          format: "%Y-%m-%d"
+
+  - trigger: ";dt "
+    replace: "{{datetime}}"
+    vars:
+      - name: datetime
+        type: date
+        params:
+          format: "%Y-%m-%d %H:%M:%S"
+
+  - trigger: ";uuid "
+    replace: "{{uuid}}"
+    vars:
+      - name: uuid
+        type: shell
+        params:
+          shell: bash
+          cmd: "/usr/bin/uuidgen | tr '[:upper:]' '[:lower:]'"
