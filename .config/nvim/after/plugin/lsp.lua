@@ -52,11 +52,11 @@ end
 
 local function extend_server_config(config)
     -- Show borders around the floating windows.
-    local hover_opts = { border = 'single', focusable = true }
+    local floating_window_opts = { border = 'single', focusable = true }
 
     local handlers = {
-        ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, hover_opts),
-        ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, hover_opts)
+        ['textDocument/hover'] = vim.lsp.buf.hover(floating_window_opts),
+        ['textDocument/signatureHelp'] = vim.lsp.buf.signature_help(floating_window_opts),
     }
 
     -- Tell the language servers that we support all the capabilities of `nvim-cmp`.
@@ -110,7 +110,13 @@ if executable_exists('elixir') then
 end
 
 if executable_exists('go') then
-    lsp_config['gopls'].setup(extend_server_config())
+    lsp_config.gopls.setup(extend_server_config())
+end
+
+if executable_exists('ghc') then
+    lsp_config.hls.setup(extend_server_config({
+        filetypes = { 'haskell', 'lhaskell', 'cabal' }
+    }))
 end
 
 if executable_exists('node') then
