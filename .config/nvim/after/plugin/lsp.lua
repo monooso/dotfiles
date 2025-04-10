@@ -109,22 +109,10 @@ if executable_exists('elixir') then
     lsp_config.elixirls.setup(extend_server_config())
 end
 
-if executable_exists('go') then
-    lsp_config.gopls.setup(extend_server_config())
-end
-
-if executable_exists('ghc') then
-    lsp_config.hls.setup(extend_server_config({
-        filetypes = { 'haskell', 'lhaskell', 'cabal' }
-    }))
-end
-
 if executable_exists('node') then
     lsp_config.astro.setup(extend_server_config())
     lsp_config.bashls.setup(extend_server_config())
-    lsp_config.svelte.setup(extend_server_config())
     lsp_config.vimls.setup(extend_server_config())
-    lsp_config.volar.setup(extend_server_config())
 
     -- Phoenix makes life tricky, because it uses JavaScript, but may not have a `package.json` file.
     lsp_config.eslint.setup(extend_server_config({
@@ -151,26 +139,6 @@ if executable_exists('node') then
                 },
             }
         }
-    }))
-
-    -- Getting the TypeScript LSP to work with Vue is a bit tricky.
-    -- @see https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#ts_ls
-    -- @see https://github.com/vuejs/language-tools?tab=readme-ov-file#hybrid-mode-configuration-requires-vuelanguage-server-version-200
-    local mason_registry = require('mason-registry')
-    local vue_lsp = mason_registry.get_package('vue-language-server'):get_install_path() ..
-        '/node_modules/@vue/language-server'
-
-    lsp_config.ts_ls.setup(extend_server_config({
-        init_options = {
-            plugins = {
-                {
-                    name = '@vue/typescript-plugin',
-                    location = vue_lsp,
-                    languages = { 'vue' },
-                },
-            },
-        },
-        filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
     }))
 end
 
