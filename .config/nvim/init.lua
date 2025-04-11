@@ -6,6 +6,3 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 require('monooso.options')
 require('monooso.keymaps')
 require('monooso.lazy')
-
--- Oddments.
-require('monooso.blade')
