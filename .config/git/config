@@ -50,4 +50,4 @@
 [user]
     email = code@stephenlewis.me
     name = Stephen Lewis
-    signingkey = /Users/sl/.ssh/keys.d/default.pub
+    signingkey = ~/.ssh/keys.d/default.pub
