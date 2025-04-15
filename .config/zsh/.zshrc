@@ -6,9 +6,6 @@ bindkey -v
 # Initialise Homebrew, which other things depend on
 if [ -f "/opt/homebrew/bin/brew" ]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
-else
-  echo "ERROR: Homebrew is not installed"
-  exit 1
 fi
 
 # Load antidote, which is installed via Homebrew
