@@ -9,8 +9,10 @@ if [ -f "/opt/homebrew/bin/brew" ]; then
 fi
 
 # Load antidote, which is installed via Homebrew
-source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
-antidote load
+if command -v brew &> /dev/null; then
+  source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
+  antidote load
+fi
 
 # Source configuration files
 # Order is important
