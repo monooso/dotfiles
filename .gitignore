@@ -17,3 +17,21 @@
 .config/zsh/.zsh_history
 .ssh/known_hosts
 .ssh/known_hosts.old
+
+# All the Linux things...
+# There must be a better way of organising this stuff.
+.config/.gsd-keyboard.settings-ported
+.config/1Password
+.config/background
+.config/BraveSoftware
+.config/dconf/user
+.config/evolution
+.config/gnome-initial-setup-done
+.config/gtk-3.0/bookmarks
+.config/ibus
+.config/org.gnome.Ptyxis/session.gvariant
+.config/pop-shell/config.json
+.config/pulse/cookie
+.config/user-dirs.dirs
+.config/user-dirs.locale
+
