@@ -1,0 +1,70 @@
+{
+  "anonymous function": {
+    "prefix": "fna",
+    "description": "Create a PHP anonymous function.",
+    "body": [
+      "function (${1:params}) {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "arrow function": {
+    "prefix": "fns",
+    "description": "Create a PHP arrow (short) function.",
+    "body": [
+      "fn(${1:params}) => $0;"
+    ]
+  },
+  "class": {
+    "prefix": "class",
+    "description": "Create a PHP class.",
+    "body": [
+      "${1:final }class ${2:name}{$3: implements}",
+      "{",
+      "\t$0",
+      "}"
+    ]
+  },
+  "public method": {
+    "prefix": "fnp",
+    "description": "Create a public PHP method.",
+    "body": [
+      "public function ${1:name}(${2:params})",
+      "{",
+      "\t$0",
+      "}"
+    ]
+  },
+  "protected method": {
+    "prefix": "fnd",
+    "description": "Create a protected PHP method.",
+    "body": [
+      "protected function ${1:name}(${2:params})",
+      "{",
+      "\t$0",
+      "}"
+    ]
+  },
+  "private method": {
+    "prefix": "fnv",
+    "description": "Create a private PHP method.",
+    "body": [
+      "private function ${1:name}(${2:params})",
+      "{",
+      "\t$0",
+      "}"
+    ]
+  },
+  "module": {
+    "prefix": "mod",
+    "description": "Create a PHP 'module' (a PHP file with a namespace).",
+    "body": [
+      "<?php",
+      "declare(strict_types=1);",
+      "",
+      "namespace ${1:namespace};",
+      "",
+      "$0"
+    ]
+  }
+}
