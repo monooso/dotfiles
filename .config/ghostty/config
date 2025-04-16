@@ -1,3 +1,14 @@
+theme = tokyonight_night
+
+adjust-cell-height = 25%
+
+window-decoration = none
+window-padding-x = 4
+window-padding-y = 4
+window-padding-balance = true
+
+window-inherit-working-directory = true
+
 # This is the configuration file for Ghostty.
 #
 # This template file has been automatically created at the following
