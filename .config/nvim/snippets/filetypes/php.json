@@ -19,7 +19,7 @@
     "prefix": "class",
     "description": "Create a PHP class.",
     "body": [
-      "${1:final }class ${2:name}{$3: implements}",
+      "${1:final }class ${2:name}${3: implements}",
       "{",
       "\t$0",
       "}"
