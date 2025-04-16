@@ -17,6 +17,10 @@
       {
         "language": "eelixir",
         "path": "./filetypes/eelixir.json"
+      },
+      {
+        "language": "php",
+        "path": "./filetypes/php.json"
       }
     ]
   }
