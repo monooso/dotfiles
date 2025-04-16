@@ -51,12 +51,9 @@ local function lsp_on_attach(client, bufnr)
 end
 
 local function extend_server_config(config)
-    -- Show borders around the floating windows.
-    local floating_window_opts = { border = 'single', focusable = true }
-
     local handlers = {
-        ['textDocument/hover'] = vim.lsp.buf.hover(floating_window_opts),
-        ['textDocument/signatureHelp'] = vim.lsp.buf.signature_help(floating_window_opts),
+        ['textDocument/hover'] = vim.lsp.buf.hover(),
+        ['textDocument/signatureHelp'] = vim.lsp.buf.signature_help(),
     }
 
     -- Tell the language servers that we support all the capabilities of `nvim-cmp`.
