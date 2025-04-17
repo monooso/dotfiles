@@ -21,7 +21,6 @@
 # All the Linux things...
 # There must be a better way of organising this stuff.
 .config/.gsd-keyboard.settings-ported
-.config/1Password
 .config/background
 .config/BraveSoftware
 .config/dconf/user
@@ -34,4 +33,17 @@
 .config/pulse/cookie
 .config/user-dirs.dirs
 .config/user-dirs.locale
+
+# Files related to 1Password and its browser extensions.
+.config/1Password
+.config/chromium
+.config/google-chrome
+.config/google-chrome-beta
+.config/google-chrome-unstable
+.config/microsoft-edge-dev
+.config/vivaldi
+.config/vivaldi-snapshot
+
+# Herd Lite. Only used when bootstrapping Sail.
+.config/herd-lite
 
