@@ -24,6 +24,12 @@ if test -d $HOME/Library/Application\ Support/Herd/bin; then
   export PATH=$HOME/Library/Application\ Support/Herd/bin:$PATH
 fi
 
+# We use Herd lite to bootstrap PHP on Linux (for now, at least)
+# All Laravel development uses Sail, but we need PHP to set it up
+if test -d $XDG_CONFIG_HOME/herd-lite/bin; then
+  export PATH=$XDG_CONFIG_HOME/herd-lite/bin:$PATH
+fi
+
 # Load Mise, if it exists
 if command -v mise &> /dev/null; then
   eval "$(mise activate zsh)"
