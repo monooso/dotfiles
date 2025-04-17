@@ -47,3 +47,5 @@
 # Herd Lite. Only used when bootstrapping Sail.
 .config/herd-lite
 
+# Just for now...
+.config/nvim-kickstart
