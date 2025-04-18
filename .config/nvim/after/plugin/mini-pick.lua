@@ -18,4 +18,4 @@ vim.keymap.set({ 'n' }, '<Leader>gm', pickers.marks, { desc = 'Marks' })
 -- results in a split. This is much nicer.
 vim.keymap.set({ 'n' }, '<Leader>gs', function()
   pickers.lsp({ scope = 'document_symbol' })
-end,{ desc = 'Document symbols' })
+end, { desc = 'Document symbols' })
