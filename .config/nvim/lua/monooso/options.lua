@@ -1,79 +1,63 @@
+-- Configures Neovim options.
+
 local g = vim.g
-local o = vim.o
+local o = vim.opt
 
--- Highlight the current line number, so we know where we are.
-o.cursorline = true
-o.cursorlineopt = 'number'
+o.mouse = 'a'                   -- Enable mouse mode, because TJ said it was okay.
 
--- Enable relative line numbers.
-o.number = true
-o.relativenumber = true
+o.cursorline = true             -- Highlight the current line...
+o.cursorlineopt = 'number'      -- ...but just the line number.
 
--- Always show the sign column. Allow two cells for diagnostics.
-o.signcolumn = 'yes:2'
+o.number = true                 -- Show line numbers.
+o.relativenumber = true         -- Make them relative.
 
--- Default to spaces.
-o.expandtab = true
-o.shiftwidth = 2
-o.softtabstop = 2
-o.tabstop = 2
+o.signcolumn = 'yes:2'          -- Show the sign column. Allow two cells for diagnostics.
 
--- Be smart about indenting.
-o.smartindent = true
+-- o.wrap = false               -- Only savages wrap lines.
+o.breakindent = true            -- Indent wrapped lines.
+o.smartindent = true            -- Be smart about indenting.
 
--- Show invisible characters.
-o.list = true
+o.undofile = true               -- Save undo history.
+
+o.ignorecase = true             -- Use case-insensitive searching...
+o.smartcase = true              -- ...unless we use `\C` or the search term contains capitals.
+
+o.list = true                   -- Show invisible characters.
 o.listchars = 'tab:▸ ,trail:•'
 
--- Disable folding.
-o.foldenable = false
+o.foldenable = false            -- Disable folding; I never use it.
+o.visualbell = true             -- Stop beeping me, dammit.
+o.timeoutlen = 300              -- Don't wait around for keymappings to complete.
 
--- Don't wrap lines, you savage.
-o.wrap = false
+o.splitbelow = true             -- Open new splits below the current split.
+o.splitright = true             -- Open new splits to the right of the current split.
 
--- Stop beeping me, dammit.
-o.visualbell = true
+o.laststatus = 3                -- Use the global status line.
+o.cmdheight = 1                 -- Keep the command line small.
+o.shortmess = 'I'               -- Don't show the intro message on startup.
+o.showmode = false              -- Don't show the mode; it's already in the status line.
+o.scrolloff = 10                -- Minimum number of lines to show above and below cursor.
+o.confirm = true                -- Ask if I want to save unsaved changes on `:q`.
 
--- Don't wait around for keymappings to complete.
-o.timeoutlen = 500
+-- Configure the built-in auto-complete menu.
+-- - Always show the menu, even if there is only one item.
+-- - Do not automatically select the first menu item.
+o.completeopt = { 'menu', 'menuone', 'noselect' }
 
--- Set the position of new splits. The defaults confuse me, every time.
-o.splitbelow = true
-o.splitright = true
-
--- Use the global status line.
-o.laststatus = 3
-
--- Now that we have a global status line, improve the appearance of window splits.
+-- Improve the appearance of window splits.
 vim.cmd [[highlight WinSeparator guifg=#908caa guibg=None]]
 
--- Use case-insensitive searching, unless we use `/C`, or the search term contains a capital letter.
-o.ignorecase = true
-o.smartcase = true
+-- Sync the Neovim and OS clipboards.
+-- Schdule the setting after `UiEnter`, as it can increase startup time.
+vim.schedule(function()
+  vim.opt.clipboard = 'unnamedplus'
+end)
 
--- Keep the command line small.
-o.cmdheight = 1
-
--- Don't show the intro message when starting Neovim.
-o.shortmess = 'I'
-
--- Don't display a 'short message' when switching mode; it's already in the status line.
-o.showmode = false
-
--- Highlight text when yanking. Surprisingly helpful, and no longer requires a plugin.
-local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
-
+-- Highlight text when yanking.
 vim.api.nvim_create_autocmd('TextYankPost', {
-    callback = function()
-        vim.highlight.on_yank()
-    end,
-    group = highlight_group,
-    pattern = '*',
+  desc = 'Highlight the yanked (copied) text',
+  group = vim.api.nvim_create_augroup('monooso-highlight-yank', { clear = true }),
+  callback = function()
+      vim.highlight.on_yank()
+  end,
 })
-
--- Do not rely on any external dependencies; Lua or Vimscript only
-g.loaded_perl_provider = 0
-g.loaded_python_provider = 0
-g.loaded_python3_provider = 0
-g.loaded_node_provider = 0
-g.loaded_ruby_provider = 0

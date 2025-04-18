@@ -1,9 +1,8 @@
-local luasnip = require('luasnip')
+-- Configure the LuaSnip plugin.
+--
+-- @see https://github.com/L3MON4D3/LuaSnip
 
-luasnip.config.set_config({
-  history = true,
-  updateevents = 'TextChanged,TextChangedI'
-})
+local luasnip = require('luasnip')
 
 -- Expand the snippet, or jump to the next placeholder.
 vim.keymap.set({ 'i', 's' }, '<c-j>', function()
