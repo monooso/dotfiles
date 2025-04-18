@@ -1,6 +1,7 @@
 -- Bootstrap the Lazy plugin manager.
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 
+---@diagnostic disable-next-line: undefined-field
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
   local out = vim.fn.system { 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath }
@@ -15,25 +16,12 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Install plugins.
 require('lazy').setup({
-    require 'monooso.plugins.conform',
-
-    -- lazydev
-
-    require 'monooso.plugins.fern',
-    require 'monooso.plugins.luasnip',
-    require 'monooso.plugins.mason',
-    require 'monooso.plugins.mini',
-    require 'monooso.plugins.nvim-lspconfig',
-    
-    require 'monooso.plugins.nvim-treesitter',
-
-    -- telescope
-        -- plenary
-        -- telescope-fzf-native
-        -- telescope-ui-select
-
-    -- todo-comments
-    -- vim-sleuth
-
-    require 'monooso.plugins.vim-sleuth',
+  require 'monooso.plugins.conform',
+  require 'monooso.plugins.fern',
+  require 'monooso.plugins.luasnip',
+  require 'monooso.plugins.mason',
+  require 'monooso.plugins.mini',
+  require 'monooso.plugins.nvim-lspconfig',
+  require 'monooso.plugins.nvim-treesitter',
+  require 'monooso.plugins.vim-sleuth',
 })
