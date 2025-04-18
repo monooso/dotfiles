@@ -1,0 +1,6 @@
+{
+  "Smoke Test": {
+    "prefix": "smoke",
+    "body": "Smoke test: $0"
+  }
+}
