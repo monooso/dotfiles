@@ -17,3 +17,6 @@
 .config/zsh/.zsh_history
 .ssh/known_hosts
 .ssh/known_hosts.old
+
+# File created by ssh-agent systemd service.
+.config/systemd/user/default.target.wants/
