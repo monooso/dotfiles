@@ -4,17 +4,21 @@
 
 require('nvim-treesitter.configs').setup({
     auto_install = true,
+    ensure_installed = {},
     highlight = { enable = true },
+    ignore_install = {},
     indent = {
         enable = true,
         disable = { 'yaml' }
     },
+    modules = {},
     playground = {
         enable = true,
         disable = {},
         updatetime = 25,        -- Debounced time for highlighting nodes in the playground from source code
         persist_queries = false -- Whether the query persists across vim sessions
     },
+    sync_install = false,
     textobjects = {
         lsp_interop = {
             enable = true,
