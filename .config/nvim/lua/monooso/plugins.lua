@@ -19,6 +19,7 @@ require('lazy').setup({
 
     -- lazydev
 
+    require 'monooso.plugins.fern',
     require 'monooso.plugins.luasnip',
     require 'monooso.plugins.mason',
     require 'monooso.plugins.mini',
