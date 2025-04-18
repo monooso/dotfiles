@@ -35,6 +35,5 @@ require('lazy').setup({
     -- todo-comments
     -- vim-sleuth
 
-    require 'monooso.plugins.which-key'
     require 'monooso.plugins.vim-sleuth',
 })
