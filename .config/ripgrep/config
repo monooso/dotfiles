@@ -1,0 +1,15 @@
+# Ripgrep configuration file.
+# @see https://github.com/BurntSushi/ripgrep/blob/master/GUIDE.md#configuration-file
+#
+# Note that Ripgrep doesn't automatically look for a configuration file. Instead,
+# we have to manually set the RIPGREP_CONFIG_PATH environment variable.
+
+# Search hidden files and directories.
+--hidden
+
+# Do not search the .git directory.
+--glob
+!.git/*
+
+# Be smart about case-sensitive searches.
+--smart-case
