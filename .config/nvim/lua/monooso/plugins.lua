@@ -36,4 +36,5 @@ require('lazy').setup({
     -- vim-sleuth
 
     require 'monooso.plugins.which-key'
+    require 'monooso.plugins.vim-sleuth',
 })
