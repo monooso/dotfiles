@@ -17,35 +17,3 @@
 .config/zsh/.zsh_history
 .ssh/known_hosts
 .ssh/known_hosts.old
-
-# All the Linux things...
-# There must be a better way of organising this stuff.
-.config/.gsd-keyboard.settings-ported
-.config/background
-.config/BraveSoftware
-.config/dconf/user
-.config/evolution
-.config/gnome-initial-setup-done
-.config/gtk-3.0/bookmarks
-.config/ibus
-.config/org.gnome.Ptyxis/session.gvariant
-.config/pop-shell/config.json
-.config/pulse/cookie
-.config/user-dirs.dirs
-.config/user-dirs.locale
-
-# Files related to 1Password and its browser extensions.
-.config/1Password
-.config/chromium
-.config/google-chrome
-.config/google-chrome-beta
-.config/google-chrome-unstable
-.config/microsoft-edge-dev
-.config/vivaldi
-.config/vivaldi-snapshot
-
-# Herd Lite. Only used when bootstrapping Sail.
-.config/herd-lite
-
-# Just for now...
-.config/nvim-kickstart
