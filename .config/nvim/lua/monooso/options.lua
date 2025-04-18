@@ -10,8 +10,12 @@ o.cursorlineopt = 'number'      -- ...but just the line number.
 
 o.number = true                 -- Show line numbers.
 o.relativenumber = true         -- Make them relative.
-
 o.signcolumn = 'yes:2'          -- Show the sign column. Allow two cells for diagnostics.
+
+o.expandtab = true              -- Tabs are the devil's plaything.
+o.shiftwidth = 2                -- Set a sensible default indentation...
+o.softtabstop = 2               -- ...and again...
+o.tabstop = 2                   -- ...and once more.
 
 -- o.wrap = false               -- Only savages wrap lines.
 o.breakindent = true            -- Indent wrapped lines.
