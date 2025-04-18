@@ -25,7 +25,7 @@ require('lazy').setup({
     require 'monooso.plugins.mini',
     require 'monooso.plugins.nvim-lspconfig',
     
-    -- nvim-treesitter
+    require 'monooso.plugins.nvim-treesitter',
 
     -- telescope
         -- plenary
