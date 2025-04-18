@@ -29,5 +29,6 @@ fi
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=245"
 
 # Load our fancy prompt
+#
+# @todo Support OSC 133, once this issue is resolved: https://github.com/starship/starship/issues/5463
 eval "$(starship init zsh)"
-
