@@ -23,5 +23,6 @@ require('lazy').setup({
   require 'monooso.plugins.mini',
   require 'monooso.plugins.nvim-lspconfig',
   require 'monooso.plugins.nvim-treesitter',
+  require 'monooso.plugins.rose-pine',
   require 'monooso.plugins.vim-sleuth',
 })
