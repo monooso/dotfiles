@@ -13,11 +13,8 @@ require 'monooso.providers'
 -- Refer to individual plugin files for plugin-specific key bindings.
 require 'monooso.keys'
 
--- Install and configure plugins.
-require 'monooso.plugins'
-
--- Set the colour scheme.
-require 'monooso.theme'
+-- Install and configure plugins using Lazy.
+require 'monooso.lazy'
 
 -- Configure and enable language servers.
 require 'monooso.lsp'
