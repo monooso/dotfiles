@@ -15,14 +15,4 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Install plugins.
-require('lazy').setup({
-  require 'monooso.plugins.conform',
-  require 'monooso.plugins.fern',
-  require 'monooso.plugins.luasnip',
-  require 'monooso.plugins.mason',
-  require 'monooso.plugins.mini',
-  require 'monooso.plugins.nvim-lspconfig',
-  require 'monooso.plugins.nvim-treesitter',
-  require 'monooso.plugins.rose-pine',
-  require 'monooso.plugins.vim-sleuth',
-})
+require('lazy').setup('monooso.plugins')
