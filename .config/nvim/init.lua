@@ -16,6 +16,9 @@ require 'monooso.keys'
 -- Install and configure plugins.
 require 'monooso.plugins'
 
+-- Set the colour scheme.
+require 'monooso.theme'
+
 -- Configure and enable language servers.
 require 'monooso.lsp'
 
