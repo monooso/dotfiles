@@ -43,8 +43,10 @@ o.confirm = true     -- Ask if I want to save unsaved changes on `:q`.
 
 -- Configure the built-in auto-complete menu.
 -- - Always show the menu, even if there is only one item.
--- - Do not automatically select the first menu item.
-o.completeopt = { 'menu', 'menuone', 'noselect' }
+-- - Automatically select the first item.
+-- - Do not automatically insert the first item, that way madness lies.
+-- - Enable fuzzy matching.
+o.completeopt = { 'menu', 'menuone', 'noinsert', 'fuzzy' }
 
 -- Improve the appearance of window splits.
 vim.cmd [[highlight WinSeparator guifg=#908caa guibg=None]]
