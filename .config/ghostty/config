@@ -1,6 +1,6 @@
 theme = dark:tokyonight_moon,light:tokyonight-day
 
-adjust-cell-height = 25%
+adjust-cell-height = 50%
 
 window-decoration = none
 window-padding-x = 4
