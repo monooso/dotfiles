@@ -15,16 +15,15 @@ o.shiftwidth = 2           -- Set a sensible default indentation...
 o.softtabstop = 2          -- ...and again...
 o.tabstop = 2              -- ...and once more.
 
--- o.wrap = false               -- Only savages wrap lines.
-o.breakindent = true -- Indent wrapped lines.
-o.smartindent = true -- Be smart about indenting.
+o.wrap = false             -- Only savages wrap lines.
+o.smartindent = true       -- Be smart about indenting.
 
-o.undofile = true    -- Save undo history.
+o.undofile = true          -- Save undo history.
 
-o.ignorecase = true  -- Use case-insensitive searching...
-o.smartcase = true   -- ...unless we use `\C` or the search term contains capitals.
+o.ignorecase = true        -- Use case-insensitive searching...
+o.smartcase = true         -- ...unless we use `\C` or the search term contains capitals.
 
-o.list = true        -- Show invisible characters.
+o.list = true              -- Show invisible characters.
 o.listchars = 'tab:▸ ,trail:•'
 
 o.foldenable = false -- Disable folding; I never use it.
