@@ -11,6 +11,9 @@ fi
 # Local Composer package binaries
 export PATH=./vendor/bin:$PATH
 
+# Global Mix Escripts
+export PATH=$HOME/.mix/escripts:$PATH
+
 # Local Node.js package binaries
 export PATH=./node_modules/.bin:$PATH
 
