@@ -61,6 +61,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight the yanked (copied) text',
   group = vim.api.nvim_create_augroup('monooso-highlight-yank', { clear = true }),
   callback = function()
-    vim.highlight.on_yank()
+    vim.hl.on_yank()
   end,
 })
