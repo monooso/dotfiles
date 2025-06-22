@@ -13,7 +13,3 @@ map({ 'n', 'v' }, '<Leader>p', '"0p', opts())
 
 -- Make the terminal less painful.
 map({ 't' }, '<Esc>', [[<C-\><C-n>]], opts())
-
--- Resize splits.
-map({ 'i', 'n', 't', 'v' }, '<C-w>e', '<C-w>=', opts({ desc = 'Equalise splits' }))
-map({ 'i', 'n', 't', 'v' }, '<C-w>m', '<C-w>|<C-w>_', opts({ desc = 'Maximise current split' }))
