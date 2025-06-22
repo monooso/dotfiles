@@ -1,4 +1,7 @@
 matches:
+  - trigger: ";br "
+    replace: "Best regards,\nStephen"
+
   - trigger: ";dd "
     replace: "{{date}}"
     vars:
@@ -14,6 +17,12 @@ matches:
         type: date
         params:
           format: "%Y-%m-%d %H:%M:%S"
+
+  - trigger: ";em "
+    replace: "—"
+
+  - trigger: ";gbp "
+    replace: "£"
 
   - trigger: ";uuid "
     replace: "{{uuid}}"
