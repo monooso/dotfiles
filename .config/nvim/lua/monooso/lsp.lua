@@ -13,4 +13,5 @@ vim.lsp.enable({
     'lua_ls',
     'jsonls',
     'ts_ls',
+    'ruby_lsp',
 })
