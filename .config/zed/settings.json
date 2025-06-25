@@ -74,7 +74,7 @@
     "editor.document_highlight.write_background": "#FFFFFF00"
   },
   "features": {
-    "edit_prediction_provider": "copilot"
+    "edit_prediction_provider": "none"
   },
   "inline_code_actions": false,
   "minimap": {
