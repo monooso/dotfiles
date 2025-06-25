@@ -1,58 +1,134 @@
-// Zed settings
-//
-// For information on how to configure Zed, see the Zed
-// documentation: https://zed.dev/docs/configuring-zed
-//
-// To see all of Zed's default settings without changing your
-// custom settings, run `zed: open default settings` from the
-// command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "edit_predictions": {
-    "disabled_globs": [".env", "README.md"]
-  },
-  "assistant": {
+  // AI agent settings.
+  "agent": {
+    "always_allow_tool_actions": true,
     "default_model": {
       "provider": "copilot_chat",
-      "model": "gpt-4o"
+      "model": "claude-3.7-sonnet"
     },
+    "model_parameters": [],
+    "play_sound_when_agent_done": true,
     "version": "2"
   },
-  "ui_font_size": 14,
-  "buffer_font_size": 14,
-  "buffer_line_height": { "custom": 2.25 },
-  "current_line_highlight": "none",
-  "languages": {
-    "PHP": {
-      "language_servers": ["intelephense", "!phpactor"]
+  "context_servers": {
+    "Phoenix Tidewave": {
+      "command": {
+        "path": "/home/sl/.local/bin/mcp-proxy",
+        "args": [
+          "http://localhost:4000/tidewave/mcp"
+        ],
+        "env": null
+      },
+      "settings": {}
     }
   },
-  "outline_panel": { "button": false },
+  "language_models": {
+    "copilot_chat": {
+      "api_url": "https://api.githubcopilot.com/chat/completions",
+      "auth_url": "https://api.github.com/copilot_internal/v2/token",
+      "models_url": "https://api.githubcopilot.com/models"
+    }
+  },
+  // Language-specific settings.
+  "languages": {
+    "Ruby": {
+      "language_servers": [
+        "ruby-lsp",
+        "rubocop",
+        "!solargraph"
+      ]
+    }
+  },
+  // Language-server settings.
+  "lsp": {
+    // @see https://zed.dev/docs/languages/ruby#setting-up-rubocop-lsp
+    "rubocop": {
+      "initialization_options": {
+        "safeAutocorrect": false
+      }
+    },
+    // @see https://zed.dev/docs/languages/ruby#setting-up-ruby-lsp
+    "ruby-lsp": {
+      "initialization_options": {
+        "enabledFeatures": {
+          "diagnostics": false
+        }
+      }
+    }
+  },
+  // General settings. Mostly just removing clutter.
+  "buffer_font_family": "JetBrains Mono",
+  "buffer_line_height": {
+    "custom": 2.0
+  },
+  "close_on_file_delete": true,
+  "collaboration_panel": {
+    "button": false
+  },
+  "current_line_highlight": "none",
+  "diagnostics": {
+    "inline": {
+      "enabled": true
+    }
+  },
+  "drag_and_drop_selection": false,
+  "experimental.theme_overrides": {
+    // Stop adding a background colour to elements you shouty bastard.
+    // @see https://github.com/zed-industries/zed/discussions/22854#discussioncomment-12073289
+    "editor.document_highlight.bracket_background": "#FFFFFF00",
+    "editor.document_highlight.read_background": "#FFFFFF00",
+    "editor.document_highlight.write_background": "#FFFFFF00"
+  },
+  "features": {
+    "edit_prediction_provider": "copilot"
+  },
+  "inline_code_actions": false,
+  "minimap": {
+    "show": "never"
+  },
+  "outline_panel": {
+    "button": false
+  },
   "project_panel": {
-    "button": false,
+    "default_width": 300,
     "dock": "right"
   },
   "relative_line_numbers": true,
-  "scrollbar": { "show": "never" },
+  "restore_on_startup": "none",
+  "scrollbar": {
+    "show": "never"
+  },
   "search": {
     "case_sensitive": true,
     "regex": true
   },
+  "selection_highlight": false,
   "tab_bar": {
-    "show_nav_history_buttons": false
+    "show_nav_history_buttons": false,
+    "show_tab_bar_buttons": false
+  },
+  "tabs": {
+    "activate_on_close": "neighbour",
+    "show_close_button": "hidden"
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
   },
   "terminal": {
+    // Hide the button in the toolbar. Ctrl-` works just fine.
     "button": false,
-    "dock": "right",
-    "toolbar": { "title": false }
+    "font_size": 13
+  },
+  "theme": {
+    "mode": "system",
+    "dark": "Catppuccin Mocha - No Italics",
+    "light": "One Light"
   },
   "toolbar": {
     "breadcrumbs": false,
     "quick_actions": false
   },
-  "theme": {
-    "mode": "system",
-    "dark": "Ayu Mirage",
-    "light": "One Light"
-  },
+  "use_smartcase_search": true,
   "vim_mode": true
 }
