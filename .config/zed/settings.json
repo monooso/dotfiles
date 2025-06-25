@@ -14,9 +14,7 @@
     "Phoenix Tidewave": {
       "command": {
         "path": "/home/sl/.local/bin/mcp-proxy",
-        "args": [
-          "http://localhost:4000/tidewave/mcp"
-        ],
+        "args": ["http://localhost:4000/tidewave/mcp"],
         "env": null
       },
       "settings": {}
@@ -32,11 +30,7 @@
   // Language-specific settings.
   "languages": {
     "Ruby": {
-      "language_servers": [
-        "ruby-lsp",
-        "rubocop",
-        "!solargraph"
-      ]
+      "language_servers": ["ruby-lsp", "rubocop", "!solargraph"]
     }
   },
   // Language-server settings.
