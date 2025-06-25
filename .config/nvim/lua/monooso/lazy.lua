@@ -1,26 +1,18 @@
--- Ensure lazy.nvim is installed
-local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
-if not vim.uv.fs_stat(lazypath) then
-    vim.fn.system({
-        'git',
-        'clone',
-        '--filter=blob:none',
-        'https://github.com/folke/lazy.nvim.git',
-        '--branch=stable', -- latest stable release
-        lazypath,
-    })
+-- Bootstrap the Lazy plugin manager.
+local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
+
+---@diagnostic disable-next-line: undefined-field
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
+  local out = vim.fn.system { 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath }
+
+  if vim.v.shell_error ~= 0 then
+    error('Error cloning lazy.nvim:\n' .. out)
+  end
 end
 
--- Add lazy.nvim to the path
+---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
--- Install and configure plugins
-require('lazy').setup({
-    checker = { enabled = true },
-    install = {
-        colorscheme = { 'tokyonight-day' }
-    },
-    spec = {
-        { import = 'plugins' }
-    }
-})
+-- Install plugins.
+require('lazy').setup('monooso.plugins')
