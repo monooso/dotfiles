@@ -4,8 +4,8 @@
 -- Running `:checkhealth lsp` will display a warning for each missing language server,
 -- but everything works correctly.
 
--- Enable the language servers.
 vim.lsp.enable({
     'elixirls',
+    'lua_ls',
     'ruby_lsp'
 })
