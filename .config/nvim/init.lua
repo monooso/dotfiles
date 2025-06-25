@@ -16,5 +16,8 @@ require 'monooso.keys'
 -- Install and configure plugins using Lazy.
 require 'monooso.lazy'
 
+-- Enable LSPs.
+require 'monooso.lsp'
+
 -- Configure diagnostic messages.
 require 'monooso.diagnostic'
