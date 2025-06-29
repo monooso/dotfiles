@@ -1,11 +1,20 @@
-theme = dark:tokyonight_moon,light:tokyonight-day
+window-inherit-working-directory = true
 
 adjust-cell-height = 50%
-
-window-decoration = none
+theme = dark:tokyonight_moon,light:tokyonight-day
 window-padding-x = 4
 window-padding-y = 4
 window-padding-balance = true
 
-window-inherit-working-directory = true
+gtk-titlebar = false
+gtk-wide-tabs = false
 
+# Keybindings.
+keybind = alt+w>h=goto_split:left
+keybind = alt+w>j=goto_split:down
+keybind = alt+w>k=goto_split:up
+keybind = alt+w>l=goto_split:right
+
+keybind = alt+w>s=new_split:down
+keybind = alt+w>v=new_split:right
+keybind = alt+w>e=equalize_splits
