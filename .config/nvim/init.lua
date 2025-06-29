@@ -21,6 +21,3 @@ require 'monooso.lsp'
 
 -- Configure diagnostic messages.
 require 'monooso.diagnostic'
-
--- Set up native autocompletion.
-require 'monooso.completion'
