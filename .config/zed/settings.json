@@ -10,16 +10,6 @@
     "play_sound_when_agent_done": true,
     "version": "2"
   },
-  "context_servers": {
-    "Phoenix Tidewave": {
-      "command": {
-        "path": "/home/sl/.local/bin/mcp-proxy",
-        "args": ["http://localhost:4000/tidewave/mcp"],
-        "env": null
-      },
-      "settings": {}
-    }
-  },
   "language_models": {
     "copilot_chat": {
       "api_url": "https://api.githubcopilot.com/chat/completions",
