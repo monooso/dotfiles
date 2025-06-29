@@ -1,24 +1,86 @@
 [
-  // Navigate between panes as if they're splits.
+  // I've mostly settled on `<C-a>` as my leader. It's easy to type
+  // (unlike `<C-k>`), and doesn't conflict with anything I care
+  // about ("select all text" in the editor context).
+  //
+  // The only notable exception is navigating between panes as if
+  // they're splits. In that case, I use `<C-w>`, for obvious reasons.
   {
     "context": "Dock",
     "bindings": {
-      "ctrl-w h": [
-        "workspace::ActivatePaneInDirection",
-        "Left"
-      ],
-      "ctrl-w l": [
-        "workspace::ActivatePaneInDirection",
-        "Right"
-      ],
-      "ctrl-w k": [
-        "workspace::ActivatePaneInDirection",
-        "Up"
-      ],
-      "ctrl-w j": [
-        "workspace::ActivatePaneInDirection",
-        "Down"
-      ]
+      // Navigate between panes as if they're splits.
+      "ctrl-w h": "workspace::ActivatePaneLeft",
+      "ctrl-w l": "workspace::ActivatePaneRight",
+      "ctrl-w k": "workspace::ActivatePaneUp",
+      "ctrl-w j": "workspace::ActivatePaneDown",
+      "ctrl-k ctrl-left": null,
+      "ctrl-k ctrl-right": null,
+      "ctrl-k ctrl-up": null,
+      "ctrl-k ctrl-down": null
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-a s t": "editor::SpawnNearestTask",
+      "ctrl-a s r": "task::Rerun",
+      "ctrl-a": null,
+
+      // Somewhat awkardly, we have to define this here, as well as at the
+      // Workspace level. Otherwise the current Editor action (split pane)
+      // overrides our Workspace action.
+      "ctrl-\\": "terminal_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-\\": "workspace::ToggleBottomDock"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      // Toggle the terminal with `<C-\>`. `<C-`>` is fine-ish, but I
+      // do this *a lot*.
+      "ctrl-\\": "terminal_panel::ToggleFocus",
+      "ctrl-`": null,
+
+      // Toggle the various docks.
+      //
+      // Everything follows the form `<C-a> <direction>`, where
+      // <direction> is the associated Vim motion key.
+      "ctrl-a h": "workspace::ToggleLeftDock",
+      "ctrl-a j": "workspace::ToggleBottomDock",
+      "ctrl-a l": "workspace::ToggleRightDock",
+      "ctrl-b": null,
+      "ctrl-j": null,
+      "ctrl-alt-b": null,
+
+      // Focus the various panels within docks.
+      //
+      // Everything follows the form `<C-a> <mnemonic>`, where
+      // `<mnemonic>` is a single character clearly associated with
+      // the panel.
+      //
+      // NOTE:
+      // Zed only supports toggling *focus*. This means that, if we're
+      // opening (focusing) a panel, and want to close it with the same
+      // shortcut, we have to define that same keymaps in the associated
+      // context.
+      //
+      // See the various contexts for those keymaps.
+
+      // Think (t)ree.
+      "ctrl-a t": "project_panel::ToggleFocus",
+      "ctrl-shift-e": null
+    }
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      // If we move the project panel to another dock, this will need to be updated.
+      "ctrl-a t": "workspace::ToggleRightDock"
     }
   }
 ]
