@@ -45,7 +45,7 @@ o.confirm = true     -- Ask if I want to save unsaved changes on `:q`.
 -- - Automatically select the first item.
 -- - Do not automatically insert the first item, that way madness lies.
 -- - Enable fuzzy matching.
-o.completeopt = { 'menu', 'menuone', 'noinsert', 'fuzzy' }
+o.completeopt = { 'fuzzy', 'menu', 'menuone', 'noinsert', 'popup' }
 
 -- Improve the appearance of window splits.
 vim.cmd [[highlight WinSeparator guifg=#908caa guibg=None]]
