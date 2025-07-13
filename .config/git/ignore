@@ -34,3 +34,5 @@ __pycache__
 # Miscellanea.
 # --------------------------------------------------
 .aliases
+
+**/.claude/settings.local.json
