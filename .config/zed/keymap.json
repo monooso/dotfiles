@@ -1,10 +1,30 @@
 [
+  // Experimental stuff...
+  {
+    "context": "Editor && VimControl && !VimWaiting && !menu",
+    "bindings": {
+      "space t": "workspace::NewCenterTerminal",
+
+      // Runner runner. Used exclusively for running tests at present, so uses
+      // my Neovim keybindings.
+      "space e f": ["workspace::SendKeystrokes", "ctrl-home space e t"],
+      "space e t": "editor::SpawnNearestTask",
+      "space e p": "task::Rerun",
+    }
+  },
+
+
+  // ---
   // I've mostly settled on `<C-a>` as my leader. It's easy to type
   // (unlike `<C-k>`), and doesn't conflict with anything I care
   // about ("select all text" in the editor context).
   //
   // The only notable exception is navigating between panes as if
   // they're splits. In that case, I use `<C-w>`, for obvious reasons.
+  //
+  // On that note, it's worth spending some time reading this blog post
+  // at some point. I suspect my current solution could be improved:
+  // @see https://stevedylan.dev/posts/leaving-neovim-for-zed/
   {
     "context": "Dock",
     "bindings": {
