@@ -16,7 +16,7 @@ local color_schemes = {
   dark = {
     black_metal = 'Black Metal (Bathory) (base16)',
     fahrenheit = 'Fahrenheit',
-    tokyo = 'Tokyo Night',
+    tokyo = 'Tokyo Night Moon',
   },
   light = {
     alabaster = 'Alabaster',
@@ -36,7 +36,10 @@ config.default_cursor_style = 'BlinkingBar'
 
 -- Font. Wezterm bundles and uses JetBrains Mono by default.
 -- @see https://wezfurlong.org/wezterm/config/fonts.html
-config.font_size = 15
+--
+-- Font size on Wayland is all over the place. Thankfully I no longer need to worry
+-- about this working consistently across Linux and macOS.
+config.font_size = 12
 config.line_height = 1.75
 config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' } -- Disable ligatures.
 
@@ -61,6 +64,6 @@ config.colors = {
 }
 
 -- Chrome.
-config.window_decorations = 'RESIZE'
+config.window_decorations = 'NONE'
 
 return config
