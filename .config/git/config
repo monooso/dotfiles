@@ -18,6 +18,8 @@
 [core]
     editor = vim
     hooksPath = .githooks
+[diff]
+    tool = nvimdiff
 [difftool]
     prompt = false
 [format]
