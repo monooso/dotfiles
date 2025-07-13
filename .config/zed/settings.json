@@ -88,9 +88,8 @@
   },
   "selection_highlight": false,
   "tab_bar": {
-    "show": false
-    // "show_nav_history_buttons": false,
-    // "show_tab_bar_buttons": false
+    "show_nav_history_buttons": false,
+    "show_tab_bar_buttons": false
   },
   "tabs": {
     "activate_on_close": "neighbour",
