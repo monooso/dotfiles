@@ -19,3 +19,4 @@ keybind = alt+w>l=goto_split:right
 keybind = alt+w>s=new_split:down
 keybind = alt+w>v=new_split:right
 keybind = alt+w>e=equalize_splits
+keybind = shift+enter=text:\n
