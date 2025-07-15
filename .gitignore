@@ -15,6 +15,7 @@
 .config/zed/embeddings/
 .config/zed/prompts/
 .config/zsh/.zsh_history
+.gnupg/
 .ssh/known_hosts
 .ssh/known_hosts.old
 
