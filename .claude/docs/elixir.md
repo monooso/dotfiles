@@ -1,8 +1,12 @@
 # Elixir
 
-## General code quality
-- We use `mix format` to ensure consistent formatting of our code. Run it frequently, and always before making a commit.
-- We use `mix credo` for linting. Run it frequently, and do not ignore any style violations. You must ensure that the code passes all of the style checks before making a commit.
+## Code quality tools
+All of your general guidance regarding the use of code quality tools applies to Elixir projects.
+These are the ELixir-specific code quality tools that we use.
+
+- We use `mix test` for testing.
+- We use `mix format` to ensure consistent formatting of our code. Run it frequently, and ALWAYS before making a commit.
+- We use `mix credo` for linting.
 
 ## Conventions
 Project-specific conventions should always take precedence over general advice. That being said, if no obvious convention exists, you should follow these directions.
