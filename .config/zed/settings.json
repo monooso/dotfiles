@@ -3,19 +3,11 @@
   "agent": {
     "always_allow_tool_actions": true,
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "claude-3.7-sonnet"
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4"
     },
     "model_parameters": [],
-    "play_sound_when_agent_done": true,
-    "version": "2"
-  },
-  "language_models": {
-    "copilot_chat": {
-      "api_url": "https://api.githubcopilot.com/chat/completions",
-      "auth_url": "https://api.github.com/copilot_internal/v2/token",
-      "models_url": "https://api.githubcopilot.com/models"
-    }
+    "play_sound_when_agent_done": true
   },
   // Language-specific settings.
   "languages": {
@@ -40,10 +32,11 @@
       }
     }
   },
-  // General settings. Mostly just removing clutter.
+  "auto_install_extensions": { "tokyo-night": true },
   "buffer_font_family": "JetBrains Mono",
+  "buffer_font_size": 14,
   "buffer_line_height": {
-    "custom": 2.0
+    "custom": 2.5
   },
   "close_on_file_delete": true,
   "collaboration_panel": {
@@ -55,7 +48,7 @@
       "enabled": true
     }
   },
-  "drag_and_drop_selection": false,
+  "drag_and_drop_selection": { "enabled": false },
   "experimental.theme_overrides": {
     // Stop adding a background colour to elements you shouty bastard.
     // @see https://github.com/zed-industries/zed/discussions/22854#discussioncomment-12073289
@@ -66,12 +59,16 @@
   "features": {
     "edit_prediction_provider": "none"
   },
-  "inline_code_actions": false,
+  "git": {
+    "git_gutter": "hide",
+    "inline_blame": { "delay_ms": 1000 }
+  },
+  "inline_code_actions": true,
   "minimap": {
     "show": "never"
   },
   "outline_panel": {
-    "button": false
+    "button": true
   },
   "project_panel": {
     "default_width": 300,
@@ -93,26 +90,30 @@
   },
   "tabs": {
     "activate_on_close": "neighbour",
-    "show_close_button": "hidden"
+    "show_close_button": "hover"
   },
   "telemetry": {
     "diagnostics": false,
     "metrics": false
   },
   "terminal": {
-    // Hide the button in the toolbar. Ctrl-` works just fine.
     "button": false,
-    "font_size": 13
+    "dock": "right",
+    "default_width": 1000,
+    "font_size": 13,
+    "line_height": "comfortable"
   },
   "theme": {
     "mode": "system",
-    "dark": "Ayu Mirage",
+    "dark": "Tokyo Night",
     "light": "One Light"
   },
   "toolbar": {
     "breadcrumbs": false,
     "quick_actions": false
   },
+  "ui_font_family": "JetBrains Mono",
+  "ui_font_size": 14,
   "use_smartcase_search": true,
   "vim_mode": true
 }
