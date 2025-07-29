@@ -34,7 +34,7 @@
   },
   "auto_install_extensions": { "tokyo-night": true },
   "buffer_font_family": "JetBrains Mono",
-  "buffer_font_size": 14,
+  "buffer_font_size": 15,
   "buffer_line_height": {
     "custom": 2.5
   },
@@ -100,7 +100,7 @@
     "button": false,
     "dock": "right",
     "default_width": 1000,
-    "font_size": 13,
+    "font_size": 14,
     "line_height": "comfortable"
   },
   "theme": {
