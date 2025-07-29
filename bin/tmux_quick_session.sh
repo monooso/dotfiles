@@ -32,14 +32,15 @@ if ! tmux has-session -t $selected_name 2> /dev/null; then
   # Create a new session with our first window, vim.
   tmux new-session -s $selected_name -c $selected -n vim -d
 
-  # Add three additional windows to the session: git, shell, server.
+  # Add four additional windows to the session: llm, git, shell, server.
+  tmux new-window -t $selected_name -c $selected -n llm
   tmux new-window -t $selected_name -c $selected -n git
-  tmux new-window -t $selected_name -c $selected -n shell
-  tmux new-window -t $selected_name -c $selected -n server
+  tmux new-window -t $selected_name -c $selected -n zsh
+  tmux new-window -t $selected_name -c $selected -n srv
 
   # Focus the "git" window, and launch lazygit.
-  tmux select-window -t $selected_name:2
-  tmux send-keys -t $selected_name:2 "lazygit" C-m
+  tmux select-window -t $selected_name:3
+  tmux send-keys -t $selected_name:3 "lazygit" C-m
 
   # Focus the "vim" window, and launch neovim.
   tmux select-window -t $selected_name:1
