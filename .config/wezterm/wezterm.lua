@@ -42,6 +42,7 @@ config.default_cursor_style = 'BlinkingBar'
 config.font_size = 12
 config.line_height = 1.75
 config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' } -- Disable ligatures.
+config.warn_about_missing_glyphs = false
 
 -- Colours.
 config.color_scheme = color_schemes.dark.tokyo
