@@ -38,13 +38,7 @@
   {
     "context": "Workspace",
     "bindings": {
-      "ctrl-\\": "terminal_panel::ToggleFocus",
-
-      // Navigate between panes as if they're splits.
-      "ctrl-w h": "workspace::ActivatePaneLeft",
-      "ctrl-w l": "workspace::ActivatePaneRight",
-      "ctrl-w k": "workspace::ActivatePaneUp",
-      "ctrl-w j": "workspace::ActivatePaneDown"
+      "ctrl-\\": "terminal_panel::ToggleFocus"
     }
   },
   // Toggle the visibility of docks from the panels contained in said docks.
