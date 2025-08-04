@@ -13,13 +13,6 @@
       "ctrl-w x": "workspace::CloseActiveDock"
     }
   },
-  {
-    "context": "Editor",
-    "bindings": {
-      // [S]ymbols.
-      "ctrl-w s": "outline_panel::ToggleFocus"
-    }
-  },
 
   // -------------------
   // Test (Task) Runners
