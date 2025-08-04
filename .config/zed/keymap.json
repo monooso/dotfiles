@@ -1,76 +1,45 @@
 [
-  // Experimental stuff...
+  // ----------------
+  // Panel Navigation
+  // ----------------
+  // Use <C-w> to manage between panels, much as we would splits.
   {
-    "context": "Editor && VimControl && !VimWaiting && !menu",
+    "context": "Workspace",
     "bindings": {
-      "space t": "workspace::NewCenterTerminal"
+      "ctrl-w a": "agent::ToggleFocus",
+      "ctrl-w g": "git_panel::ToggleFocus",
+      "ctrl-w p": "project_panel::ToggleFocus",
+      "ctrl-w t": "terminal_panel::ToggleFocus",
+      "ctrl-w x": "workspace::CloseActiveDock"
     }
   },
-
-  // TODO: Read this blog post properly. I suspect my current solution could be improved:
-  // @see https://stevedylan.dev/posts/leaving-neovim-for-zed/
   {
     "context": "Editor",
     "bindings": {
-      // Somewhat awkardly, we have to define this here, as well as at the
-      // Workspace level. Otherwise the current Editor action (split pane)
-      // overrides our Workspace action.
-      "ctrl-\\": "terminal_panel::ToggleFocus"
+      // [S]ymbols.
+      "ctrl-w s": "outline_panel::ToggleFocus"
     }
   },
+
+  // -------------------
+  // Test (Task) Runners
+  // -------------------
+  // Neovim is in my fingers.
   {
-    // Neovim is in my fingers.
     "context": "Editor && VimControl && !VimWaiting && !menu",
     "bindings": {
       // [E]xecute.
       "space e f": ["workspace::SendKeystrokes", "ctrl-home space e t"],
       "space e t": "editor::SpawnNearestTask",
-      "space e p": "task::Rerun",
+      "space e p": "task::Rerun"
+    }
+  },
 
-      // [N]avigate.
-      "space n a": "agent::ToggleFocus",
-      "space n g": "git_panel::ToggleFocus",
-      "space n p": "file_finder::Toggle",
-      "space n s": "outline::Toggle",
-      "space n t": "project_panel::ToggleFocus"
-    }
-  },
-  {
-    "context": "Workspace",
-    "bindings": {
-      "ctrl-\\": "terminal_panel::ToggleFocus"
-    }
-  },
-  // Toggle the visibility of docks from the panels contained in said docks.
-  // This is a very brittle approach, but I can't figure out a better way of doing it.
-  //
-  // As a fallback (and sometimes only option), you can always close the current dock with `ctrl-w x`.
-  {
-    "context": "AgentPanel",
-    "bindings": {
-      "ctrl-w x": "workspace::ToggleRightDock"
-    }
-  },
-  {
-    "context": "GitPanel",
-    "bindings": {
-      "space n g": "workspace::ToggleLeftDock",
-      "ctrl-w x": "workspace::ToggleLeftDock"
-    }
-  },
-  {
-    "context": "ProjectPanel",
-    "bindings": {
-      "space n t": "workspace::ToggleRightDock",
-      "ctrl-w x": "workspace::ToggleRightDock"
-    }
-  },
+  // ---------
+  // Terminal.
+  // ---------
   {
     "context": "Terminal",
-    "bindings": {
-      "ctrl-t": "workspace::NewTerminal",
-      "ctrl-\\": "workspace::ToggleRightDock",
-      "ctrl-w x": "workspace::ToggleRightDock"
-    }
+    "bindings": { "ctrl-t": "workspace::NewTerminal" }
   }
 ]
