@@ -98,8 +98,6 @@
   },
   "terminal": {
     "button": false,
-    "dock": "right",
-    "default_width": 1000,
     "font_size": 14,
     "line_height": "comfortable"
   },
