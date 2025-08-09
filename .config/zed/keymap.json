@@ -4,7 +4,7 @@
   // ----------------
   // Use <C-w> to manage between panels, much as we would splits.
   {
-    "context": "Workspace",
+    "context": "Dock || Workspace || Terminal || OutlinePanel || ProjectPanel || CollabPanel || (Editor && mode == auto_height) || VimControl",
     "bindings": {
       "ctrl-w a": "agent::ToggleFocus",
       "ctrl-w g": "git_panel::ToggleFocus",
