@@ -37,6 +37,10 @@ symbol = " "
 disabled = false
 symbol = " "
 
+[ruby]
+disabled = false
+symbol = " "
+
 # -------------------------------------
 # Everything else is disabled.
 # -------------------------------------
@@ -195,10 +199,6 @@ symbol = " "
 [rlang]
 disabled = true
 symbol = "󰟔 "
-
-[ruby]
-disabled = true
-symbol = " "
 
 [rust]
 disabled = true
