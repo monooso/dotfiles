@@ -1,0 +1,39 @@
+// -*- mode: jsonc -*-
+{
+  "modules-left": ["sway/workspaces"],
+  "modules-right": ["tray", "clock", "battery", "network"],
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    }
+  },
+  "battery": {
+    "states": { "warning": 30, "critical": 15 },
+    "format": "{capacity}% {icon}",
+    "format-full": "{capacity}% {icon}",
+    "format-charging": "{capacity}% ",
+    "format-plugged": "{capacity}% ",
+    "format-alt": "{time} {icon}",
+    "format-icons": ["", "", "", "", ""]
+  },
+  "clock": {
+    "format": "{:%R}",
+    "format-alt": "{:%d %b}",
+    "tooltip": false
+  },
+  "network": {
+    // "interface": "wlp2*"
+    // (Optional) To force the use of this interface
+    "format-wifi": "{essid} ({signalStrength}%) ",
+    "format-ethernet": "{ipaddr}/{cidr} ",
+    "tooltip-format": "{ifname} via {gwaddr} ",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "Disconnected ⚠",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+  },
+  "tray": {
+    "spacing": 10
+  }
+}
