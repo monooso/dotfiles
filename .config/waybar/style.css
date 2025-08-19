@@ -14,7 +14,7 @@ window#waybar {
 .modules-center,
 .modules-left,
 .modules-right {
-  margin: 5px;
+  margin: 5px 5px 0;
 }
 
 /* Modules: General */
