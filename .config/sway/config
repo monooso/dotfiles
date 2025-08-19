@@ -1,0 +1,5 @@
+default_border none
+
+gaps inner 5
+
+include ./config.d/*
