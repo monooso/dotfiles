@@ -1,0 +1,90 @@
+* {
+  /* `otf-font-awesome` is required to be installed for icons */
+  font-family: FontAwesome, monospace;
+  font-size: 13px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: transparent;
+  color: #061620;
+}
+
+/* Module groups */
+.modules-center,
+.modules-left,
+.modules-right {
+  margin: 5px;
+}
+
+/* Modules: General */
+#battery,
+#clock,
+#network,
+#tray,
+#workspaces {
+  background: #1F4254;
+  color: #8EB5BF;
+  padding: 0.25rem 0.4rem;
+  margin-left: 5px;
+}
+
+/* Modules: Battery */
+#battery.warning,
+#battery.critical {
+  background: #ECBF5B;
+  color: #326988;
+  font-weight: bold;
+}
+
+/* Modules: Network */
+#network.disconnected {
+  background: #ECBF5B;
+  color: #326988;
+  font-weight: bold;
+}
+
+/* Modules: Tray */
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  background: #ECBF5B;
+  color: #326988;
+  font-weight: bold;
+}
+
+/* Modules: Workspaces */
+#workspaces {
+  margin-left: 0;
+  padding: 0;
+}
+
+#workspaces button {
+  background: transparent;
+  color: #8EB5BF;
+  border: none;
+  border-radius: 0;
+  padding: 0.25rem;
+}
+
+#workspaces button:hover {
+  background: #061620;
+  box-shadow: inherit;
+  text-shadow: inherit;
+}
+
+#workspaces button.focused {
+  background: #326988;
+  border: none;
+  box-shadow: none;
+  color: #ECBF5B;
+  font-weight: bold;
+}
+
+#workspaces button.urgent {
+  background: #ECBF5B;
+  color: #326988;
+  font-weight: bold;
+}
