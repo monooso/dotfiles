@@ -10,6 +10,10 @@ return {
     'folke/tokyonight.nvim',
     lazy = false,
     opts = {
+        on_highlights = function(hl, colors)
+            -- Improve the appearance of window splits.
+            hl.WinSeparator = { bg = colors.none, fg = colors.yellow }
+        end,
         style = 'moon',
         styles = {
             comments = { italic = false },
