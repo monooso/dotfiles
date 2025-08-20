@@ -16,3 +16,6 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Install plugins.
 require('lazy').setup('monooso.plugins')
+
+-- Set the colour scheme.
+vim.cmd('colorscheme tokyonight')
