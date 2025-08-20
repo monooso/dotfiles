@@ -8,6 +8,12 @@ end
 -- Escape clears search highlights in Normal mode.
 map({ 'n' }, '<Esc>', '<cmd>nohlsearch<CR>')
 
+-- Yank (copy) to the system clipboard.
+map({ 'v' }, '<Leader>cy', '"+y', opts())
+
+-- Paste from the system clipboard.
+map({ 'n', 'v' }, '<Leader>cp', '"+p', opts())
+
 -- Paste the last *yanked* text, because that is always what I meant to do.
 map({ 'n', 'v' }, '<Leader>p', '"0p', opts())
 

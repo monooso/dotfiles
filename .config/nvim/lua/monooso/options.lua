@@ -47,12 +47,6 @@ o.confirm = true     -- Ask if I want to save unsaved changes on `:q`.
 -- - Enable fuzzy matching.
 o.completeopt = { 'fuzzy', 'menu', 'menuone', 'noinsert', 'popup' }
 
--- Sync the Neovim and OS clipboards.
--- Schdule the setting after `UiEnter`, as it can increase startup time.
-vim.schedule(function()
-  vim.opt.clipboard = 'unnamedplus'
-end)
-
 -- Highlight text when yanking.
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight the yanked (copied) text',
