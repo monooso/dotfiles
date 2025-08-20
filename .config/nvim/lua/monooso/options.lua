@@ -47,9 +47,6 @@ o.confirm = true     -- Ask if I want to save unsaved changes on `:q`.
 -- - Enable fuzzy matching.
 o.completeopt = { 'fuzzy', 'menu', 'menuone', 'noinsert', 'popup' }
 
--- Improve the appearance of window splits.
-vim.cmd [[highlight WinSeparator guifg=#908caa guibg=None]]
-
 -- Sync the Neovim and OS clipboards.
 -- Schdule the setting after `UiEnter`, as it can increase startup time.
 vim.schedule(function()
