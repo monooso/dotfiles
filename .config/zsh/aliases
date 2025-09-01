@@ -44,10 +44,10 @@ alias vi=nvim
 alias v=nvim
 
 # Tmux
-alias tma='tmux attach-session -t '
-alias tmk='tmux kill-session -t '
+alias tma='~/bin/tmux_attach_session.sh'
+alias tmk='~/bin/tmux_kill_session.sh'
 alias tml='tmux list-sessions'
-alias tms='~/bin/tmux_quick_session.sh'
+alias tms='~/bin/tmux_start_session.sh'
 
 # Laravel
 alias art='php artisan'
