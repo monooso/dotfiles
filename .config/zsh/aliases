@@ -45,9 +45,9 @@ alias v=nvim
 
 # Tmux
 alias tma='~/bin/tmux_attach_session.sh'
-alias tmk='~/bin/tmux_kill_session.sh'
 alias tml='tmux list-sessions'
 alias tms='~/bin/tmux_start_session.sh'
+alias tmx='~/bin/tmux_kill_session.sh'
 
 # Laravel
 alias art='php artisan'
