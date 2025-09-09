@@ -40,6 +40,8 @@ o.showmode = false   -- Don't show the mode; it's already in the status line.
 o.scrolloff = 10     -- Minimum number of lines to show above and below cursor.
 o.confirm = true     -- Ask if I want to save unsaved changes on `:q`.
 
+o.winborder = 'rounded'
+
 -- Configure the built-in auto-complete menu.
 -- - Always show the menu, even if there is only one item.
 -- - Automatically select the first item.
