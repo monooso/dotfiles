@@ -9,6 +9,10 @@ read_only = " 󰌾"
 truncation_length = 5
 truncate_to_repo = false
 
+[golang]
+disabled = false
+symbol = " "
+
 [hostname]
 disabled = false
 ssh_symbol = " "
@@ -83,10 +87,6 @@ symbol = " "
 [fossil_branch]
 disabled = true
 symbol = " "
-
-[golang]
-disabled = true
-symbol = " "
 
 [guix_shell]
 disabled = true
