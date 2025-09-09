@@ -1,5 +1,5 @@
 -- Configures Neovim options.
-local o = vim.opt
+local o = vim.o
 
 o.mouse = 'a'              -- Enable mouse mode, because TJ said it was okay.
 
@@ -45,7 +45,7 @@ o.confirm = true     -- Ask if I want to save unsaved changes on `:q`.
 -- - Automatically select the first item.
 -- - Do not automatically insert the first item, that way madness lies.
 -- - Enable fuzzy matching.
-o.completeopt = { 'fuzzy', 'menu', 'menuone', 'noinsert', 'popup' }
+o.completeopt = 'fuzzy,menu,menuone,noinsert,popup'
 
 -- Highlight text when yanking.
 vim.api.nvim_create_autocmd('TextYankPost', {
