@@ -1,4 +1,5 @@
--- Configure the Elixir language server.
+local command = os.getenv("HOME") .. "/.local/bin/language-servers/elixirls/language_server.sh"
+
 return {
-  cmd = { 'elixir-ls' }
+  cmd = { command }
 }
