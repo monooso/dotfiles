@@ -21,3 +21,6 @@ require 'monooso.lsp'
 
 -- Configure diagnostic messages.
 require 'monooso.diagnostic'
+
+-- Configure UI tweaks.
+require 'monooso.ui'
