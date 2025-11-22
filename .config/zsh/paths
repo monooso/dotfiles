@@ -22,6 +22,11 @@ if command -v go &> /dev/null; then
   export PATH=$(go env GOPATH)/bin:$PATH
 fi
 
+# Go executable
+if test -d /usr/local/go/bin; then
+  export PATH=$PATH:/usr/local/go/bin
+fi
+
 # We use Herd to manage PHP on macOS
 if test -d $HOME/Library/Application\ Support/Herd/bin; then
   export PATH=$HOME/Library/Application\ Support/Herd/bin:$PATH
