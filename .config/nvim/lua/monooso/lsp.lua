@@ -6,6 +6,7 @@
 
 vim.lsp.enable({
     'elixirls',
+    'gopls',
     'html',
     'jsonls',
     'lua_ls',
