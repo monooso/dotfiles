@@ -9,29 +9,6 @@
     "model_parameters": [],
     "play_sound_when_agent_done": true
   },
-  // Language-specific settings.
-  "languages": {
-    "Ruby": {
-      "language_servers": ["ruby-lsp", "rubocop", "!solargraph"]
-    }
-  },
-  // Language-server settings.
-  "lsp": {
-    // @see https://zed.dev/docs/languages/ruby#setting-up-rubocop-lsp
-    "rubocop": {
-      "initialization_options": {
-        "safeAutocorrect": false
-      }
-    },
-    // @see https://zed.dev/docs/languages/ruby#setting-up-ruby-lsp
-    "ruby-lsp": {
-      "initialization_options": {
-        "enabledFeatures": {
-          "diagnostics": false
-        }
-      }
-    }
-  },
   "buffer_font_size": 15,
   "buffer_line_height": {
     "custom": 2.5
