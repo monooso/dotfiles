@@ -1,0 +1,14 @@
+[Unit]
+Description=Homebrew generated unit for postgresql@17
+
+[Install]
+WantedBy=default.target
+
+[Service]
+Type=simple
+ExecStart="/home/linuxbrew/.linuxbrew/opt/postgresql@17/bin/postgres" "-D" "/home/linuxbrew/.linuxbrew/var/postgresql@17"
+Restart=on-failure
+WorkingDirectory=/home/linuxbrew/.linuxbrew
+StandardOutput=append:/home/linuxbrew/.linuxbrew/var/log/postgresql@17.log
+StandardError=append:/home/linuxbrew/.linuxbrew/var/log/postgresql@17.log
+Environment="LC_ALL=en_US.UTF-8"
