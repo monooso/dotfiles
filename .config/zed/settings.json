@@ -32,8 +32,6 @@
       }
     }
   },
-  "auto_install_extensions": { "tokyo-night": true },
-  "buffer_font_family": "JetBrains Mono",
   "buffer_font_size": 15,
   "buffer_line_height": {
     "custom": 2.5
@@ -103,14 +101,13 @@
   },
   "theme": {
     "mode": "system",
-    "dark": "Tokyo Night",
-    "light": "One Light"
+    "dark": "Rosé Pine Moon",
+    "light": "Rosé Pine Dawn"
   },
   "toolbar": {
     "breadcrumbs": false,
     "quick_actions": false
   },
-  "ui_font_family": "JetBrains Mono",
   "ui_font_size": 14,
   "use_smartcase_search": true,
   "vim_mode": true
