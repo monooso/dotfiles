@@ -1,0 +1,11 @@
+{
+  "handlerFunc": {
+    "prefix": "hf",
+    "description": "Create a route handler function.",
+    "body": [
+      "func $1HandlerFunc(w http.ResponseWriter, r *http.Request) {",
+      "\t$0",
+      "}"
+    ]
+  }
+}
