@@ -49,7 +49,7 @@
     "default_width": 300,
     "dock": "right"
   },
-  "relative_line_numbers": true,
+  "relative_line_numbers": "enabled",
   "restore_on_startup": "none",
   "scrollbar": {
     "show": "never"
@@ -87,5 +87,6 @@
   },
   "ui_font_size": 14,
   "use_smartcase_search": true,
-  "vim_mode": true
+  "vim_mode": true,
+  "window_decorations": "server"
 }
