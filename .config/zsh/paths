@@ -1,6 +1,13 @@
+#!/usr/bin/env bash
+
 # User binaries
 mkdir -p "$HOME/.local/bin"
 export PATH="$HOME/.local/bin:$PATH"
+
+# OpenCode is a special snowflake.
+if test -d "$HOME/.opencode/bin"; then
+  export PATH="$HOME/.opencode/bin:$PATH"
+fi
 
 # Global Mix Escripts
 export PATH="$HOME/.mix/escripts:$PATH"
