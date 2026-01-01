@@ -33,10 +33,6 @@ symbol = " "
 disabled = false
 symbol = " "
 
-[php]
-disabled = false
-symbol = " "
-
 [python]
 disabled = false
 symbol = " "
@@ -191,6 +187,10 @@ symbol = "󰏗 "
 [perl]
 disabled = true
 symbol = " "
+
+[php]
+disabled = true
+symbol = " "
 
 [pijul_channel]
 disabled = true
