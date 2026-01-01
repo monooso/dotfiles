@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+# Tell Ripgrep where to look for its configuration file
+export RIPGREP_CONFIG_PATH=$XDG_CONFIG_HOME/ripgrep/config
+
+# Set the path the SSH agent socket.
+# Used in conjunction with `~/.config/systemd/sl/ssh-agent.service` on Linux.
+export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
+
 # Use ripgrep with fzf
 if command -v rg &> /dev/null; then
   export FZF_DEFAULT_COMMAND='rg --files --hidden'
@@ -14,10 +21,3 @@ fi
 
 export VISUAL=$EDITOR
 export GIT_EDITOR=$EDITOR
-
-# Tell Ripgrep where to look for its configuration file
-export RIPGREP_CONFIG_PATH=$XDG_CONFIG_HOME/ripgrep/config
-
-# Set the path the SSH agent socket.
-# Used in conjunction with `~/.config/systemd/sl/ssh-agent.service` on Linux.
-export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
