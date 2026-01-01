@@ -1,41 +1,21 @@
 # User binaries
-if test -d $HOME/.local/bin; then
-  export PATH=$HOME/.local/bin:$PATH
-fi
-
-# Global Composer package binaries
-if test -d $XDG_CONFIG_HOME/composer/vendor/bin; then
-  export PATH=$XDG_CONFIG_HOME/composer/vendor/bin:$PATH
-fi
-
-# Local Composer package binaries
-export PATH=./vendor/bin:$PATH
+mkdir -p "$HOME/.local/bin"
+export PATH="$HOME/.local/bin:$PATH"
 
 # Global Mix Escripts
-export PATH=$HOME/.mix/escripts:$PATH
+export PATH="$HOME/.mix/escripts:$PATH"
 
 # Local Node.js package binaries
-export PATH=./node_modules/.bin:$PATH
+export PATH="./node_modules/.bin:$PATH"
 
 # Go binaries
 if command -v go &> /dev/null; then
-  export PATH=$(go env GOPATH)/bin:$PATH
+  export PATH="$(go env GOPATH)/bin:$PATH"
 fi
 
 # Go executable
 if test -d /usr/local/go/bin; then
-  export PATH=$PATH:/usr/local/go/bin
-fi
-
-# We use Herd to manage PHP on macOS
-if test -d $HOME/Library/Application\ Support/Herd/bin; then
-  export PATH=$HOME/Library/Application\ Support/Herd/bin:$PATH
-fi
-
-# We use Herd lite to bootstrap PHP on Linux (for now, at least)
-# All Laravel development uses Sail, but we need PHP to set it up
-if test -d $XDG_CONFIG_HOME/herd-lite/bin; then
-  export PATH=$XDG_CONFIG_HOME/herd-lite/bin:$PATH
+  export PATH="$PATH:/usr/local/go/bin"
 fi
 
 # Load Mise, if it exists
