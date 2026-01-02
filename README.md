@@ -2,7 +2,7 @@
 All of my dotfiles, in a single repository. Supercedes the modular approach of one repository per use-case (`dot-elixir`, `dot-git`, etc.). Long live the monolith.
 
 ## Requirements
-Uses [GNU Stow](https://www.gnu.org/software/stow/) to manage symlinks. You'll need a reasonably recent version. This isn't a problem if you're on Fedora (using `dnf`) or macOS (using `brew`); I can't speak for any other systems.
+Uses [GNU Stow](https://www.gnu.org/software/stow/) to manage symlinks. You'll need a reasonably recent version. This isn't a problem if you're on Fedora (using `dnf`); I can't speak for any other systems.
 
 ## Getting started
 
