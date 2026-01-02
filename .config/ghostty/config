@@ -1,3 +1,6 @@
+# Launch directly into my `host` distrobox.
+command = direct:distrobox enter host
+
 window-inherit-working-directory = true
 
 adjust-cell-height = 75%
