@@ -15,4 +15,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Install plugins.
-require('lazy').setup('monooso.plugins')
+require('lazy').setup({
+  spec = { import = 'monooso.plugins' },
+  rocks = { enabled = false }
+})
