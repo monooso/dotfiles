@@ -18,14 +18,14 @@ mkdir -p "$TMP_DIR"
 # Everything else takes place within the context of the temporary directory.
 cd "$TMP_DIR"
 
-# Download the source code.
-wget -q https://github.com/neovim/neovim/archive/refs/heads/master.zip
+# Download the source code for the latest stable release.
+wget -q https://github.com/neovim/neovim/archive/refs/tags/stable.zip
 
 # Extract the source code to `./src`. Do it quietly.
-unzip -qq master.zip -d src
+unzip -qq stable.zip -d src
 
 # Build from source.
-cd src/neovim-master
+cd src/neovim-stable
 make distclean && make deps
 
 # Install to `~/.local/bin/`.
