@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+# -----------------------------------------------------------------------------
+# Builds Neovim from `master`. Assumes the build dependencies are installed.
+#
+# @see https://github.com/neovim/neovim/blob/master/BUILD.md
+# -----------------------------------------------------------------------------
+
+set -euo pipefail
+
+TMP_DIR="/tmp/neovim"
+trap 'rm -rf "$TMP_DIR"' EXIT
+
+# Create the temporary directory.
+rm -rf "$TMP_DIR"
+mkdir -p "$TMP_DIR"
+
+# Everything else takes place within the context of the temporary directory.
+cd "$TMP_DIR"
+
+# Download the source code.
+wget -q https://github.com/neovim/neovim/archive/refs/heads/master.zip
+
+# Extract the source code to `./src`. Do it quietly.
+unzip -qq master.zip -d src
+
+# Build from source.
+cd src/neovim-master
+make distclean && make deps
+
+# Install to `~/.local/bin/`.
+make CMAKE_BUILD_TYPE=Release CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/.local"
+make install

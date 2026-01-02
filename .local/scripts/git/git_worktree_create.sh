@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-#
-# Script: create_worktree.sh
+
+# Script: git_worktree_create.sh
 #
 # Description: Helper script to create a git worktree from a specific branch.
-# 
-# Usage: bash create_worktree.sh new_branch_name base_branch_name
+#
+# Usage: bash git_worktree_create.sh new_branch_name base_branch_name
 
 # Load helper functions.
 source "$(dirname "$0")/utils.sh"

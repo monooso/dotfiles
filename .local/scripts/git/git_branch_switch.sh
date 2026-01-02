@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
-# -----------------------------------------------------------------------------
-# Switch to a Git branch using fzf for selection
-# -----------------------------------------------------------------------------
+# Script: git_branch_switch.sh
+#
+# Description: Switch to a Git branch using fzf for selection
+#
+# Usage: bash git_branch_switch.sh
 
 # Check if fzf is installed
 if ! command -v fzf >/dev/null 2>&1; then
