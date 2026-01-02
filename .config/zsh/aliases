@@ -18,17 +18,17 @@ if command -v bat &> /dev/null && command -v fzf &> /dev/null; then
 fi
 
 # Git: Branches
-alias gbc='~/bin/git/create_branch.sh'
+alias gbc='git_branch_create.sh'
 alias gbl='git branch --color'
 alias gbr='git branch --move'
-alias gbs='~/bin/git/switch_branch.sh'
-alias gbx='~/bin/git/prune_branches.sh'
+alias gbs='git_branch_switch.sh'
+alias gbx='git_branch_prune.sh'
 
 # Git: Worktrees
-alias gwc='~/bin/git/create_worktree.sh'
+alias gwc='git_worktree_create.sh'
 alias gwd='git worktree remove'
 alias gwl='git worktree list'
-alias gwp='~/bin/git/pull_worktree_branch.sh'
+alias gwp='git_worktree_pull.sh'
 
 # Git: General
 alias ga='git add'
@@ -44,7 +44,7 @@ alias vi=nvim
 alias v=nvim
 
 # Tmux
-alias tma='~/bin/tmux_attach_session.sh'
+alias tma='tmux_attach_session.sh'
 alias tml='tmux list-sessions'
-alias tms='~/bin/tmux_start_session.sh'
-alias tmx='~/bin/tmux_kill_session.sh'
+alias tms='tmux_start_session.sh'
+alias tmx='tmux_kill_session.sh'

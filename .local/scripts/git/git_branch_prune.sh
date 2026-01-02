@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-#
-# Script: prune_branches.sh
+
+# Script: git_branch_prune.sh
 #
 # Description: Prune merged local branches. Will not merge `main` or `master`.
-# 
-# Usage: bash prune_branches.sh
+#
+# Usage: bash git_branch_prune.sh
 
 # Load helper functions.
 source "$(dirname "$0")/utils.sh"

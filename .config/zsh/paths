@@ -1,8 +1,17 @@
 #!/usr/bin/env bash
 
-# User binaries
+# User binaries.
 mkdir -p "$HOME/.local/bin"
 export PATH="$HOME/.local/bin:$PATH"
+
+# User scripts. Recurse over the subdirectories.
+export PATH="~/.local/scripts:$PATH"
+
+for dir in ~/.local/scripts/*/; do
+    if test -d "$dir"; then
+        export PATH="$dir:$PATH"
+    fi
+done
 
 # OpenCode is a special snowflake.
 if test -d "$HOME/.opencode/bin"; then
@@ -17,15 +26,15 @@ export PATH="./node_modules/.bin:$PATH"
 
 # Go binaries
 if command -v go &> /dev/null; then
-  export PATH="$(go env GOPATH)/bin:$PATH"
+    export PATH="$(go env GOPATH)/bin:$PATH"
 fi
 
 # Go executable
 if test -d /usr/local/go/bin; then
-  export PATH="$PATH:/usr/local/go/bin"
+    export PATH="$PATH:/usr/local/go/bin"
 fi
 
 # Load Mise, if it exists
 if command -v mise &> /dev/null; then
-  eval "$(mise activate zsh)"
+    eval "$(mise activate zsh)"
 fi

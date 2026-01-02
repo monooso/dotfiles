@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-#
-# Script: pull_worktree_branch.sh
+
+# Script: git_worktree_pull.sh
 #
 # Description: Helper script to pull the latest changes for the current branch in a git worktree.
-# 
-# Usage: bash pull_worktree_branch.sh
+#
+# Usage: bash git_worktree_pull.sh
 
 # Load helper functions.
 source "$(dirname "$0")/utils.sh"

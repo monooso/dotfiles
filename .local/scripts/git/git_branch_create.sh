@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 #
-# Script: create_branch.sh
+# Script: git_branch_create.sh
 #
 # Description: Helper script to prevent me from accidentally branching off anything other than the main git branch.
-# 
-# Usage: bash create_branch.sh new_branch_name
+#
+# Usage: bash git_branch_create.sh new_branch_name
 
 # Load helper functions.
 source "$(dirname "$0")/utils.sh"
