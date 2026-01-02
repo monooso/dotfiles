@@ -16,6 +16,12 @@
 .config/zed/prompts/
 .config/zsh/.zcompdump
 .config/zsh/.zsh_history
+
 .gnupg/
+
 .ssh/known_hosts
 .ssh/known_hosts.old
+
+.var/app/*
+.var/app/*.*
+!.var/app/*/config/
