@@ -7,15 +7,6 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "terminal": {
-    // This *seems* to work just fine, but I keep getting log errors.
-    "shell": {
-      "with_arguments": {
-        "program": "distrobox",
-        "args": ["enter", "host"],
-      },
-    },
-  },
   "agent": {
     "default_model": {
       "provider": "Z.ai",
