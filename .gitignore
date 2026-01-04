@@ -1,26 +1,23 @@
-.config/Autodesk/FusionFabrication.FusionNesting
+# Unwanted configs.
 .config/composer/
 .config/exercism/user.json
-.config/fish/fish_variables
-.config/github-copilot/
 .config/lazygit/state.yml
 .config/ngrok/ngrok.yml
 .config/nvim/plugin/packer_compiled.lua
-.config/raycast/extensions/
 .config/op/
 .config/psysh/
-.config/valet/
 .config/wireguard/*.conf
-.config/zed/embeddings/
-.config/zed/prompts/
 .config/zsh/.zcompdump
 .config/zsh/.zsh_history
 
+# Sensitive GPG information.
 .gnupg/
 
+# Sensitive SSH information.
 .ssh/known_hosts
 .ssh/known_hosts.old
 
+# Unwanted Flatpak files.
 .var/app/*
 .var/app/*.*
 !.var/app/*/
