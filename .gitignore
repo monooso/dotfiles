@@ -1,24 +1,6 @@
-# Unwanted configs.
-.config/composer/
-.config/exercism/user.json
-.config/lazygit/state.yml
-.config/ngrok/ngrok.yml
-.config/nvim/plugin/packer_compiled.lua
-.config/op/
-.config/psysh/
-.config/wireguard/*.conf
-.config/zsh/.zcompdump
-.config/zsh/.zsh_history
+# Sensitive bash information
+.bash_history
 
-# Sensitive GPG information.
-.gnupg/
-
-# Sensitive SSH information.
+# Sensitive SSH information
 .ssh/known_hosts
 .ssh/known_hosts.old
-
-# Unwanted Flatpak files.
-.var/app/*
-.var/app/*.*
-!.var/app/*/
-!.var/app/*/config/
