@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+# Common bash commands
+alias c=clear
+alias l='ls -ahl'
+alias ..='cd ..'
+alias ...='cd ../..'
+
+# Git
+alias gs='git status -sb | sort -bf'
+
+# LazyGit
+if command -v lazygit &>/dev/null; then
+    alias lg=lazygit
+fi
+
+# Neovim
+if command -v nvim &>/dev/null; then
+    alias v=nvim
+    alias vi=nvim
+    alias vim=nvim
+fi
