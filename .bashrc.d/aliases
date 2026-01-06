@@ -6,6 +6,11 @@ alias l='ls -ahl'
 alias ..='cd ..'
 alias ...='cd ../..'
 
+# Distrobox
+if command -v distrobox &>/dev/null; then
+    alias dx=distrobox
+fi
+
 # Git
 alias gs='git status -sb | sort -bf'
 
