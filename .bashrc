@@ -8,6 +8,12 @@ if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi
 
+# Initialise Homebrew--this MUST come before any `command` checks
+BREWFILE=/home/linuxbrew/.linuxbrew/bin/brew
+if [ -f "$BREWFILE" ] && [ -x "$BREWFILE" ]; then
+    eval "$($BREWFILE shellenv)"
+fi
+
 # User specific environment
 if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
     PATH="$HOME/.local/bin:$HOME/bin:$PATH"
@@ -30,12 +36,6 @@ unset rc
 # Set up fzf key bindings and fuzzy completion
 if command -v fzf &>/dev/null; then
     eval "$(fzf --bash)"
-fi
-
-# Initialise Homebrew
-BREWFILE=/home/linuxbrew/.linuxbrew/bin/brew
-if [ -f "$BREWFILE" ] && [ -x "$BREWFILE" ]; then
-    eval "$($BREWFILE shellenv)"
 fi
 
 # Initialise Starship
