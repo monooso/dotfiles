@@ -11,6 +11,9 @@ if command -v distrobox &>/dev/null; then
     alias dx=distrobox
 fi
 
+# Podman is better than Docker
+alias docker=podman
+
 # Git
 alias gs='git status -sb | sort -bf'
 
