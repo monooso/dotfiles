@@ -33,12 +33,12 @@ if command -v fzf &>/dev/null; then
 fi
 
 # Initialise Homebrew
-if [ -x /home/linuxbrew/.linuxbrew/bin/brew ]; then
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+BREWFILE=/home/linuxbrew/.linuxbrew/bin/brew
+if [ -f $BREWFILE ] && [ -x $BREWFILE; then
+    eval "$(BREWFILE shellenv)"
 fi
 
 # Initialise Starship
 if command -v starship &>/dev/null; then
     eval "$(starship init bash)"
 fi
-
