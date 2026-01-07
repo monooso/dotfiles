@@ -34,8 +34,8 @@ fi
 
 # Initialise Homebrew
 BREWFILE=/home/linuxbrew/.linuxbrew/bin/brew
-if [ -f $BREWFILE ] && [ -x $BREWFILE; then
-    eval "$(BREWFILE shellenv)"
+if [ -f "$BREWFILE" ] && [ -x "$BREWFILE" ]; then
+    eval "$($BREWFILE shellenv)"
 fi
 
 # Initialise Starship
