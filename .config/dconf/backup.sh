@@ -1,5 +1,4 @@
-#!/bin/bash
-# Update dconf files with current settings
+#!/usr/bin/env bash
 
 set -e
 
@@ -7,12 +6,11 @@ cd ~/.config/dconf
 
 echo "Updating dconf files with current settings..."
 
-# GNOME settings
-dconf dump /org/gnome/desktop/ > settings/desktop.conf
-dconf dump /org/gnome/shell/ > settings/shell.conf
+dconf dump /org/gnome/ > settings/gnome.conf
+dconf dump /org/gtk/ > settings/gtk.conf
 
 echo "dconf files updated. Review changes and commit to dotfiles repo:"
 echo "  cd ~/code/dotfiles"
 echo "  git diff .config/dconf/"
 echo "  git add .config/dconf/"
-echo "  git commit -m 'Update GNOME settings'"
+echo "  git commit -m 'Back-up settings'"
