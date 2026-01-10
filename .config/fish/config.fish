@@ -1,3 +1,6 @@
+# Remove the default Fish greeting
+set -g fish_greeting
+
 # Initialise Homebrew--this MUST come before any `command` checks
 if test -x /home/linuxbrew/.linuxbrew/bin/brew
    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)"
