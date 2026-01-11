@@ -9,6 +9,11 @@ if test -x /home/linuxbrew/.linuxbrew/bin/brew
    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)"
 end
 
+# Export the RIPGREP_CONFIG_PATH variable if `rg` exists
+if command -q rg
+  set -gx RIPGREP_CONFIG_PATH "$HOME/.config/ripgrep/config"
+end
+
 # Set up fzf shell integration
 if command -q fzf
   fzf --fish | source
