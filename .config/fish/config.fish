@@ -19,6 +19,11 @@ if command -q fzf
   fzf --fish | source
 end
 
+# Activate Mise
+if command -q mise
+  mise activate fish | source
+end
+
 # Initialise Starship prompt
 if command -q starship
   starship init fish | source
