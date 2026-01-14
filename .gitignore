@@ -4,3 +4,6 @@
 # Sensitive SSH information
 .ssh/known_hosts
 .ssh/known_hosts.old
+
+# tmux client log (probably a better way to do this)
+tmux-client-*.log
