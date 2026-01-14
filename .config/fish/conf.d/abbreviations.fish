@@ -1,5 +1,6 @@
 # Common shell commands
 abbr -a c clear
+abbr -a t tmux
 
 # Podman > Docker
 abbr -a docker podman
