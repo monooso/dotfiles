@@ -5,10 +5,8 @@
 -- but everything works correctly.
 
 vim.lsp.enable({
+    'cssls',
     'elixirls',
     'gopls',
-    'html',
-    'jsonls',
-    'lua_ls',
-    'ruby_lsp'
+    'html'
 })
