@@ -2,46 +2,25 @@
 --
 -- @see https://github.com/nvim-treesitter/nvim-treesitter
 
-require('nvim-treesitter.configs').setup({
-    auto_install = true,
-    ensure_installed = {},
-    highlight = { enable = true },
-    ignore_install = {},
-    indent = {
-        enable = true,
-        disable = { 'yaml' }
-    },
-    modules = {},
-    playground = {
-        enable = true,
-        disable = {},
-        updatetime = 25,        -- Debounced time for highlighting nodes in the playground from source code
-        persist_queries = false -- Whether the query persists across vim sessions
-    },
-    sync_install = false,
-    textobjects = {
-        lsp_interop = {
-            enable = true,
-            border = 'none',
-            floating_preview_opts = {},
-            peek_definition_code = {
-                ['<leader>df'] = '@function.outer',
-                ['<leader>dc'] = '@class.outer',
-            },
-        },
-        select = {
-            enable = true,
-            lookahead = true,
-            keymaps = {
-                ['af'] = '@function.outer',
-                ['if'] = '@function.inner',
+-- Apparently we now have to specify all the languages, which is a complete PITA.
+--
+-- The library author is also of the opinion that countless people having identical
+-- problems with the config changes is a problem with countless people, not the
+-- ambiguous documentation, for example.
+local filetypes = {
+    'bash', 'css', 'eex', 'elixir', 'erlang', 'fish', 'go', 'heex', 'html',
+    'javascript', 'json', 'lua', 'markdown', 'regex', 'tera', 'toml', 'typescript',
+    'vim', 'vimdoc', 'xml', 'yaml'
+}
 
-                -- We can't use `ap` and `ip`, because Vim already defines those
-                -- (outer / inner paragraph, but you already knew that, right?).
-                -- Instead we use `a`, for 'attribute'.
-                ['aa'] = '@parameter.outer',
-                ['ia'] = '@parameter.inner',
-            }
-        }
-    }
+require('nvim-treesitter').install(filetypes)
+
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = filetypes,
+    callback = function(opts)
+        vim.treesitter.start()
+
+        -- Enable indentation. Apparently this is now "experimental".
+        vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+    end
 })
