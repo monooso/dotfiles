@@ -9,6 +9,9 @@ if test -x /home/linuxbrew/.linuxbrew/bin/brew
    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)"
 end
 
+# Add ~/.local/bin to the path
+fish_add_path ~/.local/bin
+
 # Export the RIPGREP_CONFIG_PATH variable if `rg` exists
 if command -q rg
   set -gx RIPGREP_CONFIG_PATH "$HOME/.config/ripgrep/config"
