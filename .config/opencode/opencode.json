@@ -1,7 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "theme": "tokyonight",
-  "model": "zai/glm-5",
   "mcp": {
     "web-reader": {
       "enabled": true,
@@ -35,14 +34,6 @@
       "headers": {
         "Authorization": "Bearer {env:ZAI_API_KEY}"
       }
-    }
-  },
-  "provider": {
-    "zai": {
-      "id": "zai",
-      "name": "ZAI",
-      "base_url": "https://api.z.ai/api/coding/paas/v4",
-      "api_key": "{env:ZAI_API_KEY}"
     }
   }
 }
