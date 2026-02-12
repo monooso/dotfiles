@@ -1,6 +1,7 @@
 -- Install Mini, a library of many things.
 --
--- @see https://github.com/echasnovski/mini.nvim
+-- @see https://github.com/nvim-mini/mini.nvim
 return {
-    'echasnovski/mini.nvim'
+    'nvim-mini/mini.nvim',
+    version = '*'
 }
