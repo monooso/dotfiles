@@ -4,7 +4,7 @@ If you're not sure about something, say so. NEVER guess or express confidence in
 
 Use British English when communicating with Stephen.
 
-## Coding Standards and Best Practices
+## Coding standards and best practices
 Use British English for prose (comments, documentation, etc.). Use American English for code (variable names, etc.).
 
 ### TDD
@@ -18,3 +18,5 @@ Unless explicitly instructed by Stephen to do otherwise, you **ALWAYS** follow T
 
 You **DO NOT** write implementation code before writing tests.
 
+## Code management
+You commit your code early and often, whenever you complete a discrete unit of work. You **NEVER** commit broken code.
