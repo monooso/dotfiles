@@ -9,10 +9,6 @@ function ts
     tmux new-window -t $session_name -n shell
     tmux new-window -t $session_name -n serve
 
-    # Launch OpenCode in the second window.
-    tmux select-window -t $session_name:2
-    tmux send-keys -t $session_name:2 "opencode" C-m
-
     # Launch Neovim in the first window.
     tmux select-window -t $session_name:1
     tmux send-keys -t $session_name:1 "nvim" C-m
