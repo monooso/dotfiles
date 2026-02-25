@@ -3,6 +3,7 @@
 
 # Managed in dotfiles-private
 .ssh/
+.config/dconf/
 .config/snyp/snippets/
 
 # tmux client log (probably a better way to do this)
