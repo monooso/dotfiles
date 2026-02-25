@@ -1,0 +1,15 @@
+[Unit]
+Description=Mount pCloud rclone remote to ~/Documents/pcloud/
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/home/linuxbrew/.linuxbrew/bin/rclone mount pcloud:/ /home/sl/Documents/pcloud/ --vfs-cache-mode full
+ExecStop=/bin/fusermount -u /home/sl/Documents/pcloud/
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target
+

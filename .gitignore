@@ -1,27 +1,7 @@
-.config/Autodesk/FusionFabrication.FusionNesting
-.config/composer/
-.config/exercism/user.json
-.config/fish/fish_variables
-.config/github-copilot/
-.config/lazygit/state.yml
-.config/ngrok/ngrok.yml
-.config/nvim/plugin/packer_compiled.lua
-.config/raycast/extensions/
-.config/op/
-.config/psysh/
-.config/valet/
-.config/wireguard/*.conf
-.config/zed/embeddings/
-.config/zed/prompts/
-.config/zsh/.zcompdump
-.config/zsh/.zsh_history
+# Sensitive bash information
+.bash_history
 
-.gnupg/
-
-.ssh/known_hosts
-.ssh/known_hosts.old
-
-.var/app/*
-.var/app/*.*
-!.var/app/*/
-!.var/app/*/config/
+# Managed in dotfiles-private
+.ssh/
+.config/dconf/
+.config/snyp/snippets/

@@ -1,6 +1,6 @@
 -- Configure the mini.pick plugin, a Telescope replacement.
 --
--- @see https://github.com/echasnovski/mini.nvim
+-- @see https://github.com/nvim-mini/mini.nvim
 
 require('mini.pick').setup()
 require('mini.extra').setup()

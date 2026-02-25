@@ -1,6 +1,6 @@
 -- Configure the mini.clue plugin, a replacement for Which Key.
 --
--- @see https://github.com/echasnovski/mini.nvim
+-- @see https://github.com/nvim-mini/mini.nvim
 
 require('mini.clue').setup({
   triggers = {

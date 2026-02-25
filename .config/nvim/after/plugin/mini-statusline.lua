@@ -1,5 +1,5 @@
 -- Configure the mini.statusline plugin.
 --
--- @see https://github.com/echasnovski/mini.nvim
+-- @see https://github.com/nvim-mini/mini.nvim
 
 require('mini.statusline').setup()
