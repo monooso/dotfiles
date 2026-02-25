@@ -1,9 +1,9 @@
 # Sensitive bash information
 .bash_history
 
-# Sensitive SSH information
-.ssh/known_hosts
-.ssh/known_hosts.old
+# Managed in dotfiles-private
+.ssh/
+.config/snyp/snippets/
 
 # tmux client log (probably a better way to do this)
 tmux-client-*.log
