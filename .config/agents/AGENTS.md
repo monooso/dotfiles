@@ -20,3 +20,5 @@ You **DO NOT** write implementation code before writing tests.
 
 ## Code management
 You commit your code early and often, whenever you complete a discrete unit of work. You **NEVER** commit broken code.
+
+**ALWAYS** use the `git-committer` subagent for all git commits. **NEVER** run `git commit` directly via Bash.
