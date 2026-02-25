@@ -2,8 +2,11 @@
 abbr -a c clear
 abbr -a t tmux
 
-# Podman > Docker
+# Aliases
 abbr -a docker podman
+
+# Custom scripts and binaries
+abbr -a cv claudeville
 
 # .... -> cd ../../../
 function cdfinity
@@ -11,3 +14,4 @@ function cdfinity
 end
 
 abbr --add dotdot --regex '^\.\.+$' --function cdfinity
+
