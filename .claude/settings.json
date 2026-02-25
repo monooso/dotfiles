@@ -10,4 +10,17 @@
   },
   "enableAllProjectMcpServers": true,
   "prefersReducedMotion": true
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "curl -d \"Claude misses you\" ntfy.sh/$NTFY_CLAUDE_CODE_TOPIC"
+          }
+        ]
+      }
+    ]
+  },
 }
