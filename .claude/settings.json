@@ -9,7 +9,6 @@
     "DISABLE_TELEMETRY": "1"
   },
   "enableAllProjectMcpServers": true,
-  "prefersReducedMotion": true
   "hooks": {
     "Notification": [
       {
@@ -23,6 +22,11 @@
       }
     ]
   },
+  "statusLine": {
+    "type": "command",
+    "command": "bash /home/sl/.claude/statusline-command.sh"
+  },
+  "prefersReducedMotion": true,
   "skipDangerousModePermissionPrompt": true,
   "enabledPlugins": {
     "frontend-design@claude-plugins-official": true
