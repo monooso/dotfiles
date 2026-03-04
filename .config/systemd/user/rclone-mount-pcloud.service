@@ -1,7 +1,5 @@
 [Unit]
 Description=Mount pCloud rclone remote to ~/Documents/pcloud/
-Wants=network-online.target
-After=network-online.target
 
 [Service]
 Type=simple
