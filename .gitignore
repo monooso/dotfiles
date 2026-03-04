@@ -1,12 +1,14 @@
 # Sensitive bash information
 .bash_history
 
-# Claude Code config files
+# Claude Code - ignore everything except config we want tracked
 # An awkward consequence of having to install my dotfiles *before* installing and running
 # Claude Code.
-.claude/backups/
-.claude/cache/
-.claude/debug/
+.claude/*
+!.claude/CLAUDE.md
+!.claude/settings.json
+!.claude/statusline-command.sh
+!.claude/agents/
 
 # Managed in dotfiles-private
 .ssh/
