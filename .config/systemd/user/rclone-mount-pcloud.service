@@ -5,6 +5,7 @@ After=network-online.target
 
 [Service]
 Type=simple
+ExecStartPre=/bin/mkdir -p /home/sl/Documents/pcloud/
 ExecStart=/home/linuxbrew/.linuxbrew/bin/rclone mount pcloud:/ /home/sl/Documents/pcloud/ --vfs-cache-mode full
 ExecStop=/bin/fusermount -u /home/sl/Documents/pcloud/
 Restart=on-failure
