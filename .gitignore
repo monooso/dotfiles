@@ -10,6 +10,9 @@
 !.claude/statusline-command.sh
 !.claude/agents/
 
+# Fish-generated universal variables
+.config/fish/fish_variables
+
 # Managed in dotfiles-private
 .ssh/
 .config/dconf/
