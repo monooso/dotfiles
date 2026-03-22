@@ -1,0 +1,18 @@
+{
+  "$schema": "https://charm.land/crush.json",
+  "options": {
+    "attribution": {
+      "trailer_style": "none",
+      "generated_with": false
+    },
+    "disable_metrics": true
+  },
+  "providers": {
+    "zai": {
+      "id": "zai",
+      "name": "ZAI Provider",
+      "base_url": "https://api.z.ai/api/coding/paas/v4",
+      "api_key": "$ZAI_API_KEY"
+    }
+  }
+}
