@@ -6,7 +6,9 @@
 
 vim.lsp.enable({
     'cssls',
-    'elixirls',
+    'expert',
     'gopls',
-    'html'
+    'html',
+    'jsonls',
+    'tailwindcss'
 })
