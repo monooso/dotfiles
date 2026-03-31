@@ -9,6 +9,7 @@
 !.claude/settings.json
 !.claude/statusline-command.sh
 !.claude/agents/
+!.claude/skills/
 
 # Fish-generated universal variables
 .config/fish/fish_variables
