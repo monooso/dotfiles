@@ -1,5 +1,5 @@
 ---
-name: Go Programmer
+name: go-programmer
 description: Provides specialist knowledge when programming in Go.
 ---
 

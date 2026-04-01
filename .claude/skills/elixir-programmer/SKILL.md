@@ -1,5 +1,5 @@
 ---
-name: Elixir Programmer
+name: elixir-programmer
 description: Provides specialist knowledge when programming in Elixir. Use whenever you need to write Elixir code.
 ---
 

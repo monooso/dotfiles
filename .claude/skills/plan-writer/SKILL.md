@@ -1,5 +1,5 @@
 ---
-name: Plan Writer
+name: plan-writer
 description: Converts a set of product requirements to a multi-phase implementation plan using tracer-bullet vertical slices. Saves the plan as a Markdown file in ./plans/. Use when user wants to break down a set of requirements, create an implementation plan, plan phases from a PRD, or mentions "tracer bullets".
 ---
 
@@ -10,7 +10,7 @@ Convert a set of product requirements to phased implementation plan using vertic
 ## Process
 
 ### 1. Confirm the requirements are in the context
-The requirements should already be in the conversation. If not, ask the user to paste them or point you to a file.
+The requirements should already be in the conversation. If not, ask the user to paste them, or point you to a file or related issue.
 
 ### 2. Explore the codebase
 If you have not already explored the codebase, do so to understand the current architecture, existing patterns, and integration layers.
@@ -57,7 +57,7 @@ Create `./plans/` if it doesn't exist. Write the plan as a Markdown file named a
 # Plan: {{ feature_name }}
 
 ## Requirements
-Write the full requirements here. You may reword for brevity and clarity, but MUST NOT change the meaning or discard any important information.
+If the requirements only exist in the context, write them here. Otherwise, include a link to the relevant requirements document or issue.
 
 ## Architectural decisions
 Durable decisions that apply across all phases:
