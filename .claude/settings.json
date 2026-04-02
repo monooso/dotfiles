@@ -17,5 +17,6 @@
     "frontend-design@claude-plugins-official": true
   },
   "prefersReducedMotion": true,
-  "skipDangerousModePermissionPrompt": true
+  "skipDangerousModePermissionPrompt": true,
+  "voiceEnabled": true
 }
