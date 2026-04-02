@@ -51,7 +51,9 @@ Ask the user:
 Iterate until the user approves the breakdown.
 
 ### 6. Write the plan file
-Create `./plans/` if it doesn't exist. Write the plan as a Markdown file named after the feature (e.g. `./plans/user-onboarding.md`). Use the template below.
+Create `./plans/` if it doesn't exist. Write the plan as a Markdown file named after the feature (e.g. `./plans/user-onboarding.md`).
+Emphasise the fact that every step MUST follow our standard red-green-refactor TDD development approach. NEVER imply that tests are an afterthought.
+Use the template below to structure the document.
 
 <plan-template>
 # Plan: {{ feature_name }}
@@ -66,6 +68,14 @@ Durable decisions that apply across all phases:
 - **Schema**: ...
 - **Key models**: ...
 - (add/remove sections as appropriate)
+
+## Approach
+
+Every step follows strict red-green-refactor TDD:
+
+1. **Red** — write failing tests that describe the desired behaviour.
+2. **Green** — implement the minimum code to make the tests pass.
+3. **Refactor** — clean up the implementation and tests while keeping them green. Eliminate duplication, improve naming, simplify structure.
 
 ## Progress
 A checklist of the plan steps. Use this list to keep track of your progress. Update the checklist whenever a step is completed, and commit this document as part of the code changes.
