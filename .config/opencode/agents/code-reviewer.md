@@ -1,7 +1,7 @@
 ---
 description: "Proactively use this agent when code has been written or modified and needs a thorough quality review before being committed. This includes after implementing a feature, fixing a bug, refactoring, or any time code changes need a critical eye. The agent should be used proactively after each logical chunk of work is completed.\\n\\nExamples:\\n\\n- User: \"Please implement a caching layer for the API responses\"\\n  Assistant: *writes the implementation*\\n  \"Now let me use the code-reviewer agent to review the code I've just written.\"\\n  (Since a significant piece of code was written, use the Agent tool to launch the code-reviewer agent to review the changes.)\\n\\n- User: \"Refactor the authentication module to use the new token format\"\\n  Assistant: *completes the refactor*\\n  \"Let me get the code-reviewer agent to do a thorough review of these changes before we proceed.\"\\n  (Since code was refactored, use the Agent tool to launch the code-reviewer agent to catch any issues introduced during refactoring.)\\n\\n- User: \"Fix the race condition in the job scheduler\"\\n  Assistant: *writes the fix*\\n  \"I'll use the code-reviewer agent to verify the fix is correct and doesn't introduce new issues.\"\\n  (Since a concurrency bug was fixed, use the Agent tool to launch the code-reviewer agent to scrutinise the fix for correctness and edge cases.)"
 mode: subagent
-model: zai-coding-plan/GLM-5.1
+model: zai-coding-plan/glm-5.1
 temperature: 0.0
 permissions:
   edit: false
