@@ -16,5 +16,6 @@
 
 # Managed in dotfiles-private
 .ssh/config.d/
+.ssh/known_hosts
 .config/dconf/
 .config/snyp/snippets/
