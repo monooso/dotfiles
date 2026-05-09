@@ -10,5 +10,7 @@ vim.lsp.enable({
     'gopls',
     'html',
     'jsonls',
-    'tailwindcss'
+    'ruff',
+    'tailwindcss',
+    'ty'
 })
