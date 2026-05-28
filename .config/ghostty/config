@@ -21,3 +21,6 @@ keybind = alt+w>s=new_split:down
 keybind = alt+w>v=new_split:right
 keybind = alt+w>e=equalize_splits
 keybind = shift+enter=text:\n
+
+# Handle older distros that do not recognise `xterm-ghostty`.
+shell-integration-features = ssh-env,ssh-terminfo,sudo
