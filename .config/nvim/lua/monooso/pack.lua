@@ -13,15 +13,15 @@ vim.api.nvim_create_autocmd('PackChanged', {
 
 -- Install all core plugins.
 vim.pack.add({
-  { src = 'https://github.com/nvim-mini/mini.nvim',       version = vim.version.range('*') },
-  { src = 'https://github.com/neovim/nvim-lspconfig' },
-  { src = 'https://github.com/nvim-treesitter/nvim-treesitter' },
-  { src = 'https://github.com/saghen/blink.cmp',          version = vim.version.range('1.x') },
-  { src = 'https://github.com/mason-org/mason.nvim' },
-  { src = 'https://github.com/folke/tokyonight.nvim' },
-  { src = 'https://github.com/lambdalisue/vim-fern' },
   { src = 'https://github.com/akinsho/toggleterm.nvim' },
   { src = 'https://github.com/CRAG666/code_runner.nvim' },
+  { src = 'https://github.com/lambdalisue/vim-fern' },
+  { src = 'https://github.com/mason-org/mason.nvim' },
+  { src = 'https://github.com/neovim/nvim-lspconfig' },
+  { src = 'https://github.com/nvim-mini/mini.nvim', version = vim.version.range('*') },
+  { src = 'https://github.com/nvim-treesitter/nvim-treesitter' },
+	{ src = "https://github.com/rose-pine/neovim", name = "rose-pine" },
+  { src = 'https://github.com/saghen/blink.cmp', version = vim.version.range('1.x') },
   { src = 'https://github.com/tpope/vim-sleuth' },
   { src = 'https://github.com/vim-test/vim-test' },
 })
