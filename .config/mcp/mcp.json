@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "web-reader": {
+      "enabled": true,
+      "type": "remote",
+      "url": "https://api.z.ai/api/mcp/web_reader/mcp",
+      "auth": "bearer",
+      "bearerToken": "${ZAI_API_KEY}",
+      "directTools": true
+    },
+    "web-search-prime": {
+      "enabled": true,
+      "type": "remote",
+      "url": "https://api.z.ai/api/mcp/web_search_prime/mcp",
+      "auth": "bearer",
+      "bearerToken": "${ZAI_API_KEY}",
+      "directTools": true
+    }
+  }
+}
