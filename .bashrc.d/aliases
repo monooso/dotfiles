@@ -1,0 +1,9 @@
+alias c="clear"
+alias l="ls -alh"
+
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+
+alias lg="lazygit"
+alias v="nvim"
