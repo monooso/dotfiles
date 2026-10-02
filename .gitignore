@@ -1,18 +1,6 @@
-# Sensitive bash information
+# Sensitive information
 .bash_history
-
-# Claude Code - ignore everything except config we want tracked
-# An awkward consequence of having to install my dotfiles *before* installing and running
-# Claude Code.
-.claude/*
-!.claude/CLAUDE.md
-!.claude/settings.json
-!.claude/statusline-command.sh
-!.claude/agents/
-!.claude/skills/
-
-# Fish-generated universal variables
-.config/fish/fish_variables
+.ssh/known_hosts.old
 
 # Managed in dotfiles-private
 .ssh/config.d/
