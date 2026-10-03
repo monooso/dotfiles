@@ -4,10 +4,8 @@
 set -o vi
 
 # Initialise Homebrew. This MUST come first.
-BREWFILE="/home/linuxbrew/.linuxbrew/bin/brew"
-if [ -f "$BREWFILE" ] && [ -x "$BREWFILE" ]; then
-    BREW_COMMAND="$BREWFILE shellenv"
-    eval "$BREW_COMMAND"
+if [ -f "/home/linuxbrew/.linuxbrew/bin/brew" ] && [ -x "/home/linuxbrew/.linuxbrew/bin/brew" ]; then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
 # Source global definitions
