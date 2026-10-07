@@ -12,6 +12,11 @@ end
 # Add ~/.local/bin to the path
 fish_add_path ~/.local/bin
 
+# Set the PI_CODING_AGENT_DIR path, if `pi` exists
+if command -q pi
+    set -gx PI_CODING_AGENT_DIR "$HOME/.config/pi/"
+end
+
 # Export the RIPGREP_CONFIG_PATH variable if `rg` exists
 if command -q rg
     set -gx RIPGREP_CONFIG_PATH "$HOME/.config/ripgrep/config"
